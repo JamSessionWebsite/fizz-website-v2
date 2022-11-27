@@ -1,0 +1,210 @@
+.logo {
+  background: #001529;
+}
+.site-layout-sub-header-background {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.site-layout-background {
+  background: #fff;
+}
+.band-page-container .band-page-title-container {
+  justify-content: space-between;
+}
+.band-page-container .label-input {
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.song-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.song-page-container .title-container {
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.song-page-container .description-container {
+  width: 100%;
+  padding-bottom: 32px;
+  align-items: unset;
+}
+.song-page-container .description-label-container {
+  justify-content: space-between;
+  align-items: baseline;
+}
+.song-page-container .audio-player-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.song-page-container .audio-table-search-container {
+  padding: 16px;
+}
+.song-page-container .song-name-input {
+  padding-right: 36px;
+}
+.song-page-container .edit-action-button {
+  margin-right: 8px;
+}
+.file-drop-zone-container .uploaded-files-container {
+  padding: 16px 0;
+  width: 100%;
+}
+.file-drop-zone-container .file-display-container {
+  justify-content: space-between;
+}
+.task-list-container {
+  width: 100%;
+  padding: 16px 0;
+}
+.task-list-container .add-task-actions {
+  width: 100%;
+  padding: 16px 0;
+  justify-content: flex-start;
+}
+.collapse-container {
+  width: 100%;
+  align-items: flex-start !important;
+}
+.collapse-container .collapse-panel {
+  width: 100%;
+}
+.chord-chart-section-container {
+  width: 100%;
+  padding: 16px;
+}
+.chord-chart-section-container .chord-chart-section-row {
+  width: 100%;
+  justify-content: space-around;
+}
+.chord-chart-section-container .chord-change-row {
+  justify-content: space-between;
+}
+.chord-chart-section-container .chord-change {
+  padding-right: 8px;
+}
+.chord-chart-section-container .chord-change-tick {
+  padding-right: 8px;
+  font-weight: bold;
+}
+.chord-chart-section-container .add-section-row {
+  padding: 16px 0;
+  width: 100%;
+}
+.chord-chart-section-container .section-title-row {
+  width: 100%;
+  justify-content: space-between;
+  padding: 8px 0;
+}
+.chord-chart-section-container .section-title-item {
+  width: unset;
+  align-items: center;
+}
+.chord-chart-section-container .chord {
+  font-size: 16px;
+}
+.chord-chart-section-container .slash-chord {
+  font-size: 16px;
+}
+.chord-picker-popover-container .label-group {
+  padding: 8px;
+  justify-content: space-between;
+}
+.chord-chart-card-container {
+  width: 100%;
+}
+.chord-chart-card-container .chord-chart-edit-row {
+  justify-content: flex-end;
+  width: 100%;
+  padding: 16px;
+}
+.editing-tag {
+  padding: 8px;
+}
+.selected-tag {
+  padding: 8px;
+  font-weight: bold;
+}
+.audio-files-table-container {
+  padding-top: 16px;
+}
+.audio-files-table-container .tags {
+  justify-content: flex-start;
+}
+.audio-files-table-container .tag-container {
+  padding: 4px 0;
+}
+#components-layout-demo-top-side-2 .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.ant-row-rtl #components-layout-demo-top-side-2 .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+.site-layout-background {
+  background: #fff;
+}
+.clickable {
+  cursor: pointer;
+}
+.clickable:hover {
+  opacity: 50%;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.right-row {
+  justify-content: flex-end;
+}
+.label {
+  font-style: italic;
+  padding-right: 16px;
+}
+.label-and-value {
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+}
+.button-container {
+  padding-right: 8px;
+}
+.tag-input {
+  background: none;
+  border: none;
+}
+.full-width {
+  width: 100%;
+}
+.x-scroll {
+  overflow-x: scroll;
+}
+.hidden-background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  opacity: 0;
+}
+/*# sourceMappingURL=App.css.map */

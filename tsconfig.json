@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext",
+      "es2018.promise",
+      "es5"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "jsx": "preserve",
+    "isolatedModules": true,
+    "noFallthroughCasesInSwitch": true,
+    "noEmit": true,
+    "strict": false
+  },
+  "include": [
+    "src",
+    "externals.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

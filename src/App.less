@@ -1,0 +1,166 @@
+@import '~antd/es/style/themes/default.less';
+@import '~antd/dist/antd.variable.min.css';
+@import 'assets/less/AppLayout';
+@import 'assets/less/HomePage';
+
+@green-1: #c5d1ca;
+@green-2: #b9c4be;
+@green-3: #adb8b2;
+@green-4: #a1aba6;
+@green-5: #919e98;
+@green-6: #6f9283;
+@green-7: #4c6b5f;
+@green-8: #2d453c;
+@green-9: #131f1b;
+@green-10: #000000;
+
+@crimson-1: #d9d0cc;
+@crimson-2: #ccc3c0;
+@crimson-3: #bfa79f;
+@crimson-4: #b38578;
+@crimson-5: #a66555;
+@crimson-6: #994636;
+@crimson-7: #732d22;
+@crimson-8: #4d1913;
+@crimson-9: #260a08;
+@crimson-10: #000000;
+
+
+// AntD Overrides
+@primary-color: @crimson-6;
+@layout-header-background: @crimson-6;
+@menu-dark-inline-submenu-bg: @crimson-7;
+@menu-dark-item-active-bg: @crimson-5;
+@layout-header-height: unset;
+
+#components-layout-demo-top-side-2 .logo {
+  float: left;
+  width: 120px;
+  height: 31px;
+  margin: 16px 24px 16px 0;
+}
+
+.home-page-background {
+  position: absolute;
+  background-size: contain;
+  height: 100%;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-image: url("./assets/images/fizz-band-bg.jpeg");
+}
+
+.white-text {
+  color: white !important;
+}
+
+.container {
+  padding: 8px 0;
+}
+
+.horizontal-pad-sm {
+  padding: 0 8px;
+}
+
+.ant-row-rtl #components-layout-demo-top-side-2 .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  opacity: 50%;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.baseline {
+  align-items: baseline !important;
+}
+
+.space-between {
+  justify-content: space-between !important;
+  align-items: flex-start !important;
+}
+
+.right-row {
+  justify-content: flex-end;
+}
+
+.label {
+  font-style: italic;
+  padding-right: 16px;
+}
+
+.input {
+  width: 75%;
+}
+
+.label-and-value {
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 8px 0;
+}
+
+.button-container {
+  padding-right: 8px;
+}
+
+.tag-input {
+  background: none;
+  border: none;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.half-width {
+  width: 50%;
+}
+
+.quarter-width {
+  width: 25%;
+}
+
+.sixth-width {
+  width: 16.66%;
+}
+
+.eighth-width {
+  width: 12.5%;
+}
+
+.x-scroll {
+  overflow-x: scroll;
+}
+
+.hidden-background {
+  position: absolute;
+  width: 100%; height:100%;
+  top:0; left:0;
+  background:rgba(0,0,0,0.6);
+  opacity: 0;
+}
+
+.list-item-icon {
+  font-size: 20px;
+}
