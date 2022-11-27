@@ -25,7 +25,7 @@ const HomePage = () => {
             <div className={'full-width youtube-container'}>
                 <YouTube
                     videoId={'Po3-1mDTm7I'}
-                    style={{maxWidth: '600px', overflowX: 'scroll'}}
+                    style={{maxWidth: '640px', overflowX: 'scroll'}}
                 ></YouTube>
             </div>
             <div className={'flex-row full-width app-footer'}>
