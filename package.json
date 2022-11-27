@@ -39,7 +39,7 @@
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "deploy": "CI=false; npm run build; aws s3 sync build/ s3://fizz-band-website",
+    "deploy": "CI=false; npm run build; aws s3 sync build/ s3://fizz-website",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
