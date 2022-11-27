@@ -8,11 +8,8 @@ const {Content, Header} = Layout;
 
 const AppLayout = ({}) => {
 
-    const items: ItemType[] = [];
-
     return (
         <Layout style={{minHeight: '100vh'}}>
-            <Header className={'app-header'}></Header>
             <Content className={`site-layout-background`}>
                 <div className={`site-layout-background`} style={{padding: 24, minHeight: 360}}>
                     <JamSessionRoutes/>

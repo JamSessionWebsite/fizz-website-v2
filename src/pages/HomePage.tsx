@@ -22,10 +22,11 @@ const HomePage = () => {
                     width={'30%'}
                     src={'https://audio.fizztheband.com/images/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/fizz-logo-pop-label-transparent.png'}/>
             </div>
-            <div className={'flex-row full-width main-content-row'}>
-            <YouTube
-                videoId={'Po3-1mDTm7I'}
-            ></YouTube>
+            <div className={'full-width youtube-container'}>
+                <YouTube
+                    videoId={'Po3-1mDTm7I'}
+                    style={{maxWidth: '600px', overflowX: 'scroll'}}
+                ></YouTube>
             </div>
             <div className={'flex-row full-width app-footer'}>
                 <div className={'button-container'}>
@@ -33,7 +34,7 @@ const HomePage = () => {
                         ghost
                         size={'large'}
                         onClick={() => populateEmail()}
-                        icon={<MailOutlined />}
+                        icon={<MailOutlined/>}
                     ></Button>
                 </div>
                 <div className={'button-container'}>
@@ -41,7 +42,7 @@ const HomePage = () => {
                         ghost
                         size={'large'}
                         onClick={() => navigateInNewTab(`https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw`)}
-                        icon={<YoutubeOutlined />}
+                        icon={<YoutubeOutlined/>}
                     >
                     </Button>
                 </div>
@@ -50,7 +51,7 @@ const HomePage = () => {
                         ghost
                         size={'large'}
                         onClick={() => navigateInNewTab('https://www.instagram.com/fizz.band/')}
-                        icon={<InstagramOutlined />}
+                        icon={<InstagramOutlined/>}
                     ></Button>
                 </div>
                 <div className={'button-container'}>
@@ -58,7 +59,7 @@ const HomePage = () => {
                         ghost
                         size={'large'}
                         onClick={() => navigateInNewTab('https://www.facebook.com/Fizzthebandofficial')}
-                        icon={<FacebookOutlined />}
+                        icon={<FacebookOutlined/>}
                     ></Button>
                 </div>
             </div>
