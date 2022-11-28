@@ -44,6 +44,13 @@ const AppLayout = ({}) => {
                             Upcoming Shows
                         </Button>
                     </div>
+                    <div className={'button-container'}>
+                        <Button
+                            onClick={() => navigate('/videos')}
+                            ghost>
+                            Videos
+                        </Button>
+                    </div>
                 </div>
             </Header>
             <Content>
