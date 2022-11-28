@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Typography} from "antd";
 
 const {Text, Paragraph} = Typography;
 
 const AboutUsPage = () => {
+    useEffect(() => {
+        document.title = 'FIZZ - About Us'
+    }, []);
     return (
         <div className={'about-us-container'}>
             <Paragraph className={'flex-row white-text'}>

@@ -1,7 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Card, List} from "antd";
 
 const UpcomingShowsPage = () => {
+    useEffect(() => {
+        document.title = 'FIZZ - Upcoming Shows'
+    }, []);
     return (
         <div className={'upcoming-shows-container'}>
             <Card title={'Upcoming Shows'}>

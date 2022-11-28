@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Button, Image, Typography} from "antd";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
 import YouTube from "react-youtube";
@@ -6,7 +6,9 @@ import YouTube from "react-youtube";
 const {Title, Text} = Typography;
 
 const HomePage = () => {
-
+    useEffect(() => {
+        document.title = 'FIZZ - Home'
+    }, []);
     return (
         <div className={'full-width youtube-container'}>
             <YouTube
