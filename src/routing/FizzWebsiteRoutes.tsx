@@ -1,10 +1,13 @@
 import React from 'react';
-import {Outlet, Route, Routes} from "react-router-dom";
+import {Outlet, Route, Routes, useNavigate} from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import AboutUsPage from "../pages/AboutUsPage";
 import UpcomingShowsPage from "../pages/UpcomingShowsPage";
+import {Button, Typography} from "antd";
+const {Title} = Typography;
 
 const FizzWebsiteRoutes = () => {
+    const navigate = useNavigate();
     return (
         <Routes>
             <Route path='/' element={<HomePage/>}/>
@@ -14,7 +17,12 @@ const FizzWebsiteRoutes = () => {
                 path="*"
                 element={
                     <main style={{padding: "1rem"}}>
-                        <p>There's nothing here!</p>
+                        <div className={'flex-column full-width'}>
+                            <Title className={'white-text'}>Woah, looks like you've reached a dead end!</Title>
+                            <Button
+                                onClick={() => navigate('/')}
+                                ghost>Click Here to Go Home</Button>
+                        </div>
                     </main>
                 }
             />
