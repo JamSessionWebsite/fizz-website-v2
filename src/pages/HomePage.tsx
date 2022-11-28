@@ -13,13 +13,16 @@ const contentStyle: React.CSSProperties = {
 };
 const HomePage = () => {
     const pictures = [
+        {src: `${PATH}mary-singing.jpeg`},
+        {src: `${PATH}drumming.jpeg`},
         {src: `${PATH}bass-playing.jpeg`},
         {src: `${PATH}dj-smiles.jpeg`},
+        {src: `${PATH}starry-patch.jpeg`},
+        {src: `${PATH}trumpet.jpeg`},
         {src: `${PATH}drum-and-guitar.jpeg`},
-        {src: `${PATH}drumming.jpeg`},
-        {src: `${PATH}focus-drum.jpeg`},
         {src: `${PATH}horns.jpeg`},
-        {src: `${PATH}mary-singing.jpeg`},
+        {src: `${PATH}focus-drum.jpeg`},
+        {src: `${PATH}trombone-toot.jpeg`},
         {src: `${PATH}rhythm-section.jpeg`},
         {src: `${PATH}sax.jpeg`},
         {src: `${PATH}spencer-set-up-drums.jpeg`},
@@ -39,6 +42,8 @@ const HomePage = () => {
                         showArrows
                         showThumbs={false}
                         dynamicHeight
+                        interval={4000}
+                        infiniteLoop
                     >
                         {pictures.map(pic => {
                             return (
