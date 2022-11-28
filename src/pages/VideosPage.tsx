@@ -29,10 +29,6 @@ const VideosPage = () => {
             videoId: 'DW-T3eGuYAo',
             url: 'https://www.youtube.com/watch?v=DW-T3eGuYAo&ab_channel=FIZZ',
         },
-        {
-            type: 'tiktok',
-            url: 'https://www.tiktok.com/embed/7169370519249095979',
-        },
 
     ]
     return (
