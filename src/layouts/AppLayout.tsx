@@ -57,7 +57,7 @@ const AppLayout = ({}) => {
                 </div>
             </Header>
             <Content className={'app-content'}>
-                <div className={'full-width'} style={{padding: 24, minHeight: 360}}>
+                <div className={'full-width'} style={{minHeight: 360}}>
                     <FizzWebsiteRoutes/>
                 </div>
             </Content>
