@@ -7,7 +7,7 @@ const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 const contentStyle: React.CSSProperties = {
     margin: 0,
     color: '#fff',
-    height: '400px',
+    maxHeight: '400px',
     textAlign: 'center',
     background: '#364d79',
 };
@@ -34,7 +34,12 @@ const HomePage = () => {
             </Helmet>
             <div className={'carousel-container'}>
                 <Image.PreviewGroup>
-                    <Carousel showArrows showThumbs={false}>
+                    <Carousel
+                        autoPlay
+                        showArrows
+                        showThumbs={false}
+                        dynamicHeight
+                    >
                         {pictures.map(pic => {
                             return (
                                 <Image style={contentStyle} src={pic.src}/>
