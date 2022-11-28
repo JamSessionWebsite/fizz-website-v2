@@ -81,6 +81,14 @@ const AppLayout = ({}) => {
                     <Button
                         ghost
                         size={'large'}
+                        onClick={() => navigateInNewTab('https://www.tiktok.com/@fizz.band')}
+                        icon={<Image preview={false} width={24} src={'./static/tiktok-logo.svg'} />}
+                    ></Button>
+                </div>
+                <div className={'button-container'}>
+                    <Button
+                        ghost
+                        size={'large'}
                         onClick={() => navigateInNewTab('https://www.facebook.com/Fizzthebandofficial')}
                         icon={<FacebookOutlined/>}
                     ></Button>
