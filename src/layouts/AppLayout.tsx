@@ -7,7 +7,6 @@ import {useNavigate} from "react-router-dom";
 
 const {Content, Header} = Layout;
 const {Title} = Typography;
-const DISABLED_FEATURE = true;
 const AppLayout = ({}) => {
     const navigate = useNavigate();
     const navigateInNewTab = (url) => {
@@ -38,14 +37,13 @@ const AppLayout = ({}) => {
                             About Us
                         </Button>
                     </div>
-                    {!DISABLED_FEATURE ?
-                        <div className={'button-container'}>
-                            <Button
-                                ghost>
-                                Videos
-                            </Button>
-                        </div> :
-                        <div/>}
+                    <div className={'button-container'}>
+                        <Button
+                            onClick={() => navigate('/upcoming-shows')}
+                            ghost>
+                            Upcoming Shows
+                        </Button>
+                    </div>
                 </div>
             </Header>
             <Content>
