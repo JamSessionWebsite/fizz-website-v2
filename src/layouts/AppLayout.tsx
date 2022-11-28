@@ -44,11 +44,12 @@ const AppLayout = ({}) => {
                             </Button>
                         </div>
                     </div>
-                    <div className={'fizz-image-container'}>
+                    <div className={'flex-row'}>
                         <Image
                             className={'clickable'}
                             onClick={() => navigate('/')}
                             height={'200px'}
+                            width={'100px'}
                             preview={false}
                             src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
                         />
