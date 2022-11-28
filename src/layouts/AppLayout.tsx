@@ -1,11 +1,12 @@
 import React from 'react';
-import {Button, Image, Layout} from "antd";
+import {Button, Image, Layout, Typography} from "antd";
 import FizzWebsiteRoutes from "../routing/FizzWebsiteRoutes";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
 import {Footer} from "antd/es/layout/layout";
 import {useNavigate} from "react-router-dom";
 
 const {Content, Header} = Layout;
+const {Title} = Typography;
 const DISABLED_FEATURE = true;
 const AppLayout = ({}) => {
     const navigate = useNavigate();
