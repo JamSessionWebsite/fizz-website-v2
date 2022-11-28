@@ -20,41 +20,43 @@ const AppLayout = ({}) => {
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
             <Header className={'app-header'}>
-                <div className={'fizz-image-container'}>
-                    <Image
-                        className={'clickable'}
-                        onClick={() => navigate('/')}
-                        height={'200px'}
-                        preview={false}
-                        src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
-                    />
-                </div>
-                <div className={'flex-row'}>
-                    <div className={'button-container'}>
-                        <Button
-                            onClick={() => navigate('/about-us')}
-                            ghost>
-                            About Us
-                        </Button>
+                <div className={'flex-column'}>
+                    <div className={'flex-row full-width'}>
+                        <div className={'button-container'}>
+                            <Button
+                                onClick={() => navigate('/about-us')}
+                                ghost>
+                                About Us
+                            </Button>
+                        </div>
+                        <div className={'button-container'}>
+                            <Button
+                                onClick={() => navigate('/upcoming-shows')}
+                                ghost>
+                                Upcoming Shows
+                            </Button>
+                        </div>
+                        <div className={'button-container'}>
+                            <Button
+                                onClick={() => navigate('/videos')}
+                                ghost>
+                                Videos
+                            </Button>
+                        </div>
                     </div>
-                    <div className={'button-container'}>
-                        <Button
-                            onClick={() => navigate('/upcoming-shows')}
-                            ghost>
-                            Upcoming Shows
-                        </Button>
-                    </div>
-                    <div className={'button-container'}>
-                        <Button
-                            onClick={() => navigate('/videos')}
-                            ghost>
-                            Videos
-                        </Button>
+                    <div className={'fizz-image-container'}>
+                        <Image
+                            className={'clickable'}
+                            onClick={() => navigate('/')}
+                            height={'200px'}
+                            preview={false}
+                            src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
+                        />
                     </div>
                 </div>
             </Header>
-            <Content>
-                <div style={{padding: 24, minHeight: 360}}>
+            <Content className={'app-content'}>
+                <div className={'full-width'} style={{padding: 24, minHeight: 360}}>
                     <FizzWebsiteRoutes/>
                 </div>
             </Content>
@@ -89,7 +91,7 @@ const AppLayout = ({}) => {
                         ghost
                         size={'large'}
                         onClick={() => navigateInNewTab('https://www.tiktok.com/@fizz.band')}
-                        icon={<Image preview={false} width={24} src={'./static/tiktok-logo.svg'} />}
+                        icon={<Image preview={false} width={24} src={'./static/tiktok-logo.svg'}/>}
                     ></Button>
                 </div>
                 <div className={'button-container'}>
