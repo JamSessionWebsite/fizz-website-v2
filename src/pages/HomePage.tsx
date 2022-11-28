@@ -1,16 +1,16 @@
-import React, {useEffect} from 'react';
-import {Button, Image, Typography} from "antd";
-import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
+import React from 'react';
 import YouTube from "react-youtube";
-
-const {Title, Text} = Typography;
+import {Helmet} from 'react-helmet';
 
 const HomePage = () => {
-    useEffect(() => {
-        document.title = 'FIZZ - Home'
-    }, []);
     return (
         <div className={'full-width youtube-container'}>
+            <Helmet>
+                <title>FIZZ - Home</title>
+                <meta
+                    name='description'
+                    content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
+            </Helmet>
             <YouTube
                 videoId={'Po3-1mDTm7I'}
                 opts={{width: '296', height: '394'}}

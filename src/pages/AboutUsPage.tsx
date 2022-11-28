@@ -1,14 +1,19 @@
 import React, {useEffect} from 'react';
 import {Typography} from "antd";
+import {Helmet} from 'react-helmet';
 
 const {Text, Paragraph} = Typography;
 
 const AboutUsPage = () => {
-    useEffect(() => {
-        document.title = 'FIZZ - About Us'
-    }, []);
     return (
         <div className={'about-us-container'}>
+            <Helmet>
+                <title>FIZZ - About Us</title>
+                <meta
+                    name='description'
+                      content='FIZZ is a pop/funk/ band in the Chicago area that has been playing together for
+                                many years.  We have also gone under the name Elise and the Police in the past.'></meta>
+            </Helmet>
             <Paragraph className={'flex-row white-text'}>
                 Many members of FIZZ have been playing music together for over 10 years. We have played
                 shows under the name Elise and the Police at House of Blues, Bottom Lounge, and more. We
