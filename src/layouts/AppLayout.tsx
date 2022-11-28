@@ -26,7 +26,7 @@ const AppLayout = ({}) => {
                         onClick={() => navigate('/')}
                         height={'200px'}
                         preview={false}
-                        src={'https://audio.fizztheband.com/images/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/fizz-soda-red-blue-transparent-bg-256-512.png'}
+                        src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
                     />
                 </div>
                 <div className={'flex-row'}>
