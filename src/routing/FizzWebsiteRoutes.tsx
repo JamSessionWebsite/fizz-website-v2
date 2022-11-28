@@ -1,11 +1,13 @@
 import React from 'react';
 import {Outlet, Route, Routes} from "react-router-dom";
 import HomePage from "../pages/HomePage";
+import AboutUsPage from "../pages/AboutUsPage";
 
-const JamSessionRoutes = () => {
+const FizzWebsiteRoutes = () => {
     return (
         <Routes>
             <Route path='/' element={<HomePage/>}/>
+            <Route path='/about-us' element={<AboutUsPage/>}/>
             <Route
                 path="*"
                 element={
@@ -18,4 +20,4 @@ const JamSessionRoutes = () => {
     )
 }
 
-export default JamSessionRoutes;
+export default FizzWebsiteRoutes;
