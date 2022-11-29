@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {Fragment, useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {Carousel} from 'react-responsive-carousel';
 import {Image as ImageAntd} from "antd";
@@ -22,6 +22,9 @@ const HomePage = () => {
         {src: `${PATH}sax.jpeg`},
         {src: `${PATH}spencer-set-up-drums.jpeg`},
     ];
+    useEffect(() => {
+        onImageChange(pictures[0].src);
+    }, []);
 
     function setHeightAndWidthOfImage() {
         setImageDimensions({height: this.height, width: this.width});
@@ -53,25 +56,27 @@ const HomePage = () => {
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
             </Helmet>
-            <div className={'carousel-container'}>
-                <Carousel
-                    autoPlay
-                    showArrows
-                    showThumbs={false}
-                    dynamicHeight
-                    interval={4000}
-                    infiniteLoop
-                    onChange={(event, node) => {
-                        onImageChange(pictures[event].src);
-                    }}
-                >
-                    {pictures.map(pic => {
-                        return (
-                            <ImageAntd style={contentStyle} src={pic.src}/>
-                        )
-                    })}
-                </Carousel>
-            </div>
+            {imageDimensions.width !== 0 ?
+                <div className={'carousel-container'}>
+                    <Carousel
+                        autoPlay
+                        showArrows
+                        showThumbs={false}
+                        dynamicHeight
+                        interval={4000}
+                        infiniteLoop
+                        onChange={(event, node) => {
+                            onImageChange(pictures[event].src);
+                        }}
+                    >
+                        {pictures.map(pic => {
+                            return (
+                                <ImageAntd style={contentStyle} src={pic.src}/>
+                            )
+                        })}
+                    </Carousel>
+                </div> :
+            <Fragment />}
         </div>
     )
 };
