@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {Typography} from "antd";
+import {Card, Typography} from "antd";
 import {Helmet} from 'react-helmet';
 
 const {Text, Paragraph} = Typography;
@@ -14,7 +14,7 @@ const AboutUsPage = () => {
                       content='FIZZ is a pop/funk/ band in the Chicago area that has been playing together for
                                 many years.  We have also gone under the name Elise and the Police in the past.'></meta>
             </Helmet>
-            <div className={'about-us-text-container'}>
+            <Card className={'about-us-text-container'}>
                 <Paragraph className={'about-us-text'}>
                     Many members of FIZZ have been playing music together for over 10 years. We have played
                     shows under the name Elise and the Police at House of Blues, Bottom Lounge, and more. We
@@ -40,7 +40,7 @@ const AboutUsPage = () => {
                     <a target={'_blank'} href={'https://linktr.ee/fizz.band'}>https://linktr.ee/fizz.band</a>
                     <div/>
                 </Paragraph>
-            </div>
+            </Card>
         </div>
     );
 }

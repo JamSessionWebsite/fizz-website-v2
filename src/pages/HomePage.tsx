@@ -8,20 +8,20 @@ const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 
 const HomePage = () => {
     const pictures = [
-        {description: 'Morgan Buckley, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.', src: `${PATH}vocalist-morgan-buckley-singing-live-chicago.jpeg`},
-        {description: 'Mary aka Sun Queen, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.', src: `${PATH}mary-singing.jpeg`},
-        {description: 'Spencer, drummer of FIZZ, playing at Bookclub Chicago.', src: `${PATH}drumming.jpeg`},
-        {description: 'Alec, bassist of FIZZ, playing his Fender Jazz Bass at Bookclub Chicago.', src: `${PATH}bass-playing.jpeg`},
-        {description: 'FIZZ performs "Something Cosmic" written by Sun Queen (feat. FIZZ) at Bookclub Chicago.', src: `${PATH}dj-smiles.jpeg`},
-        {description: 'Patrick, guitarist of FIZZ, playing Disco Ulysses by Vulfpeck at Bookclub Chicago.', src: `${PATH}starry-patch.jpeg`},
-        {description: 'Sam, trumpet player of FIZZ, takes a solo.', src: `${PATH}trumpet.jpeg`},
-        {description: 'Close up of the drums and rhythm guitar locking in.', src: `${PATH}drum-and-guitar.jpeg`},
-        {description: 'Full horn section plays in unison to a funky pop song.', src: `${PATH}horns.jpeg`},
-        {description: 'Close up of the drummer of FIZZ playing at Bookclub Chicago.', src: `${PATH}focus-drum.jpeg`},
-        {description: 'A close up of DJ, the trombone player of FIZZ, taking a solo.', src: `${PATH}trombone-toot.jpeg`},
-        {description: 'The rhythm section of FIZZ playing a cover of Disco Ulysses by Vulfpeck.', src: `${PATH}rhythm-section.jpeg`},
-        {description: 'Ethan, saxophone player of FIZZ, taking a solo at Bookclub Chicago.', src: `${PATH}sax.jpeg`},
-        {description: 'Setting up before the gig at Bookclub Chicago in late 2022.', src: `${PATH}spencer-set-up-drums.jpeg`},
+        {description: 'Morgan Buckley, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.', src: `${PATH}morgan-buckley-close-up.jpg`},
+        {description: 'Mary aka Sun Queen, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.', src: `${PATH}sun-queen-plays-something-cosmic.jpg`},
+        {description: 'Spencer, drummer of FIZZ, playing at Bookclub Chicago.', src: `${PATH}drums-playing-live.jpg`},
+        {description: 'Alec, bassist of FIZZ, playing his Fender Jazz Bass at Bookclub Chicago.', src: `${PATH}bass-playing-live-fizz.jpg`},
+        {description: 'FIZZ performs "Something Cosmic" written by Sun Queen (feat. FIZZ) at Bookclub Chicago.', src: `${PATH}fizz-performs-something-cosmic.jpg`},
+        {description: 'Patrick, guitarist of FIZZ, playing Disco Ulysses by Vulfpeck at Bookclub Chicago.', src: `${PATH}guitar-playing-live.jpg`},
+        {description: 'Sam, trumpet player of FIZZ, takes a solo.', src: `${PATH}trumpet-solo-live.jpg`},
+        {description: 'Close up of the drums and rhythm guitar locking in.', src: `${PATH}drums-and-guitar.jpg`},
+        {description: 'Full horn section plays in unison to a funky pop song.', src: `${PATH}horn-section-of-fizz-bookclub-chicago.jpg`},
+        {description: 'Close up of the drummer of FIZZ playing at Bookclub Chicago.', src: `${PATH}close-up-drummer-of-fizz.jpg`},
+        {description: 'A close up of DJ, the trombone player of FIZZ, taking a solo.', src: `${PATH}trombone-solo-live.jpg`},
+        {description: 'The rhythm section of FIZZ playing a cover of Disco Ulysses by Vulfpeck.', src: `${PATH}fizz-rhythm-section-live.jpg`},
+        {description: 'Ethan, saxophone player of FIZZ, taking a solo at Bookclub Chicago.', src: `${PATH}sax-solo-live.jpg`},
+        {description: 'Setting up before the gig at Bookclub Chicago in late 2022.', src: `${PATH}gig-setup-for-fizz.jpg`},
     ];
 
     return (
