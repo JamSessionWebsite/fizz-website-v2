@@ -1,17 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {Carousel} from 'react-responsive-carousel';
-import {Image} from "antd";
+import {Image as ImageAntd} from "antd";
 
 const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
-const contentStyle: React.CSSProperties = {
-    margin: 0,
-    color: '#fff',
-    maxHeight: '400px',
-    textAlign: 'center',
-    background: '#364d79',
-};
+
 const HomePage = () => {
+    const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
     const pictures = [
         {src: `${PATH}mary-singing.jpeg`},
         {src: `${PATH}drumming.jpeg`},
@@ -27,6 +22,28 @@ const HomePage = () => {
         {src: `${PATH}sax.jpeg`},
         {src: `${PATH}spencer-set-up-drums.jpeg`},
     ];
+
+    function setHeightAndWidthOfImage() {
+        setImageDimensions({height: this.height, width: this.width});
+    }
+
+    function onImageChange(imgPath) {
+        let myImage = new Image();
+        myImage.onload = setHeightAndWidthOfImage;
+        myImage.src = imgPath;
+    }
+    const maxHeight = 400;
+    const width = `${(imageDimensions.width / imageDimensions.height) * maxHeight}px`;
+    const contentStyle: React.CSSProperties = {
+        margin: 0,
+        color: '#fff',
+        height: `${maxHeight}px`,
+        width,
+        maxHeight: `${maxHeight}px`,
+        maxWidth: width,
+        textAlign: 'center',
+        background: '#364d79',
+    };
     return (
         <div className={'full-width youtube-container'}>
             <Helmet>
@@ -36,7 +53,7 @@ const HomePage = () => {
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
             </Helmet>
             <div className={'carousel-container'}>
-                <Image.PreviewGroup>
+                <ImageAntd.PreviewGroup>
                     <Carousel
                         autoPlay
                         showArrows
@@ -44,14 +61,17 @@ const HomePage = () => {
                         dynamicHeight
                         interval={4000}
                         infiniteLoop
+                        onChange={(event, node) => {
+                            onImageChange(pictures[event].src);
+                        }}
                     >
                         {pictures.map(pic => {
                             return (
-                                <Image style={contentStyle} src={pic.src}/>
+                                <ImageAntd style={contentStyle} src={pic.src}/>
                             )
                         })}
                     </Carousel>
-                </Image.PreviewGroup>
+                </ImageAntd.PreviewGroup>
             </div>
         </div>
     )
