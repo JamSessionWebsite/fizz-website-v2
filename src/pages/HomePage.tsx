@@ -32,6 +32,7 @@ const HomePage = () => {
         myImage.onload = setHeightAndWidthOfImage;
         myImage.src = imgPath;
     }
+
     const maxHeight = 400;
     const width = `${(imageDimensions.width / imageDimensions.height) * maxHeight}px`;
     const contentStyle: React.CSSProperties = {
@@ -53,25 +54,23 @@ const HomePage = () => {
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
             </Helmet>
             <div className={'carousel-container'}>
-                <ImageAntd.PreviewGroup>
-                    <Carousel
-                        autoPlay
-                        showArrows
-                        showThumbs={false}
-                        dynamicHeight
-                        interval={4000}
-                        infiniteLoop
-                        onChange={(event, node) => {
-                            onImageChange(pictures[event].src);
-                        }}
-                    >
-                        {pictures.map(pic => {
-                            return (
-                                <ImageAntd style={contentStyle} src={pic.src}/>
-                            )
-                        })}
-                    </Carousel>
-                </ImageAntd.PreviewGroup>
+                <Carousel
+                    autoPlay
+                    showArrows
+                    showThumbs={false}
+                    dynamicHeight
+                    interval={4000}
+                    infiniteLoop
+                    onChange={(event, node) => {
+                        onImageChange(pictures[event].src);
+                    }}
+                >
+                    {pictures.map(pic => {
+                        return (
+                            <ImageAntd style={contentStyle} src={pic.src}/>
+                        )
+                    })}
+                </Carousel>
             </div>
         </div>
     )
