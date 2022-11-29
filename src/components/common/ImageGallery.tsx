@@ -36,7 +36,7 @@ const ImageGallery = ({images, title = null}) => {
                         src={images[currentlyVisibleImageIndex].src}
                         onClick={() => setVisible(true)}
                         preview={{visible: false}}/>
-                    <div style={{top: `${ratio < 1 ? calculatedHeight - 96 : calculatedHeight - 64}px`}} className={'image-description'}>
+                    <div style={{top: `${ratio < 1 ? calculatedHeight - 88 : calculatedHeight - 84}px`}} className={'image-description'}>
                         {images[currentlyVisibleImageIndex].description}
                     </div>
                 </div>
