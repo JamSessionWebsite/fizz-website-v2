@@ -1,7 +1,7 @@
 import React from 'react';
 import {Card, Image as ImageAntd, Typography} from "antd";
-const {Text} = Typography;
 import {Helmet} from 'react-helmet';
+const {Text} = Typography;
 
 const MerchPage = () => {
     const merchItems = [
