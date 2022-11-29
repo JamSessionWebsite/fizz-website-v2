@@ -5,6 +5,7 @@ import AboutUsPage from "../pages/AboutUsPage";
 import UpcomingShowsPage from "../pages/UpcomingShowsPage";
 import {Button, Typography} from "antd";
 import VideosPage from "../pages/VideosPage";
+import MerchPage from "../pages/MerchPage";
 const {Title} = Typography;
 
 const FizzWebsiteRoutes = () => {
@@ -15,6 +16,7 @@ const FizzWebsiteRoutes = () => {
             <Route path='/about-us' element={<AboutUsPage/>}/>
             <Route path='/upcoming-shows' element={<UpcomingShowsPage/>}/>
             <Route path='/videos' element={<VideosPage/>}/>
+            <Route path='/merch' element={<MerchPage/>}/>
             <Route
                 path="*"
                 element={

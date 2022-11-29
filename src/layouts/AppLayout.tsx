@@ -43,6 +43,13 @@ const AppLayout = ({}) => {
                                 Videos
                             </Button>
                         </div>
+                        <div className={'button-container'}>
+                            <Button
+                                onClick={() => navigate('/merch')}
+                                ghost>
+                                Merch
+                            </Button>
+                        </div>
                     </div>
                     <div className={'flex-row'}>
                         <Image
