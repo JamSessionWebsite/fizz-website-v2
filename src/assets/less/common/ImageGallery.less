@@ -1,8 +1,14 @@
 .image-gallery-container {
   .flex-column;
-  .space-between;
   align-items: center !important;
   min-height: 440px;
+  position: relative;
+
+  .navigation-buttons {
+    .flex-row;
+    position: absolute;
+    bottom: -16px;
+  }
 
   .change-image-arrow {
     font-size: 48px;

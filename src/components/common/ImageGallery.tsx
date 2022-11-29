@@ -27,14 +27,16 @@ const ImageGallery = ({images}) => {
     return (
         <Card>
             <div className={'image-gallery-container'}>
-                <ImageAntd
-                    alt={images[currentlyVisibleImageIndex].description}
-                    width={maxWidth}
-                    height={height}
-                    src={images[currentlyVisibleImageIndex].src}
-                    onClick={() => setVisible(true)}
-                    preview={{visible: false}}/>
                 <div className={'flex-row'}>
+                    <ImageAntd
+                        alt={images[currentlyVisibleImageIndex].description}
+                        width={maxWidth}
+                        height={height}
+                        src={images[currentlyVisibleImageIndex].src}
+                        onClick={() => setVisible(true)}
+                        preview={{visible: false}}/>
+                </div>
+                <div className={'navigation-buttons'}>
                     <div className={'button-container'}>
                         <Button
                             ghost
