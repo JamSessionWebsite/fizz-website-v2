@@ -24,7 +24,7 @@ const ImageGallery = ({images, title = null}) => {
         if (ratio < 1) {
             return 296;
         }
-        return 400;
+        return 600;
     }
 
     useEffect(() => {
@@ -64,7 +64,7 @@ const ImageGallery = ({images, title = null}) => {
         if(ratio < 1) {
             return calculatedHeight - 64;
         }
-        return calculatedHeight + 24;
+        return calculatedHeight - 16;
     }
     return (
         <Card title={title ? title : null}>
