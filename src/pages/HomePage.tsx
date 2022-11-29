@@ -7,7 +7,6 @@ import ImageGallery from "../components/common/ImageGallery";
 const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 
 const HomePage = () => {
-    const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
     const pictures = [
         {src: `${PATH}mary-singing.jpeg`},
         {src: `${PATH}drumming.jpeg`},
@@ -23,33 +22,7 @@ const HomePage = () => {
         {src: `${PATH}sax.jpeg`},
         {src: `${PATH}spencer-set-up-drums.jpeg`},
     ];
-    useEffect(() => {
-        onImageChange(pictures[0].src);
-    }, []);
 
-    function setHeightAndWidthOfImage() {
-        setImageDimensions({height: this.height, width: this.width});
-    }
-
-    function onImageChange(imgPath) {
-        let myImage = new Image();
-        myImage.onload = setHeightAndWidthOfImage;
-        myImage.src = imgPath;
-    }
-
-    const maxWidth = 264;
-    const ratio = imageDimensions.width / imageDimensions.height;
-    const height = `${maxWidth / ratio}px`;
-    const contentStyle: React.CSSProperties = {
-        margin: 0,
-        color: '#fff',
-        width: `${maxWidth}px`,
-        height,
-        maxWidth: `${maxWidth}px`,
-        maxHeight: height,
-        textAlign: 'center',
-        background: '#364d79',
-    };
     return (
         <div className={'full-width youtube-container'}>
             <Helmet>
@@ -58,11 +31,9 @@ const HomePage = () => {
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
             </Helmet>
-            {imageDimensions.width !== 0 ?
-                <div className={'flex-row'}>
-                    <ImageGallery images={pictures} />
-                </div> :
-            <Fragment />}
+            <div className={'flex-row'}>
+                <ImageGallery images={pictures}/>
+            </div>
         </div>
     )
 };
