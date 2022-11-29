@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Card, Image as ImageAntd} from "antd";
+import {Button, Card, Image as ImageAntd, Typography} from "antd";
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
+const {Text} = Typography;
 
 const ImageGallery = ({images, title = null}) => {
     const [visible, setVisible] = useState(false);
@@ -27,6 +28,12 @@ const ImageGallery = ({images, title = null}) => {
     const height = `${calculatedHeight}px`;
     return (
         <Card title={title ? title : null}>
+            <div className={'flex-row full-width'}>
+                <Text className={'gallery-description-text'}>
+                    This is an assortment of photos of FIZZ playing at various shows!  If you want to see any image
+                    more clearly, just click it and you can view it in full screen mode.
+                </Text>
+            </div>
             <div className={'image-gallery-container'}>
                 <div className={'display-image-container'}>
                     <ImageAntd
