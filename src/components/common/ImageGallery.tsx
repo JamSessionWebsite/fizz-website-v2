@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {Button, Card, Image as ImageAntd} from "antd";
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
 
-const ImageGallery = ({images}) => {
+const ImageGallery = ({images, title = null}) => {
     const [visible, setVisible] = useState(false);
     const [currentlyVisibleImageIndex, setCurrentlyVisibleImageIndex] = useState(0);
     const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
@@ -23,11 +23,12 @@ const ImageGallery = ({images}) => {
 
     const maxWidth = 264;
     const ratio = imageDimensions.width / imageDimensions.height;
-    const height = `${maxWidth / ratio}px`;
+    const calculatedHeight = maxWidth / ratio;
+    const height = `${calculatedHeight}px`;
     return (
-        <Card>
+        <Card title={title ? title : null}>
             <div className={'image-gallery-container'}>
-                <div className={'flex-row'}>
+                <div className={'display-image-container'}>
                     <ImageAntd
                         alt={images[currentlyVisibleImageIndex].description}
                         width={maxWidth}
@@ -35,6 +36,9 @@ const ImageGallery = ({images}) => {
                         src={images[currentlyVisibleImageIndex].src}
                         onClick={() => setVisible(true)}
                         preview={{visible: false}}/>
+                    <div style={{top: `${ratio < 1 ? calculatedHeight - 96 : calculatedHeight - 64}px`}} className={'image-description'}>
+                        {images[currentlyVisibleImageIndex].description}
+                    </div>
                 </div>
                 <div className={'navigation-buttons'}>
                     <div className={'button-container'}>
