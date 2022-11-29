@@ -2,6 +2,7 @@ import React, {Fragment, useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {Carousel} from 'react-responsive-carousel';
 import {Image as ImageAntd} from "antd";
+import ImageGallery from "../components/common/ImageGallery";
 
 const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 
@@ -36,15 +37,16 @@ const HomePage = () => {
         myImage.src = imgPath;
     }
 
-    const maxHeight = 400;
-    const width = `${(imageDimensions.width / imageDimensions.height) * maxHeight}px`;
+    const maxWidth = 264;
+    const ratio = imageDimensions.width / imageDimensions.height;
+    const height = `${maxWidth / ratio}px`;
     const contentStyle: React.CSSProperties = {
         margin: 0,
         color: '#fff',
-        height: `${maxHeight}px`,
-        width,
-        maxHeight: `${maxHeight}px`,
-        maxWidth: width,
+        width: `${maxWidth}px`,
+        height,
+        maxWidth: `${maxWidth}px`,
+        maxHeight: height,
         textAlign: 'center',
         background: '#364d79',
     };
@@ -57,24 +59,8 @@ const HomePage = () => {
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
             </Helmet>
             {imageDimensions.width !== 0 ?
-                <div className={'carousel-container'}>
-                    <Carousel
-                        autoPlay
-                        showArrows
-                        showThumbs={false}
-                        dynamicHeight
-                        interval={4000}
-                        infiniteLoop
-                        onChange={(event, node) => {
-                            onImageChange(pictures[event].src);
-                        }}
-                    >
-                        {pictures.map(pic => {
-                            return (
-                                <ImageAntd style={contentStyle} src={pic.src}/>
-                            )
-                        })}
-                    </Carousel>
+                <div className={'flex-row'}>
+                    <ImageGallery images={pictures} />
                 </div> :
             <Fragment />}
         </div>
