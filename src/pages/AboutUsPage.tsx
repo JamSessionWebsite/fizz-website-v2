@@ -28,7 +28,7 @@ const AboutUsPage = () => {
                     funky pop
                     covers as well as an assortment of original music.
                 </Paragraph>
-                <Paragraph className={'flex-row full-width space-between white-text'}>
+                <Paragraph className={'about-us-text full-width space-between'}>
                     <div>
                         Our 2 lead vocalists also perform solo work under the names Morgan Buckley and Sun Queen. You can
                         check
@@ -36,7 +36,7 @@ const AboutUsPage = () => {
                     </div>
                     <div/>
                 </Paragraph>
-                <Paragraph className={'flex-row full-width space-between'}>
+                <Paragraph className={'about-us-text full-width space-between'}>
                     <a target={'_blank'} href={'https://linktr.ee/fizz.band'}>https://linktr.ee/fizz.band</a>
                     <div/>
                 </Paragraph>
