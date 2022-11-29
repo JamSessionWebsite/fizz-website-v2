@@ -1,5 +1,5 @@
 import React from 'react';
-import {List} from "antd";
+import {Helmet} from 'react-helmet';
 import YouTube from "react-youtube";
 
 const VideosPage = () => {
@@ -33,6 +33,12 @@ const VideosPage = () => {
     ]
     return (
         <div className={'videos-page-container'}>
+            <Helmet>
+                <title>FIZZ - Videos</title>
+                <meta
+                    name='description'
+                    content='Check out the latest videos of FIZZ performing funk/pop/indie music in the Chicago area!'/>
+            </Helmet>
             <div className={'video-grid'}>
                 {videos.map(video => {
                     return (

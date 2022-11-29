@@ -1,6 +1,7 @@
 import React from 'react';
 import {Card, Image as ImageAntd, Typography} from "antd";
 const {Text} = Typography;
+import {Helmet} from 'react-helmet';
 
 const MerchPage = () => {
     const merchItems = [
@@ -32,6 +33,12 @@ const MerchPage = () => {
 
     return (
         <div className={'merch-page-container'}>
+            <Helmet>
+                <title>FIZZ - Merch</title>
+                <meta
+                    name='description'
+                    content='Take a look at all of the merch that is available for purchase at live FIZZ concerts!'/>
+            </Helmet>
             <div className={'merch-text-container'}>
                 <Text className={'white-text'}>
                     We hope to be able to sell merch online in the near future! Until then, these items can be purchased at our live shows.
