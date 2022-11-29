@@ -20,6 +20,7 @@ const ImageGallery = ({images}) => {
         myImage.onload = setHeightAndWidthOfImage;
         myImage.src = imgPath;
     }
+
     const maxWidth = 264;
     const ratio = imageDimensions.width / imageDimensions.height;
     const height = `${maxWidth / ratio}px`;
@@ -27,6 +28,7 @@ const ImageGallery = ({images}) => {
         <Card>
             <div className={'image-gallery-container'}>
                 <ImageAntd
+                    alt={images[currentlyVisibleImageIndex].description}
                     width={maxWidth}
                     height={height}
                     src={images[currentlyVisibleImageIndex].src}
@@ -60,7 +62,9 @@ const ImageGallery = ({images}) => {
             <div style={{display: 'none'}}>
                 <ImageAntd.PreviewGroup
                     preview={{visible, current: currentlyVisibleImageIndex, onVisibleChange: (vis) => setVisible(vis)}}>
-                    {images.map(image => <ImageAntd src={image.src}/>)}
+                    {images.map(image => <ImageAntd
+                        alt={image.description}
+                        src={image.src}/>)}
                 </ImageAntd.PreviewGroup>
             </div>
         </Card>

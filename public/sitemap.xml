@@ -1,17 +1,48 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://fizztheband.com</loc>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/bass-playing.jpeg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/mary-singing.jpeg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/drumming.jpeg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/starry-patch.jpeg</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/horns.jpeg</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://fizztheband.com/about-us</loc>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://fizztheband.com/upcoming-shows</loc>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://fizztheband.com/videos</loc>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://fizztheband.com/merch</loc>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
     </url>
 </urlset>
