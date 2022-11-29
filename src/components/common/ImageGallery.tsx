@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Image as ImageAntd} from "antd";
+import {Button, Card, Image as ImageAntd} from "antd";
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
 
 const ImageGallery = ({images}) => {
@@ -24,8 +24,8 @@ const ImageGallery = ({images}) => {
     const ratio = imageDimensions.width / imageDimensions.height;
     const height = `${maxWidth / ratio}px`;
     return (
-        <div className={'image-gallery-container'}>
-            <div className={'flex-column'}>
+        <Card>
+            <div className={'image-gallery-container'}>
                 <ImageAntd
                     width={maxWidth}
                     height={height}
@@ -36,6 +36,7 @@ const ImageGallery = ({images}) => {
                     <div className={'button-container'}>
                         <Button
                             ghost
+                            className={'change-image-button'}
                             onClick={() => setCurrentlyVisibleImageIndex(
                                 currentlyVisibleImageIndex !== 0 ?
                                     currentlyVisibleImageIndex - 1 :
@@ -46,6 +47,7 @@ const ImageGallery = ({images}) => {
                     <div className={'button-container'}>
                         <Button
                             ghost
+                            className={'change-image-button'}
                             onClick={() => setCurrentlyVisibleImageIndex(
                                 currentlyVisibleImageIndex !== images.length - 1 ?
                                     currentlyVisibleImageIndex + 1 :
@@ -61,7 +63,7 @@ const ImageGallery = ({images}) => {
                     {images.map(image => <ImageAntd src={image.src}/>)}
                 </ImageAntd.PreviewGroup>
             </div>
-        </div>
+        </Card>
 
     );
 };
