@@ -27,7 +27,7 @@ const HomePage = () => {
     return (
         <div className={'full-width youtube-container'}>
             <Helmet>
-                <title>FIZZ - Home</title>
+                <title>FIZZ | A Chicago Based Funk/Pop/Indie Band</title>
                 <meta
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
