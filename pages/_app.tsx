@@ -22,7 +22,7 @@ export default function MyApp({Component, pageProps}) {
                     name='description'
                     content='The official website of FIZZ, a funk/pop/indie band from Chicago!'></meta>
                 <link rel="shortcut icon"
-                      href="https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png"/>
+                      href="https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"/>
             </Head>
             <header className={'app-header'}>
                 <div className={'flex-row full-width'}>
