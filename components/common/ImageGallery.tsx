@@ -8,7 +8,10 @@ const ImageGallery = ({images, title = null}) => {
     const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
 
     function getBrowserWidth() {
-        return 200;
+        if(typeof window !== 'undefined') {
+            return window.innerWidth;
+        }
+        return 760;
     }
 
     const getMaxWidth = (ratio) => {
