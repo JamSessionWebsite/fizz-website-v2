@@ -3,19 +3,15 @@ import Link from "next/link";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
 import React from "react";
 import '../scss/App.scss';
+import {useRouter} from "next/router";
 
 export default function MyApp({Component, pageProps}) {
-    // const navigateInNewTab = (url) => {
-    //     if (typeof window !== 'undefined') {
-    //         window.open(url, '_blank').focus();
-    //     }
-    // }
-    //
-    // const populateEmail = () => {
-    //     if (typeof window !== 'undefined') {
-    //         window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi FIZZ!`
-    //     }
-    // }
+    const router = useRouter();
+    const populateEmail = () => {
+        if (typeof window !== 'undefined') {
+            window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi FIZZ!`
+        }
+    }
 
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
@@ -55,6 +51,7 @@ export default function MyApp({Component, pageProps}) {
                 <div className={'full-width'} style={{minHeight: 360}}>
                     <div className={'flex-row full-width'}>
                         <Image
+                            onClick={async () => router.push('/')}
                             className={'clickable'}
                             height={'200px'}
                             width={'100px'}
@@ -71,6 +68,7 @@ export default function MyApp({Component, pageProps}) {
                         ghost
                         size={'large'}
                         // onClick={() => populateEmail()}
+                        target={'_blank'}
                         icon={<MailOutlined/>}
                     />
                 </div>
@@ -78,23 +76,26 @@ export default function MyApp({Component, pageProps}) {
                     <Button
                         ghost
                         size={'large'}
-                        // onClick={() => navigateInNewTab(`https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw`)}
+                        href={`https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw`}
                         icon={<YoutubeOutlined/>}
+                        target={'_blank'}
                     />
                 </div>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        // onClick={() => navigateInNewTab('https://www.instagram.com/fizz.band/')}
+                        href={'https://www.instagram.com/fizz.band/'}
                         icon={<InstagramOutlined/>}
+                        target={'_blank'}
                     />
                 </div>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        // onClick={() => navigateInNewTab('https://www.tiktok.com/@fizz.band')}
+                        href={'https://www.tiktok.com/@fizz.band'}
+                        target={'_blank'}
                         icon={<Image preview={false} width={24} src={'./static/tiktok-logo.svg'}/>}
                     />
                 </div>
@@ -102,7 +103,8 @@ export default function MyApp({Component, pageProps}) {
                     <Button
                         ghost
                         size={'large'}
-                        // onClick={() => navigateInNewTab('https://www.facebook.com/Fizzthebandofficial')}
+                        href={'https://www.facebook.com/Fizzthebandofficial'}
+                        target={'_blank'}
                         icon={<FacebookOutlined/>}
                     />
                 </div>
