@@ -4,6 +4,7 @@ import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from
 import React from "react";
 import '../scss/App.scss';
 import {useRouter} from "next/router";
+import Head from "next/head";
 
 export default function MyApp({Component, pageProps}) {
     const router = useRouter();
@@ -15,6 +16,14 @@ export default function MyApp({Component, pageProps}) {
 
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
+            <Head>
+                <title>FIZZ: A Chicago Funk/Pop/Indie Band</title>
+                <meta
+                    name='description'
+                    content='The official website of FIZZ, a funk/pop/indie band from Chicago!'></meta>
+                <link rel="shortcut icon"
+                      href="https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png"/>
+            </Head>
             <header className={'app-header'}>
                 <div className={'flex-row full-width'}>
                     <div className={'button-container'}>

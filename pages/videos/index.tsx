@@ -34,10 +34,10 @@ const VideosPage = () => {
     return (
         <div className={'videos-page-container'}>
             <Helmet>
-                <title>FIZZ - Videos</title>
+                <title>FIZZ: A Chicago Funk/Pop/Indie Band | Videos</title>
                 <meta
                     name='description'
-                    content='Check out the latest videos of FIZZ performing funk/pop/indie music in the Chicago area!'/>
+                    content='Check out the latest videos of FIZZ performing live music in the Chicago area!'/>
             </Helmet>
             <div className={'video-grid'}>
                 {videos.map(video => {
