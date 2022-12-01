@@ -67,7 +67,7 @@ export default function MyApp({Component, pageProps}) {
                     <Button
                         ghost
                         size={'large'}
-                        // onClick={() => populateEmail()}
+                        onClick={() => populateEmail()}
                         target={'_blank'}
                         icon={<MailOutlined/>}
                     />
