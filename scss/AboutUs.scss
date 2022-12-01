@@ -1,6 +1,7 @@
 .about-us-container {
   @extend .flex-row;
   @extend .full-width;
+  padding: 0 128px;
 
   .about-us-text-container {
     padding: 16px 64px;
