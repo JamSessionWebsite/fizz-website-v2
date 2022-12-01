@@ -2,7 +2,7 @@
   padding: 16px;
 
   .merch-text-container {
-    .flex-row;
+    @extend .flex-row;
     padding: 16px 0;
     font-size: 16px;
   }

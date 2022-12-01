@@ -16,8 +16,8 @@
 }
 
 .app-header {
-  .flex-row;
-  .white-text;
+  @extend .flex-row;
+  @extend .white-text;
   background: transparent;
   width: 100%;
   height: 64px;
@@ -25,13 +25,13 @@
 }
 
 .app-content {
-  .flex-row;
-  .full-width;
+  @extend .flex-row;
+  @extend .full-width;
   margin: 64px 0;
 }
 
 .app-footer {
-  .flex-row;
+  @extend .flex-row;
   background: transparent;
   width: 100%;
 }

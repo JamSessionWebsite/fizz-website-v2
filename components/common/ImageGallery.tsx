@@ -8,13 +8,7 @@ const ImageGallery = ({images, title = null}) => {
     const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
 
     function getBrowserWidth() {
-        return Math.max(
-            document.body.scrollWidth,
-            document.documentElement.scrollWidth,
-            document.body.offsetWidth,
-            document.documentElement.offsetWidth,
-            document.documentElement.clientWidth
-        );
+        return 200;
     }
 
     const getMaxWidth = (ratio) => {
@@ -29,12 +23,12 @@ const ImageGallery = ({images, title = null}) => {
 
     useEffect(() => {
         window.onresize = () => {
-            setMaxWidth(getMaxWidth(imageDimensions.width/imageDimensions.height));
+            setMaxWidth(getMaxWidth(imageDimensions.width / imageDimensions.height));
         }
     }, [imageDimensions]);
     const [visible, setVisible] = useState(false);
     const [currentlyVisibleImageIndex, setCurrentlyVisibleImageIndex] = useState(0);
-    const [maxWidth, setMaxWidth] = useState(getMaxWidth(imageDimensions.width/imageDimensions.height));
+    const [maxWidth, setMaxWidth] = useState(0);
 
     useEffect(() => {
         onImageChange(images[currentlyVisibleImageIndex].src);
@@ -42,7 +36,7 @@ const ImageGallery = ({images, title = null}) => {
 
     function setHeightAndWidthOfImage() {
         setImageDimensions({height: this.height, width: this.width});
-        setMaxWidth(getMaxWidth(this.width/this.height));
+        setMaxWidth(getMaxWidth(this.width / this.height));
     }
 
     function onImageChange(imgPath) {
@@ -55,13 +49,13 @@ const ImageGallery = ({images, title = null}) => {
     const height = `${calculatedHeight}px`;
     const getTopPixel = () => {
         const ratio = imageDimensions.width / imageDimensions.height;
-        if(getBrowserWidth() <= 760) {
-            if(ratio < 1) {
+        if (getBrowserWidth() <= 760) {
+            if (ratio < 1) {
                 return calculatedHeight - 52;
             }
             return calculatedHeight + 48;
         }
-        if(ratio < 1) {
+        if (ratio < 1) {
             return calculatedHeight - 64;
         }
         return calculatedHeight - 16;

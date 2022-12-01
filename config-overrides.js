@@ -6,7 +6,7 @@ module.exports = function override(config, env) {
             {loader: "style-loader"},
             {loader: "css-loader"},
             {
-                loader: "less-loader",
+                loader: "scss-loader",
                 options: {
                     lessOptions: {
                         javascriptEnabled: true,

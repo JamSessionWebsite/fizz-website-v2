@@ -3,12 +3,12 @@
 }
 
 .youtube-container {
-  .flex-row;
+  @extend .flex-row;
   padding: 0 64px;
   width: 50%;
 }
 
 .social-media-icon {
-  .clickable;
+  @extend .clickable;
   font-size: 48px;
 }

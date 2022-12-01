@@ -1,8 +1,6 @@
-import React, {Fragment, useEffect, useState} from 'react';
-import {Helmet} from 'react-helmet';
-import {Carousel} from 'react-responsive-carousel';
-import {Image as ImageAntd} from "antd";
+import React from 'react';
 import ImageGallery from "../components/common/ImageGallery";
+import Head from "next/head";
 
 const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 
@@ -26,12 +24,12 @@ const HomePage = () => {
 
     return (
         <div className={'full-width youtube-container'}>
-            <Helmet>
+            <Head>
                 <title>FIZZ | A Chicago Based Funk/Pop/Indie Band</title>
                 <meta
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
-            </Helmet>
+            </Head>
             <div className={'flex-row'}>
                 <ImageGallery
                     title={'FIZZ Image Gallery'}

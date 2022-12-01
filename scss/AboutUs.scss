@@ -1,6 +1,6 @@
 .about-us-container {
-  .flex-row;
-  .full-width;
+  @extend .flex-row;
+  @extend .full-width;
 
   .about-us-text-container {
     padding: 16px 64px;
@@ -8,7 +8,7 @@
   }
 
   .about-us-text {
-    .flex-row;
+    @extend .flex-row;
     font-size: 16px;
   }
 }

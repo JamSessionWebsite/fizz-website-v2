@@ -1,116 +1,112 @@
-import React from 'react';
-import {Button, Image, Layout, Typography} from "antd";
-import FizzWebsiteRoutes from "../routing/FizzWebsiteRoutes";
+import {Button, Image, Layout} from "antd";
+import Link from "next/link";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
-import {Footer} from "antd/es/layout/layout";
-import {useNavigate} from "react-router-dom";
+import React from "react";
+import '../scss/App.scss';
 
-const {Content, Header} = Layout;
-const {Title} = Typography;
-const AppLayout = ({}) => {
-    const navigate = useNavigate();
-    const navigateInNewTab = (url) => {
-        window.open(url, '_blank').focus();
-    }
-
-    const populateEmail = () => {
-        window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi FIZZ!`
-    }
+export default function MyApp({Component, pageProps}) {
+    // const navigateInNewTab = (url) => {
+    //     if (typeof window !== 'undefined') {
+    //         window.open(url, '_blank').focus();
+    //     }
+    // }
+    //
+    // const populateEmail = () => {
+    //     if (typeof window !== 'undefined') {
+    //         window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi FIZZ!`
+    //     }
+    // }
 
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
-            <Header className={'app-header'}>
+            <header className={'app-header'}>
                 <div className={'flex-row full-width'}>
                     <div className={'button-container'}>
                         <Button
-                            onClick={() => navigate('/about-us')}
                             ghost>
-                            About Us
+                            <Link href={'/about-us'}>About Us</Link>
                         </Button>
                     </div>
                     <div className={'button-container'}>
                         <Button
-                            onClick={() => navigate('/upcoming-shows')}
                             ghost>
-                            Upcoming Shows
+                            <Link href={'/upcoming-shows'}>Upcoming Shows</Link>
                         </Button>
                     </div>
                     <div className={'button-container'}>
                         <Button
-                            onClick={() => navigate('/videos')}
                             ghost>
-                            Videos
+                            <Link href={'/videos'}>
+                                Videos
+                            </Link>
                         </Button>
                     </div>
                     <div className={'button-container'}>
                         <Button
-                            onClick={() => navigate('/merch')}
                             ghost>
-                            Merch
+                            <Link href={'/merch'}>
+                                Merch
+                            </Link>
                         </Button>
                     </div>
                 </div>
-            </Header>
-            <Content className={'app-content'}>
+            </header>
+            <main className={'app-content'}>
                 <div className={'full-width'} style={{minHeight: 360}}>
                     <div className={'flex-row full-width'}>
                         <Image
                             className={'clickable'}
-                            onClick={() => navigate('/')}
                             height={'200px'}
                             width={'100px'}
                             preview={false}
                             src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
                         />
                     </div>
-                    <FizzWebsiteRoutes/>
+                    <Component {...pageProps} />
                 </div>
-            </Content>
-            <Footer className={'app-footer'}>
+            </main>
+            <footer className={'app-footer'}>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        onClick={() => populateEmail()}
+                        // onClick={() => populateEmail()}
                         icon={<MailOutlined/>}
-                    ></Button>
+                    />
                 </div>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        onClick={() => navigateInNewTab(`https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw`)}
+                        // onClick={() => navigateInNewTab(`https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw`)}
                         icon={<YoutubeOutlined/>}
-                    >
-                    </Button>
+                    />
                 </div>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        onClick={() => navigateInNewTab('https://www.instagram.com/fizz.band/')}
+                        // onClick={() => navigateInNewTab('https://www.instagram.com/fizz.band/')}
                         icon={<InstagramOutlined/>}
-                    ></Button>
+                    />
                 </div>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        onClick={() => navigateInNewTab('https://www.tiktok.com/@fizz.band')}
+                        // onClick={() => navigateInNewTab('https://www.tiktok.com/@fizz.band')}
                         icon={<Image preview={false} width={24} src={'./static/tiktok-logo.svg'}/>}
-                    ></Button>
+                    />
                 </div>
                 <div className={'button-container'}>
                     <Button
                         ghost
                         size={'large'}
-                        onClick={() => navigateInNewTab('https://www.facebook.com/Fizzthebandofficial')}
+                        // onClick={() => navigateInNewTab('https://www.facebook.com/Fizzthebandofficial')}
                         icon={<FacebookOutlined/>}
-                    ></Button>
+                    />
                 </div>
-            </Footer>
+            </footer>
         </Layout>
-    )
-};
-
-export default AppLayout;
+    );
+}
