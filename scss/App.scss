@@ -7,6 +7,7 @@
 @import 'VideosPage.scss';
 @import 'MerchPage.scss';
 @import 'NotFound.scss';
+@import 'ContactUs.scss';
 @import 'common/ImageGallery.scss';
 
 #components-layout-demo-top-side-2 .logo {
@@ -85,6 +86,7 @@
 .label {
   font-style: italic;
   padding-right: 16px;
+  font-size: 16px;
 }
 
 .input {

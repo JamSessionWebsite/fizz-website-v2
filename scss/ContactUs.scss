@@ -1,0 +1,15 @@
+.contact-us-container {
+  @extend .flex-row;
+  @extend .full-width;
+  padding: 0 128px;
+
+  .contact-us-text-container {
+    @extend .flex-row;
+    @extend .space-between;
+  }
+
+  .contact-us-text {
+    @extend .flex-row;
+    font-size: 16px;
+  }
+}

@@ -62,4 +62,10 @@
             <image:loc>https://audio.fizztheband.com/images/fizz-website/merch/ass-bracelets.jpeg</image:loc>
         </image:image>
     </url>
+    <url>
+        <loc>https://fizztheband.com/contact-us</loc>
+        <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
+    </url>
 </urlset>

@@ -11,6 +11,7 @@ import {Provider} from "react-redux";
 export default function MyApp({Component, pageProps}) {
     useEffect(() => {
         if (typeof window !== 'undefined') {
+            fizzWebsiteStore.dispatch({type: 'app/setWindowWidth', payload: {windowWidth: window.innerWidth}});
             window.onresize = () => {
                 fizzWebsiteStore.dispatch({type: 'app/setWindowWidth', payload: {windowWidth: window.innerWidth}});
             }
@@ -60,6 +61,14 @@ export default function MyApp({Component, pageProps}) {
                             ghost>
                             <Link href={'/merch'}>
                                 Merch
+                            </Link>
+                        </Button>
+                    </div>
+                    <div className={'button-container'}>
+                        <Button
+                            ghost>
+                            <Link href={'/contact-us'}>
+                                Contact Us
                             </Link>
                         </Button>
                     </div>
