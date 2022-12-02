@@ -63,7 +63,7 @@ const HomePage = () => {
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
             </Head>
-            <div className={'flex-row'}>
+            <div className={'flex-row image-gallery-container'}>
                 <ImageGallery
                     title={'FIZZ Image Gallery'}
                     images={pictures}/>
