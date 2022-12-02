@@ -1,10 +1,12 @@
 import React from 'react';
 import {Card, List} from "antd";
 import Head from "next/head";
+import {useSelector} from "react-redux";
 
 const UpcomingShowsPage = () => {
+    const windowWidth = useSelector((state: {app: any}) => state.app.windowWidth);
     return (
-        <div className={'upcoming-shows-container'}>
+        <div style={{padding: windowWidth <= 760 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
             <Head>
                 <title>FIZZ: A Local Chicago Pop/Funk/Indie Band | Upcoming Shows</title>
                 <meta

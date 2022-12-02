@@ -1,12 +1,21 @@
 import {Button, Image, Layout} from "antd";
 import Link from "next/link";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import '../scss/App.scss';
 import {useRouter} from "next/router";
 import Head from "next/head";
+import fizzWebsiteStore from "../redux/FizzWebsiteStore";
+import {Provider} from "react-redux";
 
 export default function MyApp({Component, pageProps}) {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.onresize = () => {
+                fizzWebsiteStore.dispatch({type: 'app/setWindowWidth', payload: {windowWidth: window.innerWidth}});
+            }
+        }
+    }, []);
     const router = useRouter();
     const populateEmail = () => {
         if (typeof window !== 'undefined') {
@@ -76,7 +85,9 @@ export default function MyApp({Component, pageProps}) {
                             </div>
                         </div>
                     </div>
-                    <Component {...pageProps} />
+                    <Provider store={fizzWebsiteStore}>
+                        <Component {...pageProps} />
+                    </Provider>
                 </div>
             </main>
             <footer className={'app-footer'}>

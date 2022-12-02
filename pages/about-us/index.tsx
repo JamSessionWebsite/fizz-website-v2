@@ -1,18 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import {Card, Typography} from "antd";
 import Head from "next/head";
+import {useSelector} from "react-redux";
 
 const {Text, Paragraph} = Typography;
 
 const AboutUsPage = () => {
-    const [windowWidth, setWindowWidth] = useState(0);
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            window.onresize = () => {
-                setWindowWidth(window.innerWidth);
-            }
-        }
-    }, [])
+    const windowWidth = useSelector((state: {app: any}) => state.app.windowWidth);
     return (
         <div style={{padding: windowWidth <= 760 ? '0' : '0 128px'}}
              className={'about-us-container'}>
