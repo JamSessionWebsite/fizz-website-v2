@@ -6,6 +6,9 @@
             <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
         <image:image>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-performs-something-cosmic.jpg</image:loc>
+        </image:image>
+        <image:image>
             <image:loc>https://audio.fizztheband.com/images/fizz-website/morgan-buckley-close-up.jpg</image:loc>
         </image:image>
         <image:image>
@@ -16,9 +19,6 @@
         </image:image>
         <image:image>
             <image:loc>https://audio.fizztheband.com/images/fizz-website/bass-playing-live-fizz.jpg</image:loc>
-        </image:image>
-        <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-performs-something-cosmic.jpg</image:loc>
         </image:image>
     </url>
     <url>
