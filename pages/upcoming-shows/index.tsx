@@ -6,7 +6,7 @@ const UpcomingShowsPage = () => {
     return (
         <div className={'upcoming-shows-container'}>
             <Head>
-                <title>FIZZ: A Chicago Funk/Pop/Indie Band | Upcoming Shows</title>
+                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band | Upcoming Shows</title>
                 <meta
                     name='description'
                     content='View a list of all of the upcoming shows that FIZZ is going to be playing.  Many will be in the Chicago area although we are always open to travel with in reason!'/>

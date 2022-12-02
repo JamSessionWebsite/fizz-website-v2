@@ -58,10 +58,10 @@ const HomePage = () => {
     return (
         <div className={'full-width youtube-container'}>
             <Head>
-                <title>FIZZ: A Chicago Funk/Pop/Indie Band</title>
+                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band</title>
                 <meta
                     name='description'
-                    content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago!'></meta>
+                    content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
             </Head>
             <div className={'flex-row image-gallery-container'}>
                 <ImageGallery

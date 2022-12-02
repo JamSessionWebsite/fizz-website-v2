@@ -34,7 +34,7 @@ const VideosPage = () => {
     return (
         <div className={'videos-page-container'}>
             <Helmet>
-                <title>FIZZ: A Chicago Funk/Pop/Indie Band | Videos</title>
+                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band | Videos</title>
                 <meta
                     name='description'
                     content='Check out the latest videos of FIZZ performing live music in the Chicago area!'/>

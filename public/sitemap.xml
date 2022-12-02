@@ -1,5 +1,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
         <loc>https://fizztheband.com</loc>
         <image:image>
@@ -12,7 +13,8 @@
             <image:loc>https://audio.fizztheband.com/images/fizz-website/morgan-buckley-close-up.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/sun-queen-plays-something-cosmic.jpg</image:loc>
+            <image:loc>https://audio.fizztheband.com/images/fizz-website/sun-queen-plays-something-cosmic.jpg
+            </image:loc>
         </image:image>
         <image:image>
             <image:loc>https://audio.fizztheband.com/images/fizz-website/drums-playing-live.jpg</image:loc>
@@ -38,6 +40,18 @@
         <image:image>
             <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
+        <video:video>
+            <video:title>I Love You - Morgan Buckley (feat. FIZZ)</video:title>
+            <video:content_loc>
+                https://www.youtube.com/watch?v=Po3-1mDTm7I
+            </video:content_loc>
+        </video:video>
+        <video:video>
+            <video:title>Latin Man at Dillo Day</video:title>
+            <video:content_loc>
+                https://www.youtube.com/watch?v=FDmttaicp9A
+            </video:content_loc>
+        </video:video>
     </url>
     <url>
         <loc>https://fizztheband.com/merch</loc>
