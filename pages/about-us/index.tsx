@@ -1,19 +1,29 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Card, Typography} from "antd";
 import Head from "next/head";
 
 const {Text, Paragraph} = Typography;
 
 const AboutUsPage = () => {
+    const [windowWidth, setWindowWidth] = useState(0);
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            window.onresize = () => {
+                setWindowWidth(window.innerWidth);
+            }
+        }
+    }, [])
     return (
-        <div className={'about-us-container'}>
+        <div style={{padding: windowWidth <= 760 ? '0' : '0 128px'}}
+             className={'about-us-container'}>
             <Head>
                 <title>FIZZ: A Local Chicago Pop/Funk/Indie Band | About Us</title>
                 <meta
                     name='description'
                     content='FIZZ is a pop/funk/indie band performing live in the Chicago area that takes rich vocal harmonies and a funky rhythm section and layers a powerful horn section on top to create pop music with layers of funk scattered throughout.'></meta>
             </Head>
-            <Card className={'about-us-text-container'}>
+            <Card style={{padding: windowWidth <= 760 ? '16px 0' : '16px 64px'}}
+                  className={'about-us-text-container'}>
                 <Paragraph className={'about-us-text'}>
                     Many members of FIZZ have been playing music together for over 10 years. We have played
                     shows under the name Elise and the Police at House of Blues, Bottom Lounge, and more. We
