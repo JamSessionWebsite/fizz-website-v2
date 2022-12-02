@@ -7,6 +7,10 @@ const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 const HomePage = () => {
     const pictures = [
         {
+            description: 'FIZZ performs "Something Cosmic" written by Sun Queen (feat. FIZZ) at Bookclub Chicago.',
+            src: `${PATH}fizz-performs-something-cosmic.jpg`
+        },
+        {
             description: 'Morgan Buckley, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.',
             src: `${PATH}morgan-buckley-close-up.jpg`
         },
@@ -18,10 +22,6 @@ const HomePage = () => {
         {
             description: 'Alec, bassist of FIZZ, playing his Fender Jazz Bass at Bookclub Chicago.',
             src: `${PATH}bass-playing-live-fizz.jpg`
-        },
-        {
-            description: 'FIZZ performs "Something Cosmic" written by Sun Queen (feat. FIZZ) at Bookclub Chicago.',
-            src: `${PATH}fizz-performs-something-cosmic.jpg`
         },
         {
             description: 'Patrick, guitarist of FIZZ, playing Disco Ulysses by Vulfpeck at Bookclub Chicago.',
