@@ -17,10 +17,10 @@ export default function MyApp({Component, pageProps}) {
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
             <Head>
-                <title>FIZZ: A Chicago Funk/Pop/Indie Band</title>
+                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band</title>
                 <meta
                     name='description'
-                    content='The official website of FIZZ, a funk/pop/indie band from Chicago!'></meta>
+                    content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
                 <link rel="shortcut icon"
                       href="https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"/>
             </Head>
@@ -58,15 +58,23 @@ export default function MyApp({Component, pageProps}) {
             </header>
             <main className={'app-content'}>
                 <div className={'full-width'} style={{minHeight: 360}}>
-                    <div className={'flex-row full-width'}>
-                        <Image
-                            onClick={async () => router.push('/')}
-                            className={'clickable'}
-                            height={'200px'}
-                            width={'100px'}
-                            preview={false}
-                            src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
-                        />
+                    <div className={'logo-and-title-container'}>
+                        <div>
+                            <Image
+                                onClick={async () => router.push('/')}
+                                className={'clickable'}
+                                height={'200px'}
+                                width={'100px'}
+                                preview={false}
+                                src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
+                            />
+                        </div>
+                        <div>
+                            <div className={'title-container'}>
+                                <h1 className={'fizz-title'}>FIZZ</h1>
+                                <h3 className={'fizz-subtitle'}>A Chicago Pop/Funk/Indie Band</h3>
+                            </div>
+                        </div>
                     </div>
                     <Component {...pageProps} />
                 </div>
