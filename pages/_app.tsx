@@ -48,38 +48,7 @@ export default function MyApp({Component, pageProps}) {
                             "genre": "Pop/Funk/Indie",
                             "email": "booking@fizztheband.com",
                             "logo": "https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"
-                        },
-                            {
-                                "@context": "https://schema.org",
-                                "@type": "BreadcrumbList",
-                                "itemListElement": [{
-                                    "@type": "ListItem",
-                                    "position": 1,
-                                    "name": "Home",
-                                    "item": "https://fizztheband.com/"
-                                }, {
-                                    "@type": "ListItem",
-                                    "position": 2,
-                                    "name": "About Us",
-                                    "item": "https://fizztheband.com/about-us"
-                                }, {
-                                    "@type": "ListItem",
-                                    "position": 3,
-                                    "name": "Contact Us",
-                                    "item": "https://fizztheband.com/contact-us"
-                                }, {
-                                    "@type": "ListItem",
-                                    "position": 4,
-                                    "name": "Videos",
-                                    "item": "https://fizztheband.com/videos"
-                                }, {
-                                    "@type": "ListItem",
-                                    "position": 5,
-                                    "name": "Merch",
-                                    "item": "https://fizztheband.com/merch"
-                                }
-                                ]
-                            }
+                        }
                         ])
                     }}/>
             </Head>
