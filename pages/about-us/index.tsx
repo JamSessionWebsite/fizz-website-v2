@@ -11,7 +11,7 @@ const AboutUsPage = () => {
         <div style={{padding: windowWidth <= 760 ? '0' : '0 128px'}}
              className={'about-us-container'}>
             <Head>
-                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band | About Us</title>
+                <title>About Us | FIZZ | Pop/Funk/Indie Music</title>
                 <meta
                     name='description'
                     content='FIZZ is a pop/funk/indie band performing live in the Chicago area that takes rich vocal harmonies and a funky rhythm section and layers a powerful horn section on top to create pop music with layers of funk scattered throughout.'></meta>

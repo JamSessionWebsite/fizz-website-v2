@@ -8,7 +8,7 @@ const UpcomingShowsPage = () => {
     return (
         <div style={{padding: windowWidth <= 760 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
             <Head>
-                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band | Upcoming Shows</title>
+                <title>Upcoming Shows | FIZZ | Pop/Funk/Indie Music</title>
                 <meta
                     name='description'
                     content='View a list of all of the upcoming shows that FIZZ is going to be playing.  Many will be in the Chicago area although we are always open to travel with in reason!'/>
