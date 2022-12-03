@@ -41,6 +41,7 @@ export default function MyApp({Component, pageProps}) {
                             "@context": "https://schema.org",
                             "@type": "MusicGroup",
                             "name": "FIZZ",
+                            "url": "https://fizztheband.com/",
                             "image": [
                                 "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
                             ],
