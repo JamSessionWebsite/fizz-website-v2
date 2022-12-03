@@ -37,15 +37,11 @@ export default function MyApp({Component, pageProps}) {
                         "@context": "https://schema.org",
                         "@type": "MusicGroup",
                         "name": "FIZZ",
-                        "image": {
-                            "@type": "ImageObject",
-                            "url": "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg",
-                            "height": "617",
-                            "width": "925"
-                        },
+                        "image": [ 
+                            "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
+                        ],
                         "genre": "Pop/Funk/Indie",
-                        "email": "booking@fizztheband.com",
-                        "logo": "https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png"
+                        "email": "booking@fizztheband.com"
                     }`}
                 </script>
             </Head>
