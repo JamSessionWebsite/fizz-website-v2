@@ -33,6 +33,27 @@ export default function MyApp({Component, pageProps}) {
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
                 <link rel="shortcut icon"
                       href="https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"/>
+                <script type="application/ld+json">{`
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "MusicGroup",
+                        "name": "FIZZ",
+                        "image": {
+                            "@type": "ImageObject",
+                            "url": "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg",
+                            "height": "617",
+                            "width": "925"
+                        },
+                        "genre": "Pop/Funk/Indie",
+                        "email": "booking@fizztheband.com",
+                        "logo": {
+                            "@type": "ImageObject",
+                            "url": "https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png",
+                            "height": "200",
+                            "width": "100"
+                        }
+                    }`}
+                </script>
             </Head>
             <header className={'app-header'}>
                 <div className={'flex-row full-width'}>
