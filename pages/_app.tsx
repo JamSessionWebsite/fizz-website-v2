@@ -46,12 +46,7 @@ export default function MyApp({Component, pageProps}) {
                         },
                         "genre": "Pop/Funk/Indie",
                         "email": "booking@fizztheband.com",
-                        "logo": {
-                            "@type": "ImageObject",
-                            "url": "https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png",
-                            "height": "200",
-                            "width": "100"
-                        }
+                        "logo": "https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png"
                     }`}
                 </script>
             </Head>
