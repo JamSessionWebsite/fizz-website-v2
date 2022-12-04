@@ -35,7 +35,7 @@ const MerchPage = () => {
     return (
         <div className={'merch-page-container'}>
             <Head>
-                <title>Merch | FIZZ | Pop/Funk/Indie Music</title>
+                <title>Merch | FIZZ</title>
                 <meta
                     name='description'
                     content='Although not currently available online, take a look to see what we currently are going to be offering at our live shows in the future.  We hope to add more and more to this in the future and eventually sell our merch online!'/>

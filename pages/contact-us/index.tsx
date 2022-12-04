@@ -10,7 +10,7 @@ const ContactUs = () => {
             className={'contact-us-container'}
             style={{padding: windowWidth <= 760 ? '0 16px' : '0 128px'}}>
             <Head>
-                <title>Contact Us | FIZZ | Pop/Funk/Indie Music</title>
+                <title>Contact Us | FIZZ</title>
                 <meta
                     name='description'
                     content='Contact FIZZ for booking, merch, website issues, or just to chat.  For booking, you can reach us at booking@fizztheband.com.'></meta>
