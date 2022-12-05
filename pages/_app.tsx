@@ -45,14 +45,6 @@ export default function MyApp({Component, pageProps}) {
                             "image": [
                                 "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
                             ],
-                            "event": {
-                                "@type": "Event",
-                                "url": "https://www.instagram.com/bookclubchi/",
-                                "about": ["FIZZ","Bookclub","Chicago"],
-                                "name": "Bookclub Chicago",
-                                "startDate": "2022-11-18",
-                                "endDate": "2022-11-18"
-                            },
                             "genre": "Pop/Funk/Indie",
                             "email": "booking@fizztheband.com",
                             "logo": "https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"
