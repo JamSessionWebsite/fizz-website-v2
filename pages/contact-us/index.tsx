@@ -26,19 +26,19 @@ const ContactUs = () => {
                 <div className={'contact-us-text-container'}>
                     <div className={'label'}>Merch: </div>
                     <a
-                        href={'mailto:booking@fizztheband.com?subject=Merch Proposal for FIZZ'}
+                        href={'mailto:merch@fizztheband.com?subject=Merch Proposal for FIZZ'}
                         className={'contact-us-text'}>merch@fizztheband.com</a>
                 </div>
                 <div className={'contact-us-text-container'}>
                     <div className={'label'}>Website: </div>
                     <a
-                        href={'mailto:booking@fizztheband.com?subject=I Have an Issue With the Website'}
+                        href={'mailto:spencer@fizztheband.com?subject=I Have an Issue With the Website'}
                         className={'contact-us-text'}>spencer@fizztheband.com</a>
                 </div>
                 <div className={'contact-us-text-container'}>
                     <div className={'label'}>Other: </div>
                     <a
-                        href={'mailto:booking@fizztheband.com?subject=Hi!'}
+                        href={'mailto:other@fizztheband.com?subject=Hi!'}
                         className={'contact-us-text'}>other@fizztheband.com</a>
                 </div>
             </Card>
