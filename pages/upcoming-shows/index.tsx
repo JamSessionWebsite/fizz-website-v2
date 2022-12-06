@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, List} from "antd";
+import {Card, List, Tag} from "antd";
 import Head from "next/head";
 import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
@@ -27,7 +27,7 @@ const UpcomingShowsPage = () => {
     const windowWidth = useSelector((state: { app: any }) => state.app.windowWidth);
     const shows: Show[] = [
         {
-            name: 'Bookclub Chicago 11/18/22',
+            name: 'FIZZ at Bookclub Chicago',
             description: 'FIZZ plays a show alongside Morgan Buckley, Sun Queen, and Susie McCollum',
             startDateTimeEpoch: 1668819600000,
             endDateTimeEpoch: 1668835800000,
@@ -72,15 +72,17 @@ const UpcomingShowsPage = () => {
                 ],
                 "location": {
                     "@context": "https://schema.org",
-                    "@type": "PostalAddress",
                     "addressCountry": location.country,
                     "addressRegion": location.state,
                     "postalCode": location.zipCode,
                     "streetAddress": location.address,
                     "email": "tickets@fizztheband.com",
                 },
-                "attendanceMode": "OfflineEventAttendanceMode",
-                "organizer": "FIZZ",
+                "eventAttendanceMode": "OfflineEventAttendanceMode",
+                "organizer": {
+                    'name': "FIZZ",
+                    'url': 'https://fizztheband.com/upcoming-shows'
+                },
                 "performer": "FIZZ",
                 "description": show.description,
                 "eventStatus": 'EventScheduled',
@@ -116,10 +118,24 @@ const UpcomingShowsPage = () => {
                         __html: JSON.stringify(richTextDataStructuresForGoogleSearch)
                     }}/>
             </Head>
-            <Card title={'Upcoming Shows'}>
+            <Card title={'Shows'}>
                 <List
                     locale={{emptyText: 'There are currently no upcoming shows. Check back soon!'}}
                     dataSource={shows}
+                    renderItem={(show) => {
+                        const showHasHappened = show.startDateTimeEpoch < Date.now();
+                        return <div className={'flex-row full-width space-between'}>
+                            <div>
+                                {show.name}
+                            </div>
+                            <div>
+                                {DateTimeUtil.fromEpochToDateTime(show.startDateTimeEpoch)}
+                            </div>
+                            <div>
+                                <Tag color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Passed' : 'Upcoming'}</Tag>
+                            </div>
+                        </div>;
+                    }}
                 />
             </Card>
         </div>
