@@ -63,7 +63,7 @@ export default function MyApp({Component, pageProps}) {
                     <div className={'button-container'}>
                         <Button
                             ghost>
-                            <Link href={'/upcoming-shows'}>Upcoming Shows</Link>
+                            <Link href={'/shows'}>Shows</Link>
                         </Button>
                     </div>
                     <div className={'button-container'}>
