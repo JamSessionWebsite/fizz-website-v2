@@ -72,6 +72,8 @@ const UpcomingShowsPage = () => {
                 ],
                 "location": {
                     "@context": "https://schema.org",
+                    "name": location.name,
+                    ...(location.address ? {'address': location.address} : {}),
                     "addressCountry": location.country,
                     "addressRegion": location.state,
                     "postalCode": location.zipCode,
