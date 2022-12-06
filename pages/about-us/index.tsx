@@ -25,7 +25,7 @@ const AboutUsPage = () => {
                     We got to play the Navy Pier show because we won 3rd place in the <a target={'_blank'} className={'inline-link'} href={'https://www.bitterjesterfoundation.org/bitter-jester-music-festival-info'}>Bitter Jester Music Festival</a>!
                     We performed in that festival style competition many years in the past under the name Elise and the Police.
                     We also won the Battle of the Bands at Northwestern University which gave us the opportunity to open for <a target={'_blank'} className={'inline-link'} href={'https://www.dilloday.com/'}>Dillo Day</a>; a music festival where we performed just before artists
-                    such as <a target={'_blank'} className={'inline-link'} href={'https://hippocampus.band/'}>Hippo Campus</a> and <a target={'_blank'} className={'inline-link'} href={'https://www.asapferg.com/'}>A$AP Ferg</a> performing.
+                    such as <a target={'_blank'} className={'inline-link'} href={'https://hippocampus.band/'}>Hippo Campus</a> and <a target={'_blank'} className={'inline-link'} href={'https://www.asapferg.com/'}>A$AP Ferg</a>.
                 </Paragraph>
                 <Paragraph className={'about-us-text'}>
                     Currently, we have been working on writing new music and are actively looking for gigs in the
