@@ -38,7 +38,7 @@ const ContactUs = () => {
                 <div className={'contact-us-text-container'}>
                     <div className={'label'}>Tickets: </div>
                     <a
-                        href={'mailto:tickets@fizztheband.com?subject=Merch Proposal for FIZZ'}
+                        href={'mailto:tickets@fizztheband.com?subject=I am Trying to Buy Tickets'}
                         className={'contact-us-text'}>tickets@fizztheband.com</a>
                 </div>
                 <div className={'contact-us-text-container'}>
