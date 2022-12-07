@@ -83,7 +83,7 @@ const VideosPage = () => {
                     content='Check out the latest videos of FIZZ performing live music in the Chicago area!'/>
                 <script async src="https://www.tiktok.com/embed.js"></script>
             </Helmet>
-            <div className={'flex-row full-width'} style={{
+            <div className={'flex-row'} style={{
                 height: 736,
                 overflowY: 'auto',
                 padding: '0 16px',

@@ -1,4 +1,6 @@
 .videos-page-container {
+  @extend .flex-row;
+  @extend .full-width;
   padding: 16px;
 
   .video-grid {
