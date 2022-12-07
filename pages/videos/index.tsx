@@ -9,34 +9,41 @@ const VideosPage = () => {
         {
             type: 'youtube',
             videoId: 'Po3-1mDTm7I',
+            name: 'I Love You - Morgan Buckley (feat. FIZZ)',
             url: 'https://www.youtube-nocookie.com/embed/Po3-1mDTm7I',
         },
         {
             type: 'tiktok',
+            name: 'Shot by Lawrence - FIZZ Cover',
             url: 'https://www.tiktok.com/embed/7169370519249095979'
         },
         {
             type: 'tiktok',
+            name: 'Something Cosmic - Sun Queen (feat. FIZZ)',
             url: 'https://www.tiktok.com/embed/7169345381040491822'
         },
         {
             type: 'youtube',
             videoId: 'FDmttaicp9A',
+            name: 'Latin Man at Dillo Day',
             url: 'https://www.youtube-nocookie.com/embed/FDmttaicp9A',
         },
         {
             type: 'youtube',
             videoId: 'SDLzqZ1Dg8s',
+            name: 'American Boy/Dang! Covers - FIZZ',
             url: 'https://www.youtube-nocookie.com/embed/SDLzqZ1Dg8s',
         },
         {
             type: 'youtube',
             videoId: '_7TZ8DVQpug',
+            name: 'Caught Up - FIZZ at Dillo Day',
             url: 'https://www.youtube-nocookie.com/embed/_7TZ8DVQpug',
         },
         {
             type: 'youtube',
             videoId: 'DW-T3eGuYAo',
+            name: 'FIZZ at Mayfest Battle of the Bands',
             url: 'https://www.youtube-nocookie.com/embed/DW-T3eGuYAo',
         }
     ];
@@ -64,14 +71,15 @@ const VideosPage = () => {
         return 760;
     }
 
-    const getMaxWidth = (ratio) => {
-        if (getBrowserWidth() <= 760) {
-            return 264;
+    const toVideoObject = (video) => {
+        return {
+            "@context": "https://schema.org",
+            "@type": "VideoObject",
+            "name": video.name,
+            "url": video.url,
+            "embedUrl": video.url,
+            "musicBy": "FIZZ",
         }
-        if (ratio < 1) {
-            return 296;
-        }
-        return 600;
     }
 
     return (
@@ -82,6 +90,11 @@ const VideosPage = () => {
                     name='description'
                     content='Check out the latest videos of FIZZ performing live music in the Chicago area!'/>
                 <script async src="https://www.tiktok.com/embed.js"></script>
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify([])
+                    }}/>
             </Helmet>
             <div className={'flex-row'} style={{
                 height: 736,

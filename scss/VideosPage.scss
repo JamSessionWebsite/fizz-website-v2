@@ -16,7 +16,7 @@
   .video-grid-item {
     @extend .flex-row;
     @extend .full-width;
-    padding: 24px 0;
+    padding: 24px 8px;
     max-width: 605px;
     min-width: 325px;
   }
