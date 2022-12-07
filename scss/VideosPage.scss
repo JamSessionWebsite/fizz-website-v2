@@ -11,6 +11,14 @@
     overflow-y: auto;
   }
 
+  .video-grid-item {
+    @extend .flex-row;
+    @extend .full-width;
+    padding: 24px 0;
+    max-width: 605px;
+    min-width: 325px;
+  }
+
   .tiktok-video {
     height: 600px;
     width: 322px;
