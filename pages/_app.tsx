@@ -25,6 +25,8 @@ export default function MyApp({Component, pageProps}) {
         }
     }
 
+    // @ts-ignore
+    // @ts-ignore
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
             <Head>
@@ -51,6 +53,16 @@ export default function MyApp({Component, pageProps}) {
                         }
                         ])
                     }}/>
+                <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></script>
+            <script
+                dangerouslySetInnerHTML={{
+                    __html: `
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-5WBC8G1PS8');
+                                    `,
+                }}/>
             </Head>
             <header className={'app-header'}>
                 <div className={'flex-row full-width'}>
