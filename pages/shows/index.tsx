@@ -79,6 +79,9 @@ const UpcomingShowsPage = () => {
         .sort(onSortShows)
         .map(show => {
             const location = show.location;
+            const dateOffset = (24*60*60*1000) * 14;
+            const ticketSaleStartDate = new Date();
+            ticketSaleStartDate.setTime(ticketSaleStartDate.getTime() - dateOffset);
             return {
                 "@context": "https://schema.org",
                 "@type": "Event",
@@ -93,6 +96,8 @@ const UpcomingShowsPage = () => {
                         "url": show.eventUrl,
                         "priceCurrency": "USD",
                         "price": "10.00",
+                        "availability": "https://schema.org/InStock",
+                        "validFrom": ticketSaleStartDate.toISOString(),
                         "validThrough": new Date(show.endDateTimeEpoch).toISOString(),
                     }
                 } : {}),
