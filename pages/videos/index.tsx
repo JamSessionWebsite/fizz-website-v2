@@ -49,6 +49,7 @@ const VideosPage = () => {
     ];
     const [loading, setLoading] = useState(false);
     const [loadedVideos, setLoadedVideos] = useState([]);
+    const [maxWidth, setMaxWidth] = useState(760);
     const loadMoreData = () => {
         if (loading) {
             return;
@@ -61,7 +62,15 @@ const VideosPage = () => {
     };
 
     useEffect(() => {
+        const maxWidthOfVideos = getBrowserWidth() > 760 ? 600 : 320;
+        setMaxWidth(maxWidthOfVideos);
         loadMoreData();
+        if(typeof window !== 'undefined') {
+            window.onresize = () => {
+                const maxWidthOfVideos = getBrowserWidth() > 760 ? 600 : 320;
+                setMaxWidth(maxWidthOfVideos);
+            }
+        }
     }, []);
 
     function getBrowserWidth() {
@@ -81,7 +90,7 @@ const VideosPage = () => {
             "musicBy": "FIZZ",
         }
     }
-
+    const tiktokHeight = 723.531;
     return (
         <div className={'videos-page-container'}>
             <Helmet>
@@ -97,7 +106,7 @@ const VideosPage = () => {
                     }}/>
             </Helmet>
             <div className={'flex-row'} style={{
-                height: 736,
+                height: tiktokHeight + 36,
                 overflowY: 'auto',
                 padding: '0 16px',
             }} id="scrollableDiv">
@@ -112,6 +121,9 @@ const VideosPage = () => {
                             onClick={() => {
                                 if (typeof document !== 'undefined') {
                                     document.getElementById('video-grid-item-0').scrollIntoView();
+                                    if(typeof window !== 'undefined') {
+                                        window.scrollTo(0,0);
+                                    }
                                 }
                             }}
                             icon={<ArrowUpOutlined/>}
@@ -121,19 +133,21 @@ const VideosPage = () => {
                 >
                     <List
                         dataSource={loadedVideos}
-                        renderItem={(video, index) => <div
-                            id={`video-grid-item-${index}`}
-                            className={'video-grid-item'}
-                            key={`video-grid-item-${index}`}>
-                            <iframe
-                                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                style={{border: 'none'}}
-                                loading={'lazy'}
-                                sandbox='allow-scripts allow-same-origin allow-presentation'
-                                width={'320px'}
-                                height={video.type === 'youtube' ? '244px' : '737px'}
-                                src={video.url}/>
-                        </div>}>
+                        renderItem={(video, index) => {
+                            return <div
+                                id={`video-grid-item-${index}`}
+                                className={'video-grid-item'}
+                                key={`video-grid-item-${index}`}>
+                                <iframe
+                                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    style={{border: 'none'}}
+                                    loading={'lazy'}
+                                    sandbox='allow-scripts allow-same-origin allow-presentation'
+                                    width={`${maxWidth}px`}
+                                    height={video.type === 'youtube' ? `${maxWidth * (3 / 4)}px` : `${tiktokHeight}px`}
+                                    src={video.url}/>
+                            </div>;
+                        }}>
                     </List>
                 </InfiniteScroll>
             </div>
