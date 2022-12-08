@@ -10,6 +10,7 @@ interface Show {
     startDateTimeEpoch: number;
     endDateTimeEpoch: number;
     eventUrl?: string;
+    ticketPrice?: number;
     imageUrl?: string;
     location: {
         name: string;
@@ -31,6 +32,8 @@ const UpcomingShowsPage = () => {
             description: 'Diet FIZZ, a subset of FIZZ, is performing live at Uncommon Ground in Chicago, Illinois!',
             startDateTimeEpoch: 1671237000000,
             endDateTimeEpoch: 1671247800000,
+            eventUrl: 'https://www.simpletix.com/e/sun-queen-ft-fizz-with-guy-zensai-susanna-tickets-121166',
+            ticketPrice: 1000,
             location: {
                 name: 'Uncommon Ground',
                 address: '3800 N CLARK ST',
@@ -84,6 +87,15 @@ const UpcomingShowsPage = () => {
                 "image": [
                     show.imageUrl ? show.imageUrl : 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'
                 ],
+                ...(show.name && show.eventUrl && show.endDateTimeEpoch ? {
+                    "offers": {
+                        "name": `Tickets for "${show.name}"`,
+                        "url": show.eventUrl,
+                        "priceCurrency": "USD",
+                        "price": "10.00",
+                        "validThrough": new Date(show.endDateTimeEpoch).toISOString(),
+                    }
+                } : {}),
                 "location": {
                     "@context": "https://schema.org",
                     "name": location.name,
@@ -140,18 +152,40 @@ const UpcomingShowsPage = () => {
                     dataSource={shows}
                     renderItem={(show, index) => {
                         const showHasHappened = show.startDateTimeEpoch < Date.now();
-                        return <div className={'flex-row full-width space-between'}>
-                            <div>
-                                {show.name}
+                        return <>
+                            <div className={'show-row'}>
+                                <div>
+                                    {show.name}
+                                </div>
+                                <div className={'flex-column'}>
+                                    {DateTimeUtil.fromEpochToDateTime(show.startDateTimeEpoch)}
+                                    <Tag
+                                        color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Already Happened' : 'Upcoming'}</Tag>
+                                </div>
+                                <div className={'flex-column'}>
+                                    <div className={'flex-row'}>
+                                        {show.ticketPrice || show.ticketPrice === 0 ?
+                                            <>
+                                                <div>
+                                                    Price:
+                                                </div>
+                                                <div className={'value'}>
+                                                    ${(show.ticketPrice / 100).toFixed(2)}
+                                                </div>
+                                            </> :
+                                            <></>
+                                        }
+                                    </div>
+                                    {show.eventUrl && !showHasHappened && <>
+                                        <a
+                                            target={'_blank'}
+                                            href={show.eventUrl}>Tickets</a>
+                                    </>
+                                    }
+                                </div>
                             </div>
-                            <div>
-                                {DateTimeUtil.fromEpochToDateTime(show.startDateTimeEpoch)}
-                            </div>
-                            <div>
-                                <Tag color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Already Happened' : 'Upcoming'}</Tag>
-                            </div>
-                            {index + 1 !== shows.length && <Divider />}
-                        </div>;
+                            {index + 1 !== shows.length && <Divider/>}
+                        </>
                     }}
                 />
             </Card>

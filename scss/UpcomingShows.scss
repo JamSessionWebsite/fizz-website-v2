@@ -1,3 +1,10 @@
 .upcoming-shows-container {
   padding: 16px 128px;
+
+  .show-row {
+    @extend .full-width;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(64px, 1fr));
+    grid-gap: 24px;
+  }
 }
