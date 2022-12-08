@@ -1,5 +1,5 @@
 import React from 'react';
-import {Card, List, Tag} from "antd";
+import {Card, Divider, List, Tag} from "antd";
 import Head from "next/head";
 import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
@@ -26,6 +26,20 @@ interface Show {
 const UpcomingShowsPage = () => {
     const windowWidth = useSelector((state: { app: any }) => state.app.windowWidth);
     const shows: Show[] = [
+        {
+            name: 'Sun Queen feat. Diet FIZZ at Uncommon Ground',
+            description: 'Diet FIZZ, a subset of FIZZ, is performing live at Uncommon Ground in Chicago, Illinois!',
+            startDateTimeEpoch: 1671237000000,
+            endDateTimeEpoch: 1671247800000,
+            location: {
+                name: 'Uncommon Ground',
+                address: '3800 N CLARK ST',
+                zipCode: 60613,
+                city: 'Chicago',
+                state: 'Illinois',
+                country: 'USA',
+            }
+        },
         {
             name: 'FIZZ at Bookclub Chicago',
             description: 'FIZZ plays a show alongside Morgan Buckley, Sun Queen, and Susie McCollum',
@@ -124,7 +138,7 @@ const UpcomingShowsPage = () => {
                 <List
                     locale={{emptyText: 'There are currently no upcoming shows. Check back soon!'}}
                     dataSource={shows}
-                    renderItem={(show) => {
+                    renderItem={(show, index) => {
                         const showHasHappened = show.startDateTimeEpoch < Date.now();
                         return <div className={'flex-row full-width space-between'}>
                             <div>
@@ -134,8 +148,9 @@ const UpcomingShowsPage = () => {
                                 {DateTimeUtil.fromEpochToDateTime(show.startDateTimeEpoch)}
                             </div>
                             <div>
-                                <Tag color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Passed' : 'Upcoming'}</Tag>
+                                <Tag color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Already Happened' : 'Upcoming'}</Tag>
                             </div>
+                            {index + 1 !== shows.length && <Divider />}
                         </div>;
                     }}
                 />
