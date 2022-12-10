@@ -1,13 +1,13 @@
-import {Button, Image, Layout} from "antd";
+import {Button, Layout, Menu} from "antd";
 import Link from "next/link";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
 import React, {useEffect, useState} from "react";
-import '../scss/App.scss';
+import '../public/static/scss/App.scss';
 import {useRouter} from "next/router";
 import Head from "next/head";
 import fizzWebsiteStore from "../redux/FizzWebsiteStore";
 import {Provider} from "react-redux";
-import Script from "next/script";
+import Image from "next/image";
 
 export default function MyApp({Component, pageProps}) {
     useEffect(() => {
@@ -54,15 +54,15 @@ export default function MyApp({Component, pageProps}) {
                         ])
                     }}/>
                 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></script>
-            <script
-                dangerouslySetInnerHTML={{
-                    __html: `
+                <script
+                    dangerouslySetInnerHTML={{
+                        __html: `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-5WBC8G1PS8');
                                     `,
-                }}/>
+                    }}/>
             </Head>
             <header className={'app-header'}>
                 <div className={'flex-row full-width'}>
@@ -107,20 +107,20 @@ export default function MyApp({Component, pageProps}) {
             <main className={'app-content'}>
                 <div className={'full-width'} style={{minHeight: 360}}>
                     <div className={'logo-and-title-container'}>
-                        <div>
+                        <div className={'fizz-logo-container'}>
                             <Image
+                                alt={'FIZZ pop can logo'}
                                 onClick={async () => router.push('/')}
                                 className={'clickable'}
-                                height={'200px'}
-                                width={'100px'}
-                                preview={false}
+                                height={200}
+                                width={100}
                                 src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
                             />
                         </div>
                         <div>
                             <div className={'title-container'}>
                                 <h1 className={'fizz-title'}>FIZZ</h1>
-                                <h3 className={'fizz-subtitle'}>A Chicago Pop/Funk/Indie Band</h3>
+                                <h2 className={'fizz-subtitle'}>A Chicago Pop/Funk/Indie Band</h2>
                             </div>
                         </div>
                     </div>
@@ -163,7 +163,12 @@ export default function MyApp({Component, pageProps}) {
                         size={'large'}
                         href={'https://www.tiktok.com/@fizz.band'}
                         target={'_blank'}
-                        icon={<Image preview={false} width={24} src={'./static/tiktok-logo.svg'}/>}
+                        icon={<Image
+                            alt={'Tiktok brand logo'}
+                            height={24}
+                            width={24}
+                            src={'/static/tiktok-logo.svg'}/>
+                        }
                     />
                 </div>
                 <div className={'button-container'}>

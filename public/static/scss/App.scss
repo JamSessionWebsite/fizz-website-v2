@@ -1,14 +1,14 @@
-@import '../node_modules/antd/dist/antd.variable.min.css';
-@import '../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
-@import 'AppLayout.scss';
-@import 'HomePage.scss';
-@import 'AboutUs.scss';
-@import 'UpcomingShows.scss';
-@import 'VideosPage.scss';
-@import 'MerchPage.scss';
-@import 'NotFound.scss';
-@import 'ContactUs.scss';
-@import 'common/ImageGallery.scss';
+@import '../../../node_modules/antd/dist/antd.variable.min.css';
+@import '../../../node_modules/react-responsive-carousel/lib/styles/carousel.min.css';
+@import 'AppLayout';
+@import 'HomePage';
+@import 'AboutUs';
+@import 'UpcomingShows';
+@import 'VideosPage';
+@import 'MerchPage';
+@import 'NotFound';
+@import 'ContactUs';
+@import 'common/ImageGallery';
 
 #components-layout-demo-top-side-2 .logo {
   float: left;
@@ -146,4 +146,10 @@
 
 .inline-link {
   display: contents;
+}
+
+.fizz-logo-container {
+  @extend .flex-row;
+  @extend .full-width;
+  padding: 8px;
 }

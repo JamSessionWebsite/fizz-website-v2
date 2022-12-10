@@ -1,14 +1,15 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Card, Image as ImageAntd, Typography} from "antd";
+import {Button, Card, Typography} from "antd";
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
+import ImageNext from 'next/image';
 
 const {Text} = Typography;
 
 const ImageGallery = ({images, title = null}) => {
-    const [imageDimensions, setImageDimensions] = useState({width: 0, height: 0});
+    const [imageDimensions, setImageDimensions] = useState({width: 1, height: 1});
 
     function getBrowserWidth() {
-        if(typeof window !== 'undefined') {
+        if (typeof window !== 'undefined') {
             return window.innerWidth;
         }
         return 760;
@@ -49,7 +50,7 @@ const ImageGallery = ({images, title = null}) => {
     }
 
     const calculatedHeight = maxWidth / (imageDimensions.width / imageDimensions.height);
-    const height = `${calculatedHeight}px`;
+    const height = calculatedHeight;
     const getTopPixel = () => {
         const ratio = imageDimensions.width / imageDimensions.height;
         if (getBrowserWidth() <= 760) {
@@ -74,13 +75,13 @@ const ImageGallery = ({images, title = null}) => {
             <div className={'image-gallery-container'}>
                 <div className={'display-image-container'}>
                     <div className={'display-image'}>
-                        <ImageAntd
+                        <ImageNext
                             alt={images[currentlyVisibleImageIndex].description}
                             width={maxWidth}
                             height={height}
                             src={images[currentlyVisibleImageIndex].src}
                             onClick={() => setVisible(true)}
-                            preview={{visible: false}}/>
+                        />
                     </div>
                     <div style={{top: `${getTopPixel()}px`}}
                          className={'image-description'}>
@@ -111,14 +112,6 @@ const ImageGallery = ({images, title = null}) => {
                             icon={<CaretRightOutlined/>}/>
                     </div>
                 </div>
-            </div>
-            <div style={{display: 'none'}}>
-                <ImageAntd.PreviewGroup
-                    preview={{visible, current: currentlyVisibleImageIndex, onVisibleChange: (vis) => setVisible(vis)}}>
-                    {images.map(image => <ImageAntd
-                        alt={image.description}
-                        src={image.src}/>)}
-                </ImageAntd.PreviewGroup>
             </div>
         </Card>
 
