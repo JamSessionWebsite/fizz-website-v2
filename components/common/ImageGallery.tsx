@@ -79,6 +79,7 @@ const ImageGallery = ({images, title = null}) => {
                             alt={images[currentlyVisibleImageIndex].description}
                             width={maxWidth}
                             height={height}
+                            priority
                             src={images[currentlyVisibleImageIndex].src}
                             onClick={() => setVisible(true)}
                         />
