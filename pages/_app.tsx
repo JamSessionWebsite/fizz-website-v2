@@ -8,6 +8,7 @@ import Head from "next/head";
 import fizzWebsiteStore from "../redux/FizzWebsiteStore";
 import {Provider} from "react-redux";
 import Image from "next/image";
+import Script from "next/script";
 
 export default function MyApp({Component, pageProps}) {
     useEffect(() => {
@@ -53,7 +54,6 @@ export default function MyApp({Component, pageProps}) {
                         }
                         ])
                     }}/>
-                <script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></script>
                 <script
                     dangerouslySetInnerHTML={{
                         __html: `
@@ -65,6 +65,7 @@ export default function MyApp({Component, pageProps}) {
                     }}/>
             </Head>
             <header className={'app-header'}>
+                <Script defer src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></Script>
                 <div className={'flex-row full-width'}>
                     <div className={'button-container'}>
                         <Button
