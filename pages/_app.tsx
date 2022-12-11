@@ -1,6 +1,4 @@
-import {Button, Layout} from "antd";
 import Link from "next/link";
-import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
 import React, {useEffect} from "react";
 import '../public/static/scss/App.scss';
 import {useRouter} from "next/router";
@@ -9,6 +7,13 @@ import fizzWebsiteStore from "../redux/FizzWebsiteStore";
 import {Provider} from "react-redux";
 import Image from "next/image";
 import Script from "next/script";
+import dynamic from "next/dynamic";
+const Layout = dynamic(() => import('antd').then(dep => dep.Layout));
+const Button = dynamic(() => import('antd').then(dep => dep.Button));
+const FacebookOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.FacebookOutlined));
+const MailOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.MailOutlined));
+const InstagramOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.InstagramOutlined));
+const YoutubeOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.YoutubeOutlined));
 
 export default function MyApp({Component, pageProps}) {
     useEffect(() => {
@@ -26,8 +31,6 @@ export default function MyApp({Component, pageProps}) {
         }
     }
 
-    // @ts-ignore
-    // @ts-ignore
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
             <Head>
