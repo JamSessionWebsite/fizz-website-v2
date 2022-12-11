@@ -68,7 +68,7 @@ export default function MyApp({Component, pageProps}) {
                     }}/>
             </Head>
             <header className={'app-header'}>
-                <Script defer src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></Script>
+                <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></Script>
                 <div className={'flex-row full-width'}>
                     <div className={'button-container'}>
                         <Button
@@ -118,7 +118,7 @@ export default function MyApp({Component, pageProps}) {
                                 className={'clickable'}
                                 height={200}
                                 width={100}
-
+                                priority
                                 src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
                             />
                         </div>
