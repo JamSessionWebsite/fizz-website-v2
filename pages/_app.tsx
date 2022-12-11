@@ -58,6 +58,7 @@ export default function MyApp({Component, pageProps}) {
                         ])
                     }}/>
                 <script
+                    async
                     dangerouslySetInnerHTML={{
                         __html: `
   window.dataLayer = window.dataLayer || [];
