@@ -7,7 +7,11 @@ const nextConfig = {
             'audio.fizztheband.com',
             'fizztheband.com'
         ]
-    }
+    },
+    i18n: {
+        locales: ["en"],
+        defaultLocale: "en",
+    },
 }
 
 module.exports = nextConfig;
