@@ -3,30 +3,13 @@ import Head from "next/head";
 import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
 import dynamic from "next/dynamic";
+import {Show} from "../../interfaces/show";
+
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
 const Tag = dynamic(() => import('antd').then((dep) => dep.Tag));
 const Divider = dynamic(() => import('antd').then((dep) => dep.Divider));
 
-interface Show {
-    name: string;
-    description: string;
-    startDateTimeEpoch: number;
-    endDateTimeEpoch: number;
-    eventUrl?: string;
-    ticketPrice?: number;
-    imageUrl?: string;
-    location: {
-        name: string;
-        address?: string;
-        address2?: string;
-        city?: string;
-        state?: string;
-        zipCode: number;
-        zipCode2?: number;
-        country: string;
-    }
-}
 const onSortShows = (a, b) => {
     const hasFirstShowPassed = a.startDateTimeEpoch < Date.now();
     const hasSecondShowPassed = b.startDateTimeEpoch < Date.now();

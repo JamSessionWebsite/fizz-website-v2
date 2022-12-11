@@ -2,6 +2,9 @@ import React, {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {ArrowUpOutlined} from "@ant-design/icons";
 import dynamic from "next/dynamic";
+import {useSelector} from "react-redux";
+import {FizzWebsiteReduxStore} from "../../redux/FizzWebsiteStore";
+import Script from "next/script";
 const Button = dynamic(() => import('antd').then((dep) => dep.Button));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
 const Skeleton = dynamic(() => import('antd').then((dep) => dep.Skeleton));
@@ -57,9 +60,10 @@ const VideosPage = () => {
             url: 'https://www.youtube-nocookie.com/embed/DW-T3eGuYAo',
         }
     ];
+    const windowWidth = useSelector((state: FizzWebsiteReduxStore) => state.app.windowWidth);
     const [loading, setLoading] = useState(false);
     const [loadedVideos, setLoadedVideos] = useState([]);
-    const [maxWidth, setMaxWidth] = useState(760);
+    const [imageSize, setImageSize] = useState(760);
     const loadMoreData = () => {
         if (loading) {
             return;
@@ -72,34 +76,12 @@ const VideosPage = () => {
     };
 
     useEffect(() => {
-        const maxWidthOfVideos = getBrowserWidth() > 760 ? 600 : 320;
-        setMaxWidth(maxWidthOfVideos);
         loadMoreData();
-        if(typeof window !== 'undefined') {
-            window.onresize = () => {
-                const maxWidthOfVideos = getBrowserWidth() > 760 ? 600 : 320;
-                setMaxWidth(maxWidthOfVideos);
-            }
-        }
     }, []);
 
-    function getBrowserWidth() {
-        if (typeof window !== 'undefined') {
-            return window.innerWidth;
-        }
-        return 760;
-    }
-
-    const toVideoObject = (video) => {
-        return {
-            "@context": "https://schema.org",
-            "@type": "VideoObject",
-            "name": video.name,
-            "url": video.url,
-            "embedUrl": video.url,
-            "musicBy": "FIZZ",
-        }
-    }
+    useEffect(() => {
+        setImageSize(windowWidth > 760 ? 600 : 320)
+    }, [windowWidth]);
     const tiktokHeight = 723.531;
     return (
         <div className={'videos-page-container'}>
@@ -108,13 +90,13 @@ const VideosPage = () => {
                 <meta
                     name='description'
                     content='Check out the latest videos of FIZZ performing live music in the Chicago area!'/>
-                <script async src="https://www.tiktok.com/embed.js"></script>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
                         __html: JSON.stringify([])
                     }}/>
             </Helmet>
+            <Script async src="https://www.tiktok.com/embed.js"></Script>
             <div className={'flex-row'} style={{
                 height: tiktokHeight + 36,
                 overflowY: 'auto',
@@ -153,8 +135,8 @@ const VideosPage = () => {
                                     style={{border: 'none'}}
                                     loading={'lazy'}
                                     sandbox='allow-scripts allow-same-origin allow-presentation'
-                                    width={`${maxWidth}px`}
-                                    height={video.type === 'youtube' ? `${maxWidth * (3 / 4)}px` : `${tiktokHeight}px`}
+                                    width={`${imageSize}px`}
+                                    height={video.type === 'youtube' ? `${imageSize * (3 / 4)}px` : `${tiktokHeight}px`}
                                     src={video.url}/>
                             </div>;
                         }}>

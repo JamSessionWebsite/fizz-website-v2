@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {Button, Card, Typography} from "antd";
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
 import ImageNext from 'next/image';
-
-const {Text} = Typography;
+import dynamic from "next/dynamic";
+const Button = dynamic(() => import('antd').then(dep => dep.Button));
+const Card = dynamic(() => import('antd').then(dep => dep.Card));
+const Text = dynamic(() => import('antd').then(dep => dep.Typography.Text));
 
 const ImageGallery = ({images, title = null}) => {
     const [imageDimensions, setImageDimensions] = useState({width: 1, height: 1});
