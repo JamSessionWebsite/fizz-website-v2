@@ -1,8 +1,12 @@
 import React from 'react';
-import {Card, Divider, List, Tag} from "antd";
 import Head from "next/head";
 import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
+import dynamic from "next/dynamic";
+const Card = dynamic(() => import('antd').then((dep) => dep.Card));
+const List = dynamic(() => import('antd').then((dep) => dep.List));
+const Tag = dynamic(() => import('antd').then((dep) => dep.Tag));
+const Divider = dynamic(() => import('antd').then((dep) => dep.Divider));
 
 interface Show {
     name: string;
@@ -155,7 +159,7 @@ const UpcomingShowsPage = () => {
                 <List
                     locale={{emptyText: 'There are currently no upcoming shows. Check back soon!'}}
                     dataSource={shows}
-                    renderItem={(show, index) => {
+                    renderItem={(show: Show, index) => {
                         const showHasHappened = show.startDateTimeEpoch < Date.now();
                         return <>
                             <div className={'show-row'}>

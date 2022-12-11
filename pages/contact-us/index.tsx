@@ -1,7 +1,8 @@
 import React from 'react';
-import {Card} from "antd";
 import {useSelector} from "react-redux";
 import Head from "next/head";
+import dynamic from "next/dynamic";
+const Card = dynamic(() => import('antd').then(dep => dep.Card));
 
 const ContactUs = () => {
     const windowWidth = useSelector((state: { app: any }) => state.app.windowWidth);

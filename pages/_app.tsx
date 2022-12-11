@@ -1,7 +1,7 @@
-import {Button, Layout, Menu} from "antd";
+import {Button, Layout} from "antd";
 import Link from "next/link";
 import {FacebookOutlined, InstagramOutlined, MailOutlined, YoutubeOutlined} from "@ant-design/icons";
-import React, {useEffect, useState} from "react";
+import React, {useEffect} from "react";
 import '../public/static/scss/App.scss';
 import {useRouter} from "next/router";
 import Head from "next/head";
@@ -115,6 +115,7 @@ export default function MyApp({Component, pageProps}) {
                                 className={'clickable'}
                                 height={200}
                                 width={100}
+
                                 src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
                             />
                         </div>

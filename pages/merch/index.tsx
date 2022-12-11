@@ -1,8 +1,9 @@
 import React from 'react';
-import {Card, Image as ImageAntd, Typography} from "antd";
 import Head from "next/head";
-
-const {Text} = Typography;
+import dynamic from "next/dynamic";
+const Card = dynamic(() => import('antd').then((dep) => dep.Card));
+const Text = dynamic(() => import('antd').then((dep) => dep.Typography.Text));
+const ImageAntd = dynamic(() => import('antd').then((dep) => dep.Image));
 
 const MerchPage = () => {
     const merchItems = [

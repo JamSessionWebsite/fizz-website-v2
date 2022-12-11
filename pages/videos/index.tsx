@@ -1,11 +1,21 @@
 import React, {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
-import {Button, Card, Divider, List, Skeleton} from "antd";
-import InfiniteScroll from 'react-infinite-scroll-component';
 import {ArrowUpOutlined} from "@ant-design/icons";
+import dynamic from "next/dynamic";
+const Button = dynamic(() => import('antd').then((dep) => dep.Button));
+const List = dynamic(() => import('antd').then((dep) => dep.List));
+const Skeleton = dynamic(() => import('antd').then((dep) => dep.Skeleton));
+const InfiniteScroll = dynamic(() => import('react-infinite-scroll-component').then((dep) => dep.default));
+
+interface Video {
+    name: string;
+    type: 'youtube' | 'tiktok';
+    url: string;
+    videoId?: string;
+}
 
 const VideosPage = () => {
-    const videos = [
+    const videos: Video[] = [
         {
             type: 'youtube',
             videoId: 'Po3-1mDTm7I',
@@ -133,7 +143,7 @@ const VideosPage = () => {
                 >
                     <List
                         dataSource={loadedVideos}
-                        renderItem={(video, index) => {
+                        renderItem={(video: Video, index) => {
                             return <div
                                 id={`video-grid-item-${index}`}
                                 className={'video-grid-item'}

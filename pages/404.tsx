@@ -1,5 +1,6 @@
 import React from 'react';
-import {Card} from "antd";
+import dynamic from "next/dynamic";
+const Card = dynamic(() => import('antd').then((mod) => mod.Card));
 
 const NotFound = () => {
     return (

@@ -1,6 +1,7 @@
+import dynamic from "next/dynamic";
 import React from 'react';
-import ImageGallery from "../components/common/ImageGallery";
 import Head from "next/head";
+const ImageGallery = dynamic(() => import("../components/common/ImageGallery"));
 
 const PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 

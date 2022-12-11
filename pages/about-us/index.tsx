@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import {Card, Typography} from "antd";
+import React from 'react';
+import dynamic from "next/dynamic";
 import Head from "next/head";
 import {useSelector} from "react-redux";
 import Link from "next/link";
-
-const {Text, Paragraph} = Typography;
+const Card = dynamic(() => import('antd').then((dep) => dep.Card));
+const Paragraph = dynamic(() => import('antd').then((dep) => dep.Typography.Paragraph));
 
 const AboutUsPage = () => {
     const windowWidth = useSelector((state: {app: any}) => state.app.windowWidth);
