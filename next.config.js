@@ -3,13 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-      remotePatterns: [
-          {
-              protocol: 'https',
-              hostname: 'audio.fizztheband.com',
-              pathname: '/images/fizz-website/**',
-          },
-      ],
+      domains: ['audio.fizztheband.com']
   }
 }
 
