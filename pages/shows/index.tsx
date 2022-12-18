@@ -4,6 +4,7 @@ import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
 import dynamic from "next/dynamic";
 import {Show} from "../../interfaces/show";
+import {BAND_CONFIG} from "../../band-config";
 
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
@@ -60,6 +61,7 @@ const shows: Show[] = [
         }
     }
 ];
+const bandName = BAND_CONFIG.bandName;
 const richTextEvents = shows
     .sort(onSortShows)
     .map(show => {
@@ -98,10 +100,10 @@ const richTextEvents = shows
             },
             "eventAttendanceMode": "OfflineEventAttendanceMode",
             "organizer": {
-                'name': "FIZZ",
+                'name': bandName,
                 'url': 'https://fizztheband.com/upcoming-shows'
             },
-            "performer": "FIZZ",
+            "performer": bandName,
             "description": show.description,
             "eventStatus": 'EventScheduled',
             "startDate": new Date(show.startDateTimeEpoch).toISOString(),
@@ -112,7 +114,7 @@ const richTextDataStructuresForGoogleSearch = [
     {
         "@context": "https://schema.org",
         "@type": "MusicGroup",
-        "name": "FIZZ",
+        "name": bandName,
         "url": "https://fizztheband.com/",
         "image": [
             "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"

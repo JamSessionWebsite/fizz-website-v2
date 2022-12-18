@@ -8,12 +8,24 @@ import {Provider} from "react-redux";
 import Image from "next/image";
 import Script from "next/script";
 import dynamic from "next/dynamic";
+import {BAND_CONFIG} from "../band-config";
 const Layout = dynamic(() => import('antd').then(dep => dep.Layout));
 const Button = dynamic(() => import('antd').then(dep => dep.Button));
 const FacebookOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.FacebookOutlined));
 const MailOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.MailOutlined));
 const InstagramOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.InstagramOutlined));
 const YoutubeOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.YoutubeOutlined));
+
+const SOCIAL_MEDIA_ICON_MAP = {
+    facebook: <FacebookOutlined/>,
+    tiktok: <Image
+        alt={'Tiktok brand logo'}
+        height={24}
+        width={24}
+        src={'/static/tiktok-logo.svg'}/>,
+    youtube: <YoutubeOutlined/>,
+    instagram: <InstagramOutlined/>,
+}
 
 export default function MyApp({Component, pageProps}) {
     useEffect(() => {
@@ -34,7 +46,7 @@ export default function MyApp({Component, pageProps}) {
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
             <Head>
-                <title>FIZZ: A Local Chicago Pop/Funk/Indie Band</title>
+                <title>{BAND_CONFIG.mainTitle}</title>
                 <meta
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
@@ -46,7 +58,7 @@ export default function MyApp({Component, pageProps}) {
                         __html: JSON.stringify([{
                             "@context": "https://schema.org",
                             "@type": "MusicGroup",
-                            "name": "FIZZ",
+                            "name": BAND_CONFIG.bandName,
                             "url": "https://fizztheband.com/",
                             "image": [
                                 "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
@@ -114,19 +126,19 @@ export default function MyApp({Component, pageProps}) {
                     <div className={'logo-and-title-container'}>
                         <div className={'fizz-logo-container'}>
                             <Image
-                                alt={'FIZZ pop can logo'}
+                                alt={BAND_CONFIG.logo.alt}
                                 onClick={async () => router.push('/')}
                                 className={'clickable'}
                                 height={200}
                                 width={100}
                                 priority
-                                src={'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'}
+                                src={BAND_CONFIG.logo.src}
                             />
                         </div>
                         <div>
                             <div className={'title-container'}>
-                                <h1 className={'fizz-title'}>FIZZ</h1>
-                                <h2 className={'fizz-subtitle'}>A Chicago Pop/Funk/Indie Band</h2>
+                                <h1 className={'fizz-title'}>{BAND_CONFIG.bandName}</h1>
+                                <h2 className={'fizz-subtitle'}>{BAND_CONFIG.mainTitle}</h2>
                             </div>
                         </div>
                     </div>
@@ -145,47 +157,19 @@ export default function MyApp({Component, pageProps}) {
                         icon={<MailOutlined/>}
                     />
                 </div>
-                <div className={'button-container'}>
-                    <Button
-                        ghost
-                        size={'large'}
-                        href={`https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw`}
-                        icon={<YoutubeOutlined/>}
-                        target={'_blank'}
-                    />
-                </div>
-                <div className={'button-container'}>
-                    <Button
-                        ghost
-                        size={'large'}
-                        href={'https://www.instagram.com/fizz.band/'}
-                        icon={<InstagramOutlined/>}
-                        target={'_blank'}
-                    />
-                </div>
-                <div className={'button-container'}>
-                    <Button
-                        ghost
-                        size={'large'}
-                        href={'https://www.tiktok.com/@fizz.band'}
-                        target={'_blank'}
-                        icon={<Image
-                            alt={'Tiktok brand logo'}
-                            height={24}
-                            width={24}
-                            src={'/static/tiktok-logo.svg'}/>
-                        }
-                    />
-                </div>
-                <div className={'button-container'}>
-                    <Button
-                        ghost
-                        size={'large'}
-                        href={'https://www.facebook.com/Fizzthebandofficial'}
-                        target={'_blank'}
-                        icon={<FacebookOutlined/>}
-                    />
-                </div>
+                {BAND_CONFIG.socialMedia.map((item, index) => {
+                    return (
+                        <div key={`social-media-${index}`} className={'button-container'}>
+                            <Button
+                                ghost
+                                size={'large'}
+                                href={item.pageSrc}
+                                icon={SOCIAL_MEDIA_ICON_MAP[item.platform]}
+                                target={'_blank'}
+                            />
+                        </div>
+                    )
+                })}
             </footer>
         </Layout>
     );
