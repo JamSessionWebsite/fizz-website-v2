@@ -9,6 +9,7 @@ import Image from "next/image";
 import Script from "next/script";
 import dynamic from "next/dynamic";
 import {BAND_CONFIG} from "../band-config";
+
 const Layout = dynamic(() => import('antd').then(dep => dep.Layout));
 const Button = dynamic(() => import('antd').then(dep => dep.Button));
 const FacebookOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.FacebookOutlined));
@@ -26,6 +27,14 @@ const SOCIAL_MEDIA_ICON_MAP = {
     youtube: <YoutubeOutlined/>,
     instagram: <InstagramOutlined/>,
 }
+
+const INTERNAL_LINKS = [
+    {name: 'About Us', href: '/about-us'},
+    {name: 'Shows', href: '/shows'},
+    {name: 'Contact Us', href: '/contact-us'},
+    {name: 'Videos', href: '/videos'},
+    {name: 'Merch', href: '/merch'},
+]
 
 export default function MyApp({Component, pageProps}) {
     useEffect(() => {
@@ -83,42 +92,18 @@ export default function MyApp({Component, pageProps}) {
             <header className={'app-header'}>
                 <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></Script>
                 <div className={'flex-row full-width'}>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost>
-                            <Link href={'/about-us'}>About Us</Link>
-                        </Button>
-                    </div>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost>
-                            <Link href={'/shows'}>Shows</Link>
-                        </Button>
-                    </div>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost>
-                            <Link href={'/videos'}>
-                                Videos
-                            </Link>
-                        </Button>
-                    </div>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost>
-                            <Link href={'/merch'}>
-                                Merch
-                            </Link>
-                        </Button>
-                    </div>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost>
-                            <Link href={'/contact-us'}>
-                                Contact Us
-                            </Link>
-                        </Button>
-                    </div>
+                    {
+                        INTERNAL_LINKS.map((link, index) => {
+                            return (
+                                <div key={`nav-link-${index}`} className={'button-container'}>
+                                    <Button
+                                        ghost>
+                                        <Link href={link.href}>{link.name}</Link>
+                                    </Button>
+                                </div>
+                            )
+                        })
+                    }
                 </div>
             </header>
             <main className={'app-content'}>
