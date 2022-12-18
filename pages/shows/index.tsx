@@ -4,7 +4,7 @@ import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
 import dynamic from "next/dynamic";
 import {Show} from "../../interfaces/show";
-import {BAND_CONFIG} from "../../band-config";
+import {BAND_WEBSITE_CONFIG} from "../../band-config";
 
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
@@ -61,7 +61,7 @@ const shows: Show[] = [
         }
     }
 ];
-const bandName = BAND_CONFIG.bandName;
+const bandName = BAND_WEBSITE_CONFIG.bandName;
 const richTextEvents = shows
     .sort(onSortShows)
     .map(show => {

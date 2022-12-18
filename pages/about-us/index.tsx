@@ -3,7 +3,7 @@ import dynamic from "next/dynamic";
 import Head from "next/head";
 import {useSelector} from "react-redux";
 import Link from "next/link";
-import {BAND_CONFIG} from "../../band-config";
+import {BAND_WEBSITE_CONFIG} from "../../band-config";
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const Paragraph = dynamic(() => import('antd').then((dep) => dep.Typography.Paragraph));
 
@@ -13,7 +13,7 @@ const AboutUsPage = () => {
         <div style={{padding: windowWidth <= 760 ? '0' : '0 128px'}}
              className={'about-us-container'}>
             <Head>
-                <title>About Us | {BAND_CONFIG.bandName}</title>
+                <title>About Us | {BAND_WEBSITE_CONFIG.bandName}</title>
                 <meta
                     name='description'
                     content='FIZZ is a pop/funk/indie band performing live in the Chicago area that takes rich vocal harmonies and a funky rhythm section and layers a powerful horn section on top to create pop music with layers of funk scattered throughout.'></meta>

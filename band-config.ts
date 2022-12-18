@@ -8,7 +8,7 @@ export interface Logo {
     alt: string;
 }
 
-export interface IBandConfig {
+export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
     genres: string[];
@@ -17,7 +17,7 @@ export interface IBandConfig {
     socialMedia: SocialMedia[];
 }
 
-export const BAND_CONFIG: IBandConfig = {
+export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     mainTitle: 'FIZZ: A Local Chicago Pop/Funk/Indie Band',
     bandName: 'FIZZ',
     genres: ['pop','funk', 'indie'],

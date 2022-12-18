@@ -8,7 +8,7 @@ import {Provider} from "react-redux";
 import Image from "next/image";
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import {BAND_CONFIG} from "../band-config";
+import {BAND_WEBSITE_CONFIG} from "../band-config";
 
 const Layout = dynamic(() => import('antd').then(dep => dep.Layout));
 const Button = dynamic(() => import('antd').then(dep => dep.Button));
@@ -55,7 +55,7 @@ export default function MyApp({Component, pageProps}) {
     return (
         <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
             <Head>
-                <title>{BAND_CONFIG.mainTitle}</title>
+                <title>{BAND_WEBSITE_CONFIG.mainTitle}</title>
                 <meta
                     name='description'
                     content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
@@ -67,7 +67,7 @@ export default function MyApp({Component, pageProps}) {
                         __html: JSON.stringify([{
                             "@context": "https://schema.org",
                             "@type": "MusicGroup",
-                            "name": BAND_CONFIG.bandName,
+                            "name": BAND_WEBSITE_CONFIG.bandName,
                             "url": "https://fizztheband.com/",
                             "image": [
                                 "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
@@ -111,19 +111,19 @@ export default function MyApp({Component, pageProps}) {
                     <div className={'logo-and-title-container'}>
                         <div className={'fizz-logo-container'}>
                             <Image
-                                alt={BAND_CONFIG.logo.alt}
+                                alt={BAND_WEBSITE_CONFIG.logo.alt}
                                 onClick={async () => router.push('/')}
                                 className={'clickable'}
                                 height={200}
                                 width={100}
                                 priority
-                                src={BAND_CONFIG.logo.src}
+                                src={BAND_WEBSITE_CONFIG.logo.src}
                             />
                         </div>
                         <div>
                             <div className={'title-container'}>
-                                <h1 className={'fizz-title'}>{BAND_CONFIG.bandName}</h1>
-                                <h2 className={'fizz-subtitle'}>{BAND_CONFIG.mainTitle}</h2>
+                                <h1 className={'fizz-title'}>{BAND_WEBSITE_CONFIG.bandName}</h1>
+                                <h2 className={'fizz-subtitle'}>{BAND_WEBSITE_CONFIG.mainTitle}</h2>
                             </div>
                         </div>
                     </div>
@@ -142,7 +142,7 @@ export default function MyApp({Component, pageProps}) {
                         icon={<MailOutlined/>}
                     />
                 </div>
-                {BAND_CONFIG.socialMedia.map((item, index) => {
+                {BAND_WEBSITE_CONFIG.socialMedia.map((item, index) => {
                     return (
                         <div key={`social-media-${index}`} className={'button-container'}>
                             <Button

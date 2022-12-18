@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
 import ImageNext from 'next/image';
 import dynamic from "next/dynamic";
-import {BAND_CONFIG} from "../../band-config";
+import {BAND_WEBSITE_CONFIG} from "../../band-config";
 const Button = dynamic(() => import('antd').then(dep => dep.Button));
 const Card = dynamic(() => import('antd').then(dep => dep.Card));
 const Text = dynamic(() => import('antd').then(dep => dep.Typography.Text));
@@ -70,7 +70,7 @@ const ImageGallery = ({images, title = null}) => {
         <Card title={title ? title : null}>
             <div className={'flex-row full-width'}>
                 <Text className={'gallery-description-text'}>
-                    This is an assortment of photos of {BAND_CONFIG.bandName} playing at various shows! If you want to see any image
+                    This is an assortment of photos of {BAND_WEBSITE_CONFIG.bandName} playing at various shows! If you want to see any image
                     more clearly, just click it and you can view it in full screen mode.
                 </Text>
             </div>
