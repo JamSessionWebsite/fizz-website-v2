@@ -53,7 +53,11 @@ export default function MyApp({Component, pageProps}) {
     }
 
     return (
-        <Layout className={`home-page-background`} style={{minHeight: '100vh'}}>
+        <Layout className={`home-page-background`}
+                style={{
+                    backgroundImage: `url(${BAND_WEBSITE_CONFIG.backgroundImageSrc})`,
+                    minHeight: '100vh'
+                }}>
             <Head>
                 <title>{BAND_WEBSITE_CONFIG.mainTitle}</title>
                 <meta

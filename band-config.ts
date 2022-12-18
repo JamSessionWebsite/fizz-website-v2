@@ -18,6 +18,7 @@ export interface Photo {
 export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
+    backgroundImageSrc: string;
     genres: string[];
     logo: Logo;
     primaryColor?: string;
@@ -30,6 +31,7 @@ const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     mainTitle: 'FIZZ: A Local Chicago Pop/Funk/Indie Band',
     bandName: 'FIZZ',
+    backgroundImageSrc: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk', 'indie'],
     logo: {
         src: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png',
