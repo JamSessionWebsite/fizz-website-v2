@@ -15,6 +15,14 @@ export interface Photo {
     groupId?: string;
 }
 
+export interface Contact {
+    id: string;
+    name: string;
+    method: 'phone' | 'email' | string;
+    value: string;
+    defaultSubject?: string;
+}
+
 export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
@@ -24,6 +32,7 @@ export interface BandWebsiteConfig {
     primaryColor?: string;
     socialMedia: SocialMedia[];
     photos: Photo[];
+    contacts: Contact[];
 }
 
 const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
@@ -93,4 +102,12 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             src: `${IMAGES_PATH}gig-setup-for-fizz.jpg`
         },
     ],
+    contacts: [
+        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizztheband.com', defaultSubject: 'Booking with FIZZ'},
+        {id: 'media', name: 'Media', method: 'email', value: 'media@fizztheband.com', defaultSubject: 'Media Inquiry for FIZZ'},
+        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@fizztheband.com', defaultSubject: 'Merch Proposal for FIZZ'},
+        {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@fizztheband.com', defaultSubject: 'I am Trying to Buy Tickets'},
+        {id: 'website', name: 'Website', method: 'email', value: 'spencer@fizztheband.com', defaultSubject: 'I Have an Issue With the Website'},
+        {id: 'other', name: 'Other', method: 'email', value: 'other@fizztheband.com', defaultSubject: 'Hi!'},
+    ]
 }

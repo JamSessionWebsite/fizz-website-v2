@@ -2,6 +2,7 @@ import React from 'react';
 import {useSelector} from "react-redux";
 import Head from "next/head";
 import dynamic from "next/dynamic";
+import {BAND_WEBSITE_CONFIG} from "../../band-config";
 const Card = dynamic(() => import('antd').then(dep => dep.Card));
 
 const ContactUs = () => {
@@ -18,42 +19,16 @@ const ContactUs = () => {
             </Head>
             <Card
                 title={'Contact FIZZ'}>
-                <div className={'contact-us-text-container'}>
-                    <div className={'label'}>Booking: </div>
-                    <a
-                        href={'mailto:booking@fizztheband.com?subject=Booking with FIZZ'}
-                        className={'contact-us-text'}>booking@fizztheband.com</a>
-                </div>
-                <div className={'contact-us-text-container'}>
-                    <div className={'label'}>Media: </div>
-                    <a
-                        href={'mailto:media@fizztheband.com?subject=Media Inquiry for FIZZ'}
-                        className={'contact-us-text'}>media@fizztheband.com</a>
-                </div>
-                <div className={'contact-us-text-container'}>
-                    <div className={'label'}>Merch: </div>
-                    <a
-                        href={'mailto:merch@fizztheband.com?subject=Merch Proposal for FIZZ'}
-                        className={'contact-us-text'}>merch@fizztheband.com</a>
-                </div>
-                <div className={'contact-us-text-container'}>
-                    <div className={'label'}>Tickets: </div>
-                    <a
-                        href={'mailto:tickets@fizztheband.com?subject=I am Trying to Buy Tickets'}
-                        className={'contact-us-text'}>tickets@fizztheband.com</a>
-                </div>
-                <div className={'contact-us-text-container'}>
-                    <div className={'label'}>Website: </div>
-                    <a
-                        href={'mailto:spencer@fizztheband.com?subject=I Have an Issue With the Website'}
-                        className={'contact-us-text'}>spencer@fizztheband.com</a>
-                </div>
-                <div className={'contact-us-text-container'}>
-                    <div className={'label'}>Other: </div>
-                    <a
-                        href={'mailto:other@fizztheband.com?subject=Hi!'}
-                        className={'contact-us-text'}>other@fizztheband.com</a>
-                </div>
+                {BAND_WEBSITE_CONFIG.contacts.map((contact, index) => {
+                    return (
+                        <div className={'contact-us-text-container'}>
+                            <div className={'label'}>{contact.name}: </div>
+                            <a
+                                href={`mailto:${contact.value}?subject=${contact.defaultSubject}`}
+                                className={'contact-us-text'}>{contact.value}</a>
+                        </div>
+                    )
+                })}
             </Card>
         </div>
     )
