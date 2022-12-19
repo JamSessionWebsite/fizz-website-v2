@@ -1,3 +1,5 @@
+import {Video} from "./pages/videos";
+
 export interface SocialMedia {
     platform: 'facebook' | 'tiktok' | 'twitter' | 'instagram' | 'youtube' | string;
     pageSrc: string;
@@ -42,6 +44,7 @@ export interface BandWebsiteConfig {
     photos: Photo[];
     contacts: Contact[];
     pages: WebsitePage[];
+    videos: Video[];
 }
 
 const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
@@ -112,6 +115,48 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             description: 'Setting up before the gig at Bookclub Chicago in late 2022.',
             src: `${IMAGES_PATH}gig-setup-for-fizz.jpg`
         },
+    ],
+    videos: [
+        {
+            type: 'youtube',
+            videoId: 'Po3-1mDTm7I',
+            name: 'I Love You - Morgan Buckley (feat. FIZZ)',
+            url: 'https://www.youtube-nocookie.com/embed/Po3-1mDTm7I',
+        },
+        {
+            type: 'tiktok',
+            name: 'Shot by Lawrence - FIZZ Cover',
+            url: 'https://www.tiktok.com/embed/7169370519249095979'
+        },
+        {
+            type: 'tiktok',
+            name: 'Something Cosmic - Sun Queen (feat. FIZZ)',
+            url: 'https://www.tiktok.com/embed/7169345381040491822'
+        },
+        {
+            type: 'youtube',
+            videoId: 'FDmttaicp9A',
+            name: 'Latin Man at Dillo Day',
+            url: 'https://www.youtube-nocookie.com/embed/FDmttaicp9A',
+        },
+        {
+            type: 'youtube',
+            videoId: 'SDLzqZ1Dg8s',
+            name: 'American Boy/Dang! Covers - FIZZ',
+            url: 'https://www.youtube-nocookie.com/embed/SDLzqZ1Dg8s',
+        },
+        {
+            type: 'youtube',
+            videoId: '_7TZ8DVQpug',
+            name: 'Caught Up - FIZZ at Dillo Day',
+            url: 'https://www.youtube-nocookie.com/embed/_7TZ8DVQpug',
+        },
+        {
+            type: 'youtube',
+            videoId: 'DW-T3eGuYAo',
+            name: 'FIZZ at Mayfest Battle of the Bands',
+            url: 'https://www.youtube-nocookie.com/embed/DW-T3eGuYAo',
+        }
     ],
     contacts: [
         {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizztheband.com', defaultSubject: 'Booking with FIZZ'},
