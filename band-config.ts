@@ -23,6 +23,12 @@ export interface Contact {
     defaultSubject?: string;
 }
 
+export interface WebsitePage {
+    id: string;
+    name: string;
+    path: string;
+}
+
 export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
@@ -35,6 +41,7 @@ export interface BandWebsiteConfig {
     socialMedia: SocialMedia[];
     photos: Photo[];
     contacts: Contact[];
+    pages: WebsitePage[];
 }
 
 const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
@@ -113,5 +120,12 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@fizztheband.com', defaultSubject: 'I am Trying to Buy Tickets'},
         {id: 'website', name: 'Website', method: 'email', value: 'spencer@fizztheband.com', defaultSubject: 'I Have an Issue With the Website'},
         {id: 'other', name: 'Other', method: 'email', value: 'other@fizztheband.com', defaultSubject: 'Hi!'},
+    ],
+    pages: [
+        {id: 'home', name: 'Home', path: '/'},
+        {id: 'about-us', name: 'About Us', path: '/about-us'},
+        {id: 'contact-us', name: 'Contact Us', path: '/contact-us'},
+        {id: 'shows', name: 'Shows', path: '/shows'},
+        {id: 'videos', name: 'Videos', path: '/videos'},
     ]
 }

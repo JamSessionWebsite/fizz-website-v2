@@ -10,6 +10,7 @@ const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
 const Tag = dynamic(() => import('antd').then((dep) => dep.Tag));
 const Divider = dynamic(() => import('antd').then((dep) => dep.Divider));
+const FOURTEEN_DAYS_IN_MILLISECONDS = (24 * 60 * 60 * 1000) * 14;
 
 const onSortShows = (a, b) => {
     const hasFirstShowPassed = a.startDateTimeEpoch < Date.now();
@@ -62,20 +63,24 @@ const shows: Show[] = [
     }
 ];
 const bandName = BAND_WEBSITE_CONFIG.bandName;
+const ticketEmailAddress = BAND_WEBSITE_CONFIG.contacts.find(x => x.id === 'tickets');
+const finalTicketEmailAddress = ticketEmailAddress ? ticketEmailAddress.value : BAND_WEBSITE_CONFIG.primaryEmailAddress;
+const showsPage = BAND_WEBSITE_CONFIG.pages.find(x => x.id === 'shows');
+const eventLinkToUrl = showsPage ? `${BAND_WEBSITE_CONFIG.domain}/${showsPage.path}` : BAND_WEBSITE_CONFIG.domain;
+const logoUrl = BAND_WEBSITE_CONFIG.logo.src;
 const richTextEvents = shows
     .sort(onSortShows)
     .map(show => {
         const location = show.location;
-        const dateOffset = (24*60*60*1000) * 14;
         const ticketSaleStartDate = new Date();
-        ticketSaleStartDate.setTime(ticketSaleStartDate.getTime() - dateOffset);
+        ticketSaleStartDate.setTime(ticketSaleStartDate.getTime() - FOURTEEN_DAYS_IN_MILLISECONDS);
         return {
             "@context": "https://schema.org",
             "@type": "Event",
             "name": show.name,
-            "url": show.eventUrl ? show.eventUrl : 'https://fizztheband.com/upcoming-shows',
+            "url": show.eventUrl ? show.eventUrl : eventLinkToUrl,
             "image": [
-                show.imageUrl ? show.imageUrl : 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png'
+                show.imageUrl ? show.imageUrl : logoUrl
             ],
             ...(show.name && show.eventUrl && show.endDateTimeEpoch ? {
                 "offers": {
@@ -96,12 +101,12 @@ const richTextEvents = shows
                 "addressRegion": location.state,
                 "postalCode": location.zipCode,
                 "streetAddress": location.address,
-                "email": "tickets@fizztheband.com",
+                "email": finalTicketEmailAddress,
             },
             "eventAttendanceMode": "OfflineEventAttendanceMode",
             "organizer": {
                 'name': bandName,
-                'url': 'https://fizztheband.com/upcoming-shows'
+                'url': eventLinkToUrl
             },
             "performer": bandName,
             "description": show.description,
@@ -115,13 +120,13 @@ const richTextDataStructuresForGoogleSearch = [
         "@context": "https://schema.org",
         "@type": "MusicGroup",
         "name": bandName,
-        "url": "https://fizztheband.com/",
+        "url": BAND_WEBSITE_CONFIG.domain,
         "image": [
             "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
         ],
         "genre": "Pop/Funk/Indie",
         "email": "booking@fizztheband.com",
-        "logo": "https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"
+        "logo": logoUrl
     },
     ...richTextEvents
 ];
