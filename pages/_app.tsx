@@ -52,6 +52,10 @@ export default function MyApp({Component, pageProps}) {
         }
     }
 
+    function capitalizeFirstLetter(word) {
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }
+
     return (
         <Layout className={`home-page-background`}
                 style={{
@@ -72,13 +76,15 @@ export default function MyApp({Component, pageProps}) {
                             "@context": "https://schema.org",
                             "@type": "MusicGroup",
                             "name": BAND_WEBSITE_CONFIG.bandName,
-                            "url": "https://fizztheband.com/",
+                            "url": BAND_WEBSITE_CONFIG.domain,
                             "image": [
                                 "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
                             ],
-                            "genre": "Pop/Funk/Indie",
-                            "email": "booking@fizztheband.com",
-                            "logo": "https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"
+                            "genre": BAND_WEBSITE_CONFIG.genres
+                                .map(genre => capitalizeFirstLetter(genre))
+                                .join('/'),
+                            "email": BAND_WEBSITE_CONFIG.primaryEmailAddress,
+                            "logo": BAND_WEBSITE_CONFIG.logo.src,
                         }
                         ])
                     }}/>

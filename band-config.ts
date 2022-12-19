@@ -26,6 +26,8 @@ export interface Contact {
 export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
+    domain: string;
+    primaryEmailAddress: string;
     backgroundImageSrc: string;
     genres: string[];
     logo: Logo;
@@ -40,6 +42,8 @@ const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     mainTitle: 'FIZZ: A Local Chicago Pop/Funk/Indie Band',
     bandName: 'FIZZ',
+    domain: 'https://fizztheband.com',
+    primaryEmailAddress: 'booking@fizztheband.com',
     backgroundImageSrc: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk', 'indie'],
     logo: {
