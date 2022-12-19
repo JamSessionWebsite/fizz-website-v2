@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 import React from 'react';
 import Head from "next/head";
 import {BAND_WEBSITE_CONFIG} from "../band-config";
-const ImageGallery = dynamic(() => import("../components/common/ImageGallery"));
+const ImageGallery = dynamic(() => import('@poshprincess/ui-commons').then(x => x.ImageGallery));
 
 const HomePage = () => {
     return (
