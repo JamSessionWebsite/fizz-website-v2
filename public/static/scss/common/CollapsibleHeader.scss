@@ -1,0 +1,31 @@
+.collapsible-header-container {
+  @extend .full-width;
+
+  .logo-and-title-container {
+    @extend .flex-row;
+    @extend .full-width;
+    padding: 16px 0;
+  }
+
+  .collapse-button {
+    position: fixed;
+    top: 32px;
+    left: 32px;
+  }
+
+  .collapsible-header {
+    @extend .full-width;
+    padding: 32px;
+    transition: height 0.5s;
+    position: fixed;
+    z-index: 999;
+  }
+
+  .collapsed {
+    height: 64px;
+  }
+
+  .expanded {
+    height: 100vh;
+  }
+}
