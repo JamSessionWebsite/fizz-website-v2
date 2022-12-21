@@ -5,6 +5,8 @@ import {DateTimeUtil} from "@poshprincess/ui-commons";
 import dynamic from "next/dynamic";
 import {Show} from "../../interfaces/show";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
+import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
+import useBreakpoint from "use-breakpoint";
 
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
@@ -132,9 +134,9 @@ const richTextDataStructuresForGoogleSearch = [
 ];
 
 const UpcomingShowsPage = () => {
-    const windowWidth = useSelector((state: { app: any }) => state.app.windowWidth);
+    const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
-        <div style={{padding: windowWidth <= 760 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
+        <div style={{padding: minWidth === 0 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
             <Head>
                 <title>Shows | FIZZ</title>
                 <meta

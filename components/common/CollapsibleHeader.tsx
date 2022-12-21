@@ -66,7 +66,10 @@ const CollapsibleHeader = () => {
                         INTERNAL_LINKS.map((link, index) => {
                             return (
                                 <div key={`nav-link-${index}`} className={'button-container'}>
-                                    <Button ghost>
+                                    <Button
+                                        onClick={() => {
+                                            setIsCollapsed(minWidth === 0);
+                                        }} ghost>
                                         <Link href={link.href}>{link.name}</Link>
                                     </Button>
                                 </div>
