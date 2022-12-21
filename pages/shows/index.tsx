@@ -178,7 +178,7 @@ const UpcomingShowsPage = () => {
                                             <></>
                                         }
                                     </div>
-                                    {show.eventUrl && !showHasHappened && <>
+                                    {show.eventUrl && <>
                                         <a
                                             target={'_blank'}
                                             href={show.eventUrl}>Tickets</a>

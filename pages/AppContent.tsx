@@ -28,15 +28,6 @@ const SOCIAL_MEDIA_ICON_MAP = {
 }
 
 export default function AppContent({Component, pageProps}) {
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            const windowWidth = window.innerWidth;
-            fizzWebsiteStore.dispatch({type: 'app/setWindowWidth', payload: {windowWidth}});
-            window.onresize = function () {
-                fizzWebsiteStore.dispatch({type: 'app/setWindowWidth', payload: {windowWidth}});
-            }
-        }
-    }, []);
     const populateEmail = () => {
         if (typeof window !== 'undefined') {
             window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi FIZZ!`
@@ -81,17 +72,17 @@ export default function AppContent({Component, pageProps}) {
                         }
                         ])
                     }}/>
-                <script
-                    async
-                    dangerouslySetInnerHTML={{
-                        __html: `
+            </Head>
+            <Script
+                async
+                dangerouslySetInnerHTML={{
+                    __html: `
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
   gtag('config', 'G-5WBC8G1PS8');
                                     `,
-                    }}/>
-            </Head>
+                }}/>
             <CollapsibleHeader/>
             <Script async src="https://www.googletagmanager.com/gtag/js?id=G-5WBC8G1PS8"></Script>
             <main className={'app-content'}>

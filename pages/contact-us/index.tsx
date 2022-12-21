@@ -3,15 +3,17 @@ import {useSelector} from "react-redux";
 import Head from "next/head";
 import dynamic from "next/dynamic";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
+import useBreakpoint from "use-breakpoint";
+import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
 
 const Card = dynamic(() => import('antd').then(dep => dep.Card));
 
 const ContactUs = () => {
-    const windowWidth = useSelector((state: { app: any }) => state.app.windowWidth);
+    const {breakpoint, maxWidth, minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
         <div
             className={'contact-us-container'}
-            style={{padding: windowWidth <= 760 ? '0 16px' : '0 128px'}}>
+            style={{padding: minWidth === 0 ? '0 16px' : '0 128px'}}>
             <Head>
                 <title>Contact Us | FIZZ</title>
                 <meta

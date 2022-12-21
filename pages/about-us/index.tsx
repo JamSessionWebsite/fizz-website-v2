@@ -4,13 +4,15 @@ import Head from "next/head";
 import {useSelector} from "react-redux";
 import Link from "next/link";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
+import useBreakpoint from "use-breakpoint";
+import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const Paragraph = dynamic(() => import('antd').then((dep) => dep.Typography.Paragraph));
 
 const AboutUsPage = () => {
-    const windowWidth = useSelector((state: {app: any}) => state.app.windowWidth);
+    const {breakpoint, maxWidth, minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
-        <div style={{padding: windowWidth <= 760 ? '0' : '0 128px'}}
+        <div style={{padding: minWidth === 0 ? '0' : '0 128px'}}
              className={'about-us-container'}>
             <Head>
                 <title>About Us | {BAND_WEBSITE_CONFIG.bandName}</title>
@@ -18,7 +20,7 @@ const AboutUsPage = () => {
                     name='description'
                     content='FIZZ is a pop/funk/indie band performing live in the Chicago area that takes rich vocal harmonies and a funky rhythm section and layers a powerful horn section on top to create pop music with layers of funk scattered throughout.'></meta>
             </Head>
-            <Card style={{padding: windowWidth <= 760 ? '16px 0' : '16px 64px'}}
+            <Card style={{padding: minWidth === 0 ? '16px 0' : '16px 64px'}}
                   className={'about-us-text-container'}>
                 <Paragraph className={'about-us-text'}>
                     Hi! We're FIZZ, a Chicago-based band that plays a large variety of pop, funk, and indie music. We play a
