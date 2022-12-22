@@ -6,6 +6,8 @@ import {useSelector} from "react-redux";
 import {FizzWebsiteReduxStore} from "../../redux/FizzWebsiteStore";
 import Script from "next/script";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
+import useBreakpoint from "use-breakpoint";
+import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
 const Button = dynamic(() => import('antd').then((dep) => dep.Button));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
 const Skeleton = dynamic(() => import('antd').then((dep) => dep.Skeleton));
@@ -21,7 +23,7 @@ export interface Video {
 const videos = BAND_WEBSITE_CONFIG.videos;
 
 const VideosPage = () => {
-    const windowWidth = useSelector((state: FizzWebsiteReduxStore) => state.app.windowWidth);
+    const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     const [loading, setLoading] = useState(false);
     const [loadedVideos, setLoadedVideos] = useState([]);
     const [imageSize, setImageSize] = useState(760);
@@ -41,8 +43,8 @@ const VideosPage = () => {
     }, []);
 
     useEffect(() => {
-        setImageSize(windowWidth > 760 ? 600 : 320)
-    }, [windowWidth]);
+        setImageSize(minWidth > 0 ? 600 : 320)
+    }, [minWidth]);
     const tiktokHeight = 723.531;
     return (
         <div className={'videos-page-container'}>
