@@ -19,9 +19,6 @@
     padding: 32px;
     transition: transform 0.75s;
     transform-origin: top;
-    position: fixed;
-    top: 0;
-    z-index: 999;
   }
 
   .collapsed {
@@ -31,5 +28,8 @@
   .expanded {
     transform: scaleY(1);
     height: 100vh;
+    position: fixed;
+    top: 0;
+    z-index: 999;
   }
 }
