@@ -10,8 +10,7 @@
 
   .navigation-buttons {
     @extend .flex-row;
-    position: absolute;
-    bottom: -16px;
+    position: relative;
   }
 
   .display-image-container {
@@ -29,6 +28,7 @@
     position: absolute;
     padding: 0 8px;
     font-size: 16px;
+    display: none;
   }
 
   .change-image-arrow {
@@ -36,6 +36,23 @@
   }
 
   .change-image-button {
-    background-color: black;
+    position: absolute;
+    top: 50%;
+    display: none;
+  }
+
+  .display-image-container:hover .change-image-button {
+    display: unset;
+  }
+  .display-image-container:hover .image-description {
+    display: unset;
+  }
+
+  .left-nav {
+    left: 8px;
+  }
+
+  .right-nav {
+    right: 8px;
   }
 }

@@ -26,7 +26,6 @@ const ImageGallery = ({images, title = ''}) => {
             setMaxWidth(getMaxWidth(imageDimensions.width / imageDimensions.height));
         }
     }, [imageDimensions]);
-    const [visible, setVisible] = useState(false);
     const [currentlyVisibleImageIndex, setCurrentlyVisibleImageIndex] = useState(0);
     const [maxWidth, setMaxWidth] = useState(0);
 
@@ -37,6 +36,15 @@ const ImageGallery = ({images, title = ''}) => {
     useEffect(() => {
         setTopPixel(getTopPixel());
     }, [imageDimensions]);
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            nextImage();
+        }, 4000);
+        return () => {
+            clearInterval(intervalId);
+        }
+    }, [currentlyVisibleImageIndex]);
 
     function setHeightAndWidthOfImage() {
         // @ts-ignore
@@ -66,6 +74,16 @@ const ImageGallery = ({images, title = ''}) => {
         }
         return calculatedHeight - 16;
     }
+    const previousImage = () => setCurrentlyVisibleImageIndex(
+        currentlyVisibleImageIndex !== 0 ?
+            currentlyVisibleImageIndex - 1 :
+            images.length - 1
+    );
+    const nextImage = () => setCurrentlyVisibleImageIndex(prevValue =>
+        prevValue !== images.length - 1 ?
+            prevValue + 1 :
+            0
+    );
     return (
         <Card title={title !== '' ? title : null}>
             <div className={'image-gallery-container'}>
@@ -77,37 +95,22 @@ const ImageGallery = ({images, title = ''}) => {
                             height={height}
                             priority
                             src={images[currentlyVisibleImageIndex].src}
-                            onClick={() => setVisible(true)}
                         />
                     </div>
                     <div style={{top: `${topPixel}px`}}
                          className={'image-description'}>
                         {images[currentlyVisibleImageIndex].description}
                     </div>
-                </div>
-                <div className={'navigation-buttons'}>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost
-                            className={'change-image-button'}
-                            onClick={() => setCurrentlyVisibleImageIndex(
-                                currentlyVisibleImageIndex !== 0 ?
-                                    currentlyVisibleImageIndex - 1 :
-                                    images.length - 1
-                            )}
-                            icon={<CaretLeftOutlined/>}/>
-                    </div>
-                    <div className={'button-container'}>
-                        <Button
-                            ghost
-                            className={'change-image-button'}
-                            onClick={() => setCurrentlyVisibleImageIndex(
-                                currentlyVisibleImageIndex !== images.length - 1 ?
-                                    currentlyVisibleImageIndex + 1 :
-                                    0
-                            )}
-                            icon={<CaretRightOutlined/>}/>
-                    </div>
+                    <Button
+                        ghost
+                        className={'change-image-button left-nav'}
+                        onClick={previousImage}
+                        icon={<CaretLeftOutlined/>}/>
+                    <Button
+                        ghost
+                        className={'change-image-button right-nav'}
+                        onClick={nextImage}
+                        icon={<CaretRightOutlined/>}/>
                 </div>
             </div>
         </Card>

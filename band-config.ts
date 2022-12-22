@@ -69,6 +69,10 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     ],
     photos: [
         {
+            description: 'Full horn section plays in unison to a funky pop song.',
+            src: `${IMAGES_PATH}horn-section-of-fizz-bookclub-chicago.jpg`
+        },
+        {
             description: 'FIZZ performs "Something Cosmic" written by Sun Queen (feat. FIZZ) at Bookclub Chicago.',
             src: `${IMAGES_PATH}fizz-performs-something-cosmic.jpg`
         },
@@ -91,10 +95,6 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         },
         {description: 'Sam, trumpet player of FIZZ, takes a solo.', src: `${IMAGES_PATH}trumpet-solo-live.jpg`},
         {description: 'Close up of the drums and rhythm guitar locking in.', src: `${IMAGES_PATH}drums-and-guitar.jpg`},
-        {
-            description: 'Full horn section plays in unison to a funky pop song.',
-            src: `${IMAGES_PATH}horn-section-of-fizz-bookclub-chicago.jpg`
-        },
         {
             description: 'Close up of the drummer of FIZZ playing at Bookclub Chicago.',
             src: `${IMAGES_PATH}close-up-drummer-of-fizz.jpg`
