@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Link from "next/link";
-import {Button} from "antd";
+import {Button, Space} from "antd";
 import useBreakpoint from "use-breakpoint";
 import {MenuOutlined} from "@ant-design/icons";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import Image from "next/image";
 import {useRouter} from "next/router";
+import {SocialMediaLinks} from "../SocialMediaLinks";
 
 const INTERNAL_LINKS = [
     {name: 'About Us', href: '/about-us'},
@@ -16,7 +17,7 @@ const INTERNAL_LINKS = [
 ];
 export const BREAKPOINTS = {mobile: 0, tablet: 768, desktop: 1280}
 const CollapsibleHeader = () => {
-    const {breakpoint, maxWidth, minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
+    const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     const [isCollapsed, setIsCollapsed] = useState(true);
     const router = useRouter();
 
@@ -78,6 +79,13 @@ const CollapsibleHeader = () => {
                                 </div>
                             )
                         }) :
+                        <></>
+                }
+                {
+                    !isCollapsed && minWidth === 0 ?
+                        <div style={{padding: '16px 0'}}>
+                            <SocialMediaLinks />
+                        </div> :
                         <></>
                 }
             </div>
