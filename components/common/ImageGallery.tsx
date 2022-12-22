@@ -45,10 +45,10 @@ const ImageGallery = ({images, title = ''}) => {
         myImage.src = imgPath;
     }
 
-    const containerWidth = maxWidth * 0.60;
     const ratio = imageDimensions.width / imageDimensions.height;
-    const containerHeight = containerWidth * (3 / 4);
     const isTallAspectRatio = ratio < 1;
+    const containerWidth = minWidth === 0 ? maxWidth * 0.75 : maxWidth * 0.55;
+    const containerHeight = containerWidth * (3 / 4);
 
     const previousImage = () => setCurrentlyVisibleImageIndex(
         currentlyVisibleImageIndex !== 0 ?
