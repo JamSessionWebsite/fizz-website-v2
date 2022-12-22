@@ -5,8 +5,6 @@
 .image-gallery-container {
   @extend .flex-column;
   align-items: center !important;
-  min-height: 508px;
-  position: relative;
 
   .navigation-buttons {
     @extend .flex-row;
@@ -14,21 +12,20 @@
   }
 
   .display-image-container {
+    @extend .flex-row;
     position: relative;
   }
 
   .display-image {
     @extend .flex-row;
-    padding: 32px 0;
-    min-height: 444px;
+    background: black;
   }
 
   .image-description {
-    color: #B0B3B8;
-    position: absolute;
+    @extend .flex-row;
+    //color: #B0B3B8;
     padding: 0 8px;
     font-size: 16px;
-    display: none;
   }
 
   .change-image-arrow {
@@ -38,12 +35,8 @@
   .change-image-button {
     position: absolute;
     top: 50%;
-    display: none;
   }
 
-  .display-image-container:hover .change-image-button {
-    display: unset;
-  }
   .display-image-container:hover .image-description {
     display: unset;
   }

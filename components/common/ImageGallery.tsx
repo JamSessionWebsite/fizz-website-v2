@@ -1,29 +1,18 @@
 import React, {useEffect, useState} from 'react';
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
 import ImageNext from 'next/image';
-import {Button, Card} from "antd";
+import {Button, Card, Descriptions} from "antd";
 import useBreakpoint from "use-breakpoint";
 
 const BREAKPOINTS = {mobile: 0, tablet: 768, desktop: 1280}
 
 const ImageGallery = ({images, title = ''}) => {
     const [imageDimensions, setImageDimensions] = useState({width: 1, height: 1});
-    const [topPixel, setTopPixel] = useState(48);
     const {minWidth} = useBreakpoint(BREAKPOINTS)
-
-    const getMaxWidth = (ratio) => {
-        if (minWidth === 0) {
-            return 264;
-        }
-        if (ratio < 1) {
-            return 296;
-        }
-        return 600;
-    }
 
     useEffect(() => {
         window.onresize = () => {
-            setMaxWidth(getMaxWidth(imageDimensions.width / imageDimensions.height));
+            setMaxWidth(window.innerWidth - 32);
         }
     }, [imageDimensions]);
     const [currentlyVisibleImageIndex, setCurrentlyVisibleImageIndex] = useState(0);
@@ -32,10 +21,6 @@ const ImageGallery = ({images, title = ''}) => {
     useEffect(() => {
         onImageChange(images[currentlyVisibleImageIndex].src);
     }, [images, currentlyVisibleImageIndex]);
-
-    useEffect(() => {
-        setTopPixel(getTopPixel());
-    }, [imageDimensions]);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
@@ -49,8 +34,9 @@ const ImageGallery = ({images, title = ''}) => {
     function setHeightAndWidthOfImage() {
         // @ts-ignore
         setImageDimensions({height: this.height, width: this.width});
-        // @ts-ignore
-        setMaxWidth(getMaxWidth(this.width / this.height));
+        if (typeof window !== 'undefined') {
+            setMaxWidth(window.innerWidth);
+        }
     }
 
     function onImageChange(imgPath) {
@@ -59,20 +45,21 @@ const ImageGallery = ({images, title = ''}) => {
         myImage.src = imgPath;
     }
 
-    const calculatedHeight = maxWidth / (imageDimensions.width / imageDimensions.height);
-    const height = calculatedHeight;
+    const containerWidth = maxWidth * 0.60;
+    const ratio = imageDimensions.width / imageDimensions.height;
+    const containerHeight = containerWidth * (3 / 4);
+    const isTallAspectRatio = ratio < 1;
     const getTopPixel = () => {
-        const ratio = imageDimensions.width / imageDimensions.height;
         if (minWidth === 0) {
-            if (ratio < 1) {
-                return calculatedHeight - 52;
+            if (isTallAspectRatio) {
+                return containerHeight - 52;
             }
-            return calculatedHeight + 48;
+            return containerHeight + 48;
         }
-        if (ratio < 1) {
-            return calculatedHeight - 64;
+        if (isTallAspectRatio) {
+            return containerHeight - 64;
         }
-        return calculatedHeight - 16;
+        return containerHeight - 16;
     }
     const previousImage = () => setCurrentlyVisibleImageIndex(
         currentlyVisibleImageIndex !== 0 ?
@@ -84,22 +71,30 @@ const ImageGallery = ({images, title = ''}) => {
             prevValue + 1 :
             0
     );
+    let imageWidth, imageHeight;
+
+    if (isTallAspectRatio) {
+        imageHeight = containerHeight;
+        imageWidth = imageHeight * ratio;
+    } else {
+        imageWidth = containerWidth;
+        imageHeight = imageWidth / ratio
+    }
+    console.error(`Container Width: ${containerWidth};  Container Height: ${containerHeight}`);
+    console.error(`Image Width: ${imageWidth};  Image Height: ${imageHeight}`);
     return (
         <Card title={title !== '' ? title : null}>
             <div className={'image-gallery-container'}>
                 <div className={'display-image-container'}>
-                    <div className={'display-image'}>
+                    <div className={'display-image'}
+                         style={{width: `${containerWidth}px`, height: `${containerHeight}px`}}>
                         <ImageNext
                             alt={images[currentlyVisibleImageIndex].description}
-                            width={maxWidth}
-                            height={height}
+                            height={imageHeight}
+                            width={imageWidth}
                             priority
                             src={images[currentlyVisibleImageIndex].src}
                         />
-                    </div>
-                    <div style={{top: `${topPixel}px`}}
-                         className={'image-description'}>
-                        {images[currentlyVisibleImageIndex].description}
                     </div>
                     <Button
                         ghost
@@ -112,6 +107,11 @@ const ImageGallery = ({images, title = ''}) => {
                         onClick={nextImage}
                         icon={<CaretRightOutlined/>}/>
                 </div>
+                <Card title={'Description'} style={{maxWidth: `${containerWidth}px`}}>
+                    <div className={'image-description'}>
+                        {images[currentlyVisibleImageIndex].description}
+                    </div>
+                </Card>
             </div>
         </Card>
 
