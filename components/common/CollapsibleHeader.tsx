@@ -31,7 +31,10 @@ const CollapsibleHeader = () => {
         <div className={'fizz-logo-container'}>
             <Image
                 alt={BAND_WEBSITE_CONFIG.logo.alt}
-                onClick={async () => router.push('/')}
+                onClick={async () => {
+                    setIsCollapsed(true);
+                    return router.push('/');
+                }}
                 className={'clickable'}
                 height={200}
                 width={100}
