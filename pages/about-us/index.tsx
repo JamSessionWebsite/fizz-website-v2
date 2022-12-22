@@ -1,7 +1,6 @@
 import React from 'react';
 import dynamic from "next/dynamic";
 import Head from "next/head";
-import {useSelector} from "react-redux";
 import Link from "next/link";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import useBreakpoint from "use-breakpoint";
@@ -10,7 +9,7 @@ const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const Paragraph = dynamic(() => import('antd').then((dep) => dep.Typography.Paragraph));
 
 const AboutUsPage = () => {
-    const {breakpoint, maxWidth, minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
+    const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
         <div style={{padding: minWidth === 0 ? '0' : '0 128px'}}
              className={'about-us-container'}>
