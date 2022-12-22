@@ -44,22 +44,24 @@ const CollapsibleHeader = () => {
             />
         </div>
     </div>;
+    const collapsedOrExpandedClass = isCollapsed ? 'collapsed' : 'expanded';
+    const extraClassesForHeader = minWidth > 0 ? '' : collapsedOrExpandedClass;
     return (
         <div className={'collapsible-header-container'}>
+            {
+                minWidth === 0 ?
+                    <Button
+                        className={'collapse-button'}
+                        ghost
+                        onClick={toggleMenu}
+                        icon={<MenuOutlined/>}/> :
+                    <></>
+            }
             <div
                 style={{
                     ...({backgroundImage: `url(${BAND_WEBSITE_CONFIG.backgroundImageSrc})`}),
                 }}
-                className={`collapsible-header ${isCollapsed || minWidth > 0 ? 'collapsed' : 'expanded'} ${minWidth > 0 ? 'flex-row' : 'flex-column'}`}>
-                {
-                    minWidth === 0 ?
-                        <Button
-                            className={'collapse-button'}
-                            ghost
-                            onClick={toggleMenu}
-                            icon={<MenuOutlined/>}/> :
-                        <></>
-                }
+                className={`collapsible-header ${extraClassesForHeader} ${minWidth > 0 ? 'flex-row' : 'flex-column'}`}>
                 {
                     !isCollapsed && minWidth === 0 ?
                         ImageAndBandName :

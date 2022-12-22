@@ -11,13 +11,15 @@
     position: fixed;
     top: 16px;
     left: 16px;
+    z-index: 1000;
   }
 
   .collapsible-header {
     @extend .full-width;
     padding: 32px;
-    transition: height 0.5s;
+    transition: height 0.75s ease;
     position: fixed;
+    top: 0;
     z-index: 999;
   }
 
