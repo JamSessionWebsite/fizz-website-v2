@@ -17,17 +17,19 @@
   .collapsible-header {
     @extend .full-width;
     padding: 32px;
-    transition: height 0.75s ease;
+    transition: transform 0.75s;
+    transform-origin: top;
     position: fixed;
     top: 0;
     z-index: 999;
   }
 
   .collapsed {
-    height: 64px;
+    transform: scaleY(0);
   }
 
   .expanded {
+    transform: scaleY(1);
     height: 100vh;
   }
 }
