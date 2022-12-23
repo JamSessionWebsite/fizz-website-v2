@@ -85,7 +85,7 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             src: `${IMAGES_PATH}fizz-performs-something-cosmic.jpg`
         },
         {
-            description: 'Morgan Buckley, one of the lead singers of Fizz, singing at Bookclub Chicago in late 2022.',
+            description: 'Morgan Buckley, the lead singer of Fizz, singing at Bookclub Chicago in late 2022.',
             src: `${IMAGES_PATH}morgan-buckley-close-up.jpg`
         },
         {description: 'Spencer, drummer of Fizz, playing at Bookclub Chicago.', src: `${IMAGES_PATH}drums-playing-live.jpg`},
