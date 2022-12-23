@@ -73,6 +73,8 @@ export default function AppContent({Component, pageProps}) {
                                     alt={BAND_WEBSITE_CONFIG.logo.wide.alt}
                                     width={100}
                                     height={54.3}
+                                    onClick={async () => router.push('/')}
+                                    className={'clickable'}
                                     priority
                                     src={BAND_WEBSITE_CONFIG.logo.wide.src}
                                 />
