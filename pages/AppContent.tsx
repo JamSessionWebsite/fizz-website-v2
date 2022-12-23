@@ -28,7 +28,7 @@ export default function AppContent({Component, pageProps}) {
                 <title>{BAND_WEBSITE_CONFIG.mainTitle}</title>
                 <meta
                     name='description'
-                    content='Welcome to the official website of FIZZ, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
+                    content='Welcome to the official website of Fizz, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
                 <link rel="shortcut icon"
                       href="https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"/>
                 <script

@@ -54,18 +54,18 @@ export interface BandWebsiteConfig {
 const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
 
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
-    mainTitle: 'FIZZ: A Local Chicago Pop/Funk/Indie Band',
-    bandName: 'FIZZ',
+    mainTitle: 'Fizz: A Local Chicago Pop/Funk/Indie Band',
+    bandName: 'Fizz',
     domain: 'https://fizztheband.com',
     primaryEmailAddress: 'booking@fizztheband.com',
     backgroundImageSrc: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk', 'indie'],
     logo: {
         src: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png',
-        alt: 'FIZZ pop can logo',
+        alt: 'Fizz pop can logo',
         wide: {
             src: 'https://audio.fizztheband.com/images/fizz-website/fizz-logo-pop-label-transparent-min.png',
-            alt: 'FIZZ pop bottle logo'
+            alt: 'Fizz pop bottle logo'
         }
     },
     primaryColor: '',
@@ -81,42 +81,42 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             src: `${IMAGES_PATH}horn-section-of-fizz-bookclub-chicago.jpg`
         },
         {
-            description: 'FIZZ performs "Something Cosmic" written by Sun Queen (feat. FIZZ) at Bookclub Chicago.',
+            description: 'Fizz performs "Something Cosmic" written by Sun Queen (feat. Fizz) at Bookclub Chicago.',
             src: `${IMAGES_PATH}fizz-performs-something-cosmic.jpg`
         },
         {
-            description: 'Morgan Buckley, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.',
+            description: 'Morgan Buckley, one of the lead singers of Fizz, singing at Bookclub Chicago in late 2022.',
             src: `${IMAGES_PATH}morgan-buckley-close-up.jpg`
         },
         {
-            description: 'Mary aka Sun Queen, one of the lead singers of FIZZ, singing at Bookclub Chicago in late 2022.',
+            description: 'Mary aka Sun Queen, one of the lead singers of Fizz, singing at Bookclub Chicago in late 2022.',
             src: `${IMAGES_PATH}sun-queen-plays-something-cosmic.jpg`
         },
-        {description: 'Spencer, drummer of FIZZ, playing at Bookclub Chicago.', src: `${IMAGES_PATH}drums-playing-live.jpg`},
+        {description: 'Spencer, drummer of Fizz, playing at Bookclub Chicago.', src: `${IMAGES_PATH}drums-playing-live.jpg`},
         {
-            description: 'Alec, bassist of FIZZ, playing his Fender Jazz Bass at Bookclub Chicago.',
+            description: 'Alec, bassist of Fizz, playing his Fender Jazz Bass at Bookclub Chicago.',
             src: `${IMAGES_PATH}bass-playing-live-fizz.jpg`
         },
         {
-            description: 'Patrick, guitarist of FIZZ, playing Disco Ulysses by Vulfpeck at Bookclub Chicago.',
+            description: 'Patrick, guitarist of Fizz, playing Disco Ulysses by Vulfpeck at Bookclub Chicago.',
             src: `${IMAGES_PATH}guitar-playing-live.jpg`
         },
-        {description: 'Sam, trumpet player of FIZZ, takes a solo.', src: `${IMAGES_PATH}trumpet-solo-live.jpg`},
+        {description: 'Sam, trumpet player of Fizz, takes a solo.', src: `${IMAGES_PATH}trumpet-solo-live.jpg`},
         {description: 'Close up of the drums and rhythm guitar locking in.', src: `${IMAGES_PATH}drums-and-guitar.jpg`},
         {
-            description: 'Close up of the drummer of FIZZ playing at Bookclub Chicago.',
+            description: 'Close up of the drummer of Fizz playing at Bookclub Chicago.',
             src: `${IMAGES_PATH}close-up-drummer-of-fizz.jpg`
         },
         {
-            description: 'A close up of DJ, the trombone player of FIZZ, taking a solo.',
+            description: 'A close up of DJ, the trombone player of Fizz, taking a solo.',
             src: `${IMAGES_PATH}trombone-solo-live.jpg`
         },
         {
-            description: 'The rhythm section of FIZZ playing a cover of Disco Ulysses by Vulfpeck.',
+            description: 'The rhythm section of Fizz playing a cover of Disco Ulysses by Vulfpeck.',
             src: `${IMAGES_PATH}fizz-rhythm-section-live.jpg`
         },
         {
-            description: 'Ethan, saxophone player of FIZZ, taking a solo at Bookclub Chicago.',
+            description: 'Ethan, saxophone player of Fizz, taking a solo at Bookclub Chicago.',
             src: `${IMAGES_PATH}sax-solo-live.jpg`
         },
         {
@@ -128,17 +128,17 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         {
             type: 'youtube',
             videoId: 'Po3-1mDTm7I',
-            name: 'I Love You - Morgan Buckley (feat. FIZZ)',
+            name: 'I Love You - Morgan Buckley (feat. Fizz)',
             url: 'https://www.youtube-nocookie.com/embed/Po3-1mDTm7I',
         },
         {
             type: 'tiktok',
-            name: 'Shot by Lawrence - FIZZ Cover',
+            name: 'Shot by Lawrence - Fizz Cover',
             url: 'https://www.tiktok.com/embed/7169370519249095979'
         },
         {
             type: 'tiktok',
-            name: 'Something Cosmic - Sun Queen (feat. FIZZ)',
+            name: 'Something Cosmic - Sun Queen (feat. Fizz)',
             url: 'https://www.tiktok.com/embed/7169345381040491822'
         },
         {
@@ -150,26 +150,26 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         {
             type: 'youtube',
             videoId: 'SDLzqZ1Dg8s',
-            name: 'American Boy/Dang! Covers - FIZZ',
+            name: 'American Boy/Dang! Covers - Fizz',
             url: 'https://www.youtube-nocookie.com/embed/SDLzqZ1Dg8s',
         },
         {
             type: 'youtube',
             videoId: '_7TZ8DVQpug',
-            name: 'Caught Up - FIZZ at Dillo Day',
+            name: 'Caught Up - Fizz at Dillo Day',
             url: 'https://www.youtube-nocookie.com/embed/_7TZ8DVQpug',
         },
         {
             type: 'youtube',
             videoId: 'DW-T3eGuYAo',
-            name: 'FIZZ at Mayfest Battle of the Bands',
+            name: 'Fizz at Mayfest Battle of the Bands',
             url: 'https://www.youtube-nocookie.com/embed/DW-T3eGuYAo',
         }
     ],
     contacts: [
-        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizztheband.com', defaultSubject: 'Booking with FIZZ'},
-        {id: 'media', name: 'Media', method: 'email', value: 'media@fizztheband.com', defaultSubject: 'Media Inquiry for FIZZ'},
-        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@fizztheband.com', defaultSubject: 'Merch Proposal for FIZZ'},
+        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizztheband.com', defaultSubject: 'Booking with Fizz'},
+        {id: 'media', name: 'Media', method: 'email', value: 'media@fizztheband.com', defaultSubject: 'Media Inquiry for Fizz'},
+        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@fizztheband.com', defaultSubject: 'Merch Proposal for Fizz'},
         {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@fizztheband.com', defaultSubject: 'I am Trying to Buy Tickets'},
         {id: 'website', name: 'Website', method: 'email', value: 'spencer@fizztheband.com', defaultSubject: 'I Have an Issue With the Website'},
         {id: 'other', name: 'Other', method: 'email', value: 'other@fizztheband.com', defaultSubject: 'Hi!'},

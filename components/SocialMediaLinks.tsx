@@ -22,7 +22,7 @@ const SOCIAL_MEDIA_ICON_MAP = {
 export function SocialMediaLinks() {
     const populateEmail = () => {
         if (typeof window !== 'undefined') {
-            window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi FIZZ!`
+            window.location.href = `mailto:fizzthebandofficial@gmail.com?subject=Hi Fizz!`
         }
     }
     return <div className={'social-media-links-container'}>

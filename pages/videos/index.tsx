@@ -49,10 +49,10 @@ const VideosPage = () => {
     return (
         <div className={'videos-page-container'}>
             <Helmet>
-                <title>Videos | FIZZ</title>
+                <title>Videos | Fizz</title>
                 <meta
                     name='description'
-                    content='Check out the latest videos of FIZZ performing live music in the Chicago area!'/>
+                    content='Check out the latest videos of Fizz performing live music in the Chicago area!'/>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

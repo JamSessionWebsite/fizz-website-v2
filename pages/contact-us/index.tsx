@@ -15,12 +15,12 @@ const ContactUs = () => {
             className={'contact-us-container'}
             style={{padding: minWidth === 0 ? '0 16px' : '0 128px'}}>
             <Head>
-                <title>Contact Us | FIZZ</title>
+                <title>Contact Us | Fizz</title>
                 <meta
                     name='description'
-                    content='Contact FIZZ for booking, merch, website issues, or just to chat.  For booking, you can reach us at booking@fizztheband.com.'></meta>
+                    content='Contact Fizz for booking, merch, website issues, or just to chat.  For booking, you can reach us at booking@fizztheband.com.'></meta>
             </Head>
-            <Card title={'Contact FIZZ'}>
+            <Card title={'Contact Fizz'}>
                 {BAND_WEBSITE_CONFIG.contacts.map((contact, index) => (
                     <div className={'contact-us-text-container'}>
                         <div className={'label'}>{contact.name}:</div>

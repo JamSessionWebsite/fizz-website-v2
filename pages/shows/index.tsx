@@ -34,8 +34,8 @@ const onSortShows = (a, b) => {
 
 const shows: Show[] = [
     {
-        name: 'Sun Queen feat. Diet FIZZ at Uncommon Ground',
-        description: 'Diet FIZZ, a subset of FIZZ, is performing live at Uncommon Ground in Chicago, Illinois!',
+        name: 'Sun Queen feat. Diet Fizz at Uncommon Ground',
+        description: 'Diet Fizz, a subset of Fizz, is performing live at Uncommon Ground in Chicago, Illinois!',
         startDateTimeEpoch: 1671237000000,
         endDateTimeEpoch: 1671247800000,
         eventUrl: 'https://www.simpletix.com/e/sun-queen-ft-fizz-with-guy-zensai-susanna-tickets-121166',
@@ -50,8 +50,8 @@ const shows: Show[] = [
         }
     },
     {
-        name: 'FIZZ at Bookclub Chicago',
-        description: 'FIZZ plays a show alongside Morgan Buckley, Sun Queen, and Susie McCollum',
+        name: 'Fizz at Bookclub Chicago',
+        description: 'Fizz plays a show alongside Morgan Buckley, Sun Queen, and Susie McCollum',
         startDateTimeEpoch: 1668819600000,
         endDateTimeEpoch: 1668835800000,
         location: {
@@ -138,10 +138,10 @@ const UpcomingShowsPage = () => {
     return (
         <div style={{padding: minWidth === 0 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
             <Head>
-                <title>Shows | FIZZ</title>
+                <title>Shows | Fizz</title>
                 <meta
                     name='description'
-                    content='View a list of all of the upcoming shows that FIZZ is going to be playing.  Many will be in the Chicago area although we are always open to travel with in reason!'/>
+                    content='View a list of all of the upcoming shows that Fizz is going to be playing.  Many will be in the Chicago area although we are always open to travel with in reason!'/>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
