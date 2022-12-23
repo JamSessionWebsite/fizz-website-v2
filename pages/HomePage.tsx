@@ -15,7 +15,7 @@ const HomePage = () => {
             </Head>
             <div className={'flex-row image-gallery-container'}>
                 <ImageGallery
-                    title={'FIZZ Image Gallery'}
+                    title={'Welcome to the Official Website of FIZZ!'}
                     images={BAND_WEBSITE_CONFIG.photos}/>
             </div>
         </div>

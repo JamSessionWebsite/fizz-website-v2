@@ -69,10 +69,9 @@ const ImageGallery = ({images, title = ''}) => {
         imageWidth = containerWidth;
         imageHeight = imageWidth / ratio
     }
-    console.error(`Container Width: ${containerWidth};  Container Height: ${containerHeight}`);
-    console.error(`Image Width: ${imageWidth};  Image Height: ${imageHeight}`);
+
     return (
-        <Card title={title !== '' ? title : null}>
+        <Card title={title !== '' ? <div className={'flex-row'}>{title}</div> : null}>
             <div className={'image-gallery-container'}>
                 <div className={'display-image-container'}>
                     <div className={'display-image'}

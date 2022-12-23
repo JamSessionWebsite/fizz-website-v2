@@ -15,6 +15,7 @@ export default function AppContent({Component, pageProps}) {
     function capitalizeFirstLetter(word) {
         return word.charAt(0).toUpperCase() + word.slice(1);
     }
+
     const router = useRouter();
     const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
@@ -66,7 +67,16 @@ export default function AppContent({Component, pageProps}) {
                 <div>
                     {minWidth === 0 ?
                         <div className={'title-container'}>
-                            <h1 className={'fizz-title'}>{BAND_WEBSITE_CONFIG.bandName}</h1>
+                            {!BAND_WEBSITE_CONFIG.logo.wide ?
+                                <h1 className={'fizz-title'}>{BAND_WEBSITE_CONFIG.bandName}</h1> :
+                                <Image
+                                    alt={BAND_WEBSITE_CONFIG.logo.wide.alt}
+                                    width={100}
+                                    height={54.3}
+                                    priority
+                                    src={BAND_WEBSITE_CONFIG.logo.wide.src}
+                                />
+                            }
                         </div> :
                         <div className={'fizz-logo-container'}>
                             <Image
@@ -86,7 +96,7 @@ export default function AppContent({Component, pageProps}) {
                 </div>
             </main>
             <footer className={'app-footer'}>
-                <SocialMediaLinks />
+                <SocialMediaLinks/>
             </footer>
         </Layout>
     );

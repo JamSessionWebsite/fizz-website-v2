@@ -8,6 +8,10 @@ export interface SocialMedia {
 export interface Logo {
     src: string;
     alt: string;
+    wide?: {
+        src: string;
+        alt: string;
+    }
 }
 
 export interface Photo {
@@ -58,7 +62,11 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     genres: ['pop','funk', 'indie'],
     logo: {
         src: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png',
-        alt: 'FIZZ pop can logo'
+        alt: 'FIZZ pop can logo',
+        wide: {
+            src: 'https://audio.fizztheband.com/images/fizz-website/fizz-logo-pop-label-transparent-min.png',
+            alt: 'FIZZ pop bottle logo'
+        }
     },
     primaryColor: '',
     socialMedia: [
