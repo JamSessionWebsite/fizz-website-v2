@@ -27,11 +27,11 @@
 .app-content {
   @extend .flex-row;
   @extend .full-width;
-  padding: 8px 0 32px;
+  padding-bottom: 32px;
 
   .title-container {
     @extend .flex-column;
-    max-width: 200px;
+    padding: 16px 0;
   }
 }
 

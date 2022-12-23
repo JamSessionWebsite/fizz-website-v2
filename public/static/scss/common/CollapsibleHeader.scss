@@ -16,7 +16,7 @@
 
   .collapsible-header {
     @extend .full-width;
-    padding: 32px;
+    padding: 16px 0;
     transition: transform 0.5s;
     transform-origin: top;
   }
