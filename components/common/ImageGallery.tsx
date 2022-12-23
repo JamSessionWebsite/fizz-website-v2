@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {CaretLeftOutlined, CaretRightOutlined} from "@ant-design/icons";
 import ImageNext from 'next/image';
-import {Button, Card, Descriptions} from "antd";
+import {Button, Card, Descriptions, Statistic} from "antd";
 import useBreakpoint from "use-breakpoint";
 
 const BREAKPOINTS = {mobile: 0, tablet: 768, desktop: 1280}
@@ -95,11 +95,9 @@ const ImageGallery = ({images, title = ''}) => {
                         onClick={nextImage}
                         icon={<CaretRightOutlined/>}/>
                 </div>
-                <Card title={'Description'} style={{maxWidth: `${containerWidth}px`}}>
-                    <div className={'image-description'}>
-                        {images[currentlyVisibleImageIndex].description}
-                    </div>
-                </Card>
+                <div style={{maxWidth: `${containerWidth}px`}}>
+                    {images[currentlyVisibleImageIndex].description}
+                </div>
             </div>
         </Card>
 
