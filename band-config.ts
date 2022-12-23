@@ -88,10 +88,6 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             description: 'Morgan Buckley, one of the lead singers of Fizz, singing at Bookclub Chicago in late 2022.',
             src: `${IMAGES_PATH}morgan-buckley-close-up.jpg`
         },
-        {
-            description: 'Mary aka Sun Queen, one of the lead singers of Fizz, singing at Bookclub Chicago in late 2022.',
-            src: `${IMAGES_PATH}sun-queen-plays-something-cosmic.jpg`
-        },
         {description: 'Spencer, drummer of Fizz, playing at Bookclub Chicago.', src: `${IMAGES_PATH}drums-playing-live.jpg`},
         {
             description: 'Alec, bassist of Fizz, playing his Fender Jazz Bass at Bookclub Chicago.',

@@ -22,7 +22,7 @@ const AboutUsPage = () => {
             <Card style={{padding: minWidth === 0 ? '16px 0' : '16px 64px'}}
                   className={'about-us-text-container'}>
                 <Paragraph className={'about-us-text'}>
-                    Hi! We're Fizz, a Chicago-based band that plays a large variety of pop, funk, and indie music. We play a
+                    Hi! We're Fizz, a Chicago-based band that plays a large variety of pop and funk music. We play a
                     majority of original music with a few funky covers of some of our favorite songs!
                     We have played at many notable venues in Chicago including <a target={'_blank'} className={'inline-link'} href={'https://www.houseofblues.com/chicago'}>House of Blues</a>, <a target={'_blank'} className={'inline-link'} href={'https://bottomlounge.com/'}>Bottom Lounge</a>, and <a target={'_blank'} className={'inline-link'} href={'https://navypier.org/listings/listing/navy-pier-beer-garden'}>Navy Pier Beer Garden</a>.
                     We got to play the Navy Pier show because we won 3rd place in the <a target={'_blank'} className={'inline-link'} href={'https://www.bitterjesterfoundation.org/bitter-jester-music-festival-info'}>Bitter Jester Music Festival</a>!
@@ -33,12 +33,12 @@ const AboutUsPage = () => {
                 <Paragraph className={'about-us-text'}>
                     Currently, we have been working on writing new music and are actively looking for gigs in the
                     Chicago area.  Please email us at <a target={'_blank'} className={'inline-link'} href={'mailto:booking@fizztheband.com?subject=Booking with Fizz'}>booking@fizztheband.com</a>  if you
-                    want Fizz to play a show at your venue!  Fizz is made up of 2 vocalists, guitar, bass, drums, trumpet, alto sax, and trombone.  We also sometimes play
+                    want Fizz to play a show at your venue!  Fizz is made up of a vocalist, guitar, bass, drums, trumpet, alto sax, and trombone.  We also sometimes play
                     in a stripped down configuration with just the rhythm section and vocalists called Diet Fizz.
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width space-between'}>
                     <div>
-                        Our two lead vocalists also perform solo work under the names <a target={'_blank'} className={'inline-link'} href={'https://open.spotify.com/artist/4BqHNH6QvIEODtdFByLcMy?si=AEiUoZqFSgq6jJzI4dHFUA'}>Morgan Buckley</a> and <a target={'_blank'} className={'inline-link'} href={'https://open.spotify.com/artist/2YTQ73StTkzDG9nmqVEWid?si=vGucLIJrT8WHVUk9GGy9Lg'}>Sun Queen</a>.
+                        Our lead vocalist also performs solo work under the name <a target={'_blank'} className={'inline-link'} href={'https://open.spotify.com/artist/4BqHNH6QvIEODtdFByLcMy?si=AEiUoZqFSgq6jJzI4dHFUA'}>Morgan Buckley</a>.
                         Be sure to check out all of our links in one place on our LinkTree:
                     </div>
                     <div/>
