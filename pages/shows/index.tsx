@@ -126,7 +126,7 @@ const richTextDataStructuresForGoogleSearch = [
         "image": [
             "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
         ],
-        "genre": "Pop/Funk/Indie",
+        "genre": "Funk Pop",
         "email": "booking@fizz.band",
         "logo": logoUrl
     },

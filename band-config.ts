@@ -55,13 +55,13 @@ export interface BandWebsiteConfig {
 const IMAGES_PATH = 'https://audio.fizz.band/images/fizz-website/';
 
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
-    mainTitle: 'Fizz: A Local Chicago Pop/Funk/Indie Band',
+    mainTitle: 'Fizz: A Local Chicago Funk Pop Band',
     bandName: 'Fizz',
     domain: 'https://fizz.band',
     primaryEmailAddress: 'booking@fizz.band',
     fontFamily: 'Comfortaa',
     backgroundImageSrc: 'https://audio.fizz.band/images/fizz-website/fizz-website-background-b-and-w.jpg',
-    genres: ['pop','funk', 'indie'],
+    genres: ['pop','funk'],
     logo: {
         src: 'https://audio.fizz.band/images/fizz-website/fizz-website-logo.png',
         alt: 'Fizz pop can logo',
