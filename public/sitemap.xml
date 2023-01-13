@@ -2,43 +2,43 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
     <url>
-        <loc>https://fizztheband.com</loc>
+        <loc>https://fizz.band</loc>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-performs-something-cosmic.jpg</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-performs-something-cosmic.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/morgan-buckley-close-up.jpg</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/morgan-buckley-close-up.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/sun-queen-plays-something-cosmic.jpg
+            <image:loc>https://audio.fizz.band/images/fizz-website/sun-queen-plays-something-cosmic.jpg
             </image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/drums-playing-live.jpg</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/drums-playing-live.jpg</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/bass-playing-live-fizz.jpg</image:loc>
-        </image:image>
-    </url>
-    <url>
-        <loc>https://fizztheband.com/about-us</loc>
-        <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/bass-playing-live-fizz.jpg</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://fizztheband.com/shows</loc>
+        <loc>https://fizz.band/about-us</loc>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://fizztheband.com/videos</loc>
+        <loc>https://fizz.band/shows</loc>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-website-logo.png</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://fizz.band/videos</loc>
+        <image:image>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
         <video:video>
             <video:title>I Love You - Morgan Buckley (feat. Fizz)</video:title>
@@ -54,18 +54,18 @@
         </video:video>
     </url>
     <url>
-        <loc>https://fizztheband.com/merch</loc>
+        <loc>https://fizz.band/merch</loc>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/merch/ass-bracelets.jpeg</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/merch/ass-bracelets.jpeg</image:loc>
         </image:image>
     </url>
     <url>
-        <loc>https://fizztheband.com/contact-us</loc>
+        <loc>https://fizz.band/contact-us</loc>
         <image:image>
-            <image:loc>https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png</image:loc>
+            <image:loc>https://audio.fizz.band/images/fizz-website/fizz-website-logo.png</image:loc>
         </image:image>
     </url>
 </urlset>

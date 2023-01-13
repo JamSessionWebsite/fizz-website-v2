@@ -39,6 +39,7 @@ export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
     domain: string;
+    fontFamily?: string;
     primaryEmailAddress: string;
     backgroundImageSrc: string;
     genres: string[];
@@ -51,20 +52,21 @@ export interface BandWebsiteConfig {
     videos: Video[];
 }
 
-const IMAGES_PATH = 'https://audio.fizztheband.com/images/fizz-website/';
+const IMAGES_PATH = 'https://audio.fizz.band/images/fizz-website/';
 
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     mainTitle: 'Fizz: A Local Chicago Pop/Funk/Indie Band',
     bandName: 'Fizz',
-    domain: 'https://fizztheband.com',
-    primaryEmailAddress: 'booking@fizztheband.com',
-    backgroundImageSrc: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-background-b-and-w.jpg',
+    domain: 'https://fizz.band',
+    primaryEmailAddress: 'booking@fizz.band',
+    fontFamily: 'Comfortaa',
+    backgroundImageSrc: 'https://audio.fizz.band/images/fizz-website/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk', 'indie'],
     logo: {
-        src: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png',
+        src: 'https://audio.fizz.band/images/fizz-website/fizz-website-logo.png',
         alt: 'Fizz pop can logo',
         wide: {
-            src: 'https://audio.fizztheband.com/images/fizz-website/fizz-logo-pop-label-transparent-min.png',
+            src: 'https://audio.fizz.band/images/fizz-website/fizz-logo-pop-label-transparent-min.png',
             alt: 'Fizz pop bottle logo'
         }
     },
@@ -163,12 +165,12 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         }
     ],
     contacts: [
-        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizztheband.com', defaultSubject: 'Booking with Fizz'},
-        {id: 'media', name: 'Media', method: 'email', value: 'media@fizztheband.com', defaultSubject: 'Media Inquiry for Fizz'},
-        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@fizztheband.com', defaultSubject: 'Merch Proposal for Fizz'},
-        {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@fizztheband.com', defaultSubject: 'I am Trying to Buy Tickets'},
-        {id: 'website', name: 'Website', method: 'email', value: 'spencer@fizztheband.com', defaultSubject: 'I Have an Issue With the Website'},
-        {id: 'other', name: 'Other', method: 'email', value: 'other@fizztheband.com', defaultSubject: 'Hi!'},
+        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizz.band', defaultSubject: 'Booking with Fizz'},
+        {id: 'media', name: 'Media', method: 'email', value: 'media@fizz.band', defaultSubject: 'Media Inquiry for Fizz'},
+        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@fizz.band', defaultSubject: 'Merch Proposal for Fizz'},
+        {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@fizz.band', defaultSubject: 'I am Trying to Buy Tickets'},
+        {id: 'website', name: 'Website', method: 'email', value: 'spencer@fizz.band', defaultSubject: 'I Have an Issue With the Website'},
+        {id: 'other', name: 'Other', method: 'email', value: 'other@fizz.band', defaultSubject: 'Hi!'},
     ],
     pages: [
         {id: 'home', name: 'Home', path: '/'},

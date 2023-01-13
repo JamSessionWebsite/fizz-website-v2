@@ -11,7 +11,7 @@ const MerchPage = () => {
             name: 'Fizz Soda Sticker',
             colors: [{
                 color: 'blue',
-                imageSrc: 'https://audio.fizztheband.com/images/fizz-website/fizz-website-logo.png',
+                imageSrc: 'https://audio.fizz.band/images/fizz-website/fizz-website-logo.png',
                 aspectRatio: 2,
             }],
             pricing: {
@@ -24,7 +24,7 @@ const MerchPage = () => {
             name: 'Ass Bracelets',
             colors: [{
                 aspectRatio: 3 / 4,
-                imageSrc: 'https://audio.fizztheband.com/images/fizz-website/merch/ass-bracelets.jpeg',
+                imageSrc: 'https://audio.fizz.band/images/fizz-website/merch/ass-bracelets.jpeg',
                 color: 'assorted'
             }],
             pricing: {

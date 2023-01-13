@@ -9,6 +9,12 @@ const HomePage = () => {
         <div className={'full-width youtube-container'}>
             <Head>
                 <title>{BAND_WEBSITE_CONFIG.mainTitle}</title>
+                <link rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Pacifico"></link>
+                <link rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Lobster"></link>
+                <link rel="stylesheet"
+                      href="https://fonts.googleapis.com/css2?family=Caveat"></link>
                 <meta
                     name='description'
                     content='Welcome to the official website of Fizz, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>

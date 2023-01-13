@@ -21,6 +21,7 @@ export default function AppContent({Component, pageProps}) {
     return (
         <Layout className={`home-page-background`}
                 style={{
+                    fontFamily: BAND_WEBSITE_CONFIG.fontFamily,
                     backgroundImage: `url(${BAND_WEBSITE_CONFIG.backgroundImageSrc})`,
                     minHeight: '100vh'
                 }}>
@@ -29,8 +30,10 @@ export default function AppContent({Component, pageProps}) {
                 <meta
                     name='description'
                     content='Welcome to the official website of Fizz, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
+                <link rel="stylesheet"
+                      href={`https://fonts.googleapis.com/css2?family=${BAND_WEBSITE_CONFIG.fontFamily}`}></link>
                 <link rel="shortcut icon"
-                      href="https://audio.fizztheband.com/images/fizz-website/fizz-website-ico.png"/>
+                      href="https://audio.fizz.band/images/fizz-website/fizz-website-ico.png"/>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -40,7 +43,7 @@ export default function AppContent({Component, pageProps}) {
                             "name": BAND_WEBSITE_CONFIG.bandName,
                             "url": BAND_WEBSITE_CONFIG.domain,
                             "image": [
-                                "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
+                                "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
                             ],
                             "genre": BAND_WEBSITE_CONFIG.genres
                                 .map(genre => capitalizeFirstLetter(genre))

@@ -56,7 +56,7 @@ const shows: Show[] = [
         endDateTimeEpoch: 1668835800000,
         location: {
             name: 'Bookclub Chicago',
-            address: 'Email tickets@fizztheband.com for address',
+            address: 'Email tickets@fizz.band for address',
             zipCode: 60640,
             city: 'Chicago',
             state: 'Illinois',
@@ -124,10 +124,10 @@ const richTextDataStructuresForGoogleSearch = [
         "name": bandName,
         "url": BAND_WEBSITE_CONFIG.domain,
         "image": [
-            "https://audio.fizztheband.com/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
+            "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
         ],
         "genre": "Pop/Funk/Indie",
-        "email": "booking@fizztheband.com",
+        "email": "booking@fizz.band",
         "logo": logoUrl
     },
     ...richTextEvents

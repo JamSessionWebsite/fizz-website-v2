@@ -32,7 +32,7 @@ const AboutUsPage = () => {
                 </Paragraph>
                 <Paragraph className={'about-us-text'}>
                     Currently, we have been working on writing new music and are actively looking for gigs in the
-                    Chicago area.  Please email us at <a target={'_blank'} className={'inline-link'} href={'mailto:booking@fizztheband.com?subject=Booking with Fizz'}>booking@fizztheband.com</a>  if you
+                    Chicago area.  Please email us at <a target={'_blank'} className={'inline-link'} href={'mailto:booking@fizz.band?subject=Booking with Fizz'}>booking@fizz.band</a>  if you
                     want Fizz to play a show at your venue!  Fizz is made up of a vocalist, guitar, bass, drums, trumpet, alto sax, and trombone.  We also sometimes play
                     in a stripped down configuration with just the rhythm section and vocalists called Diet Fizz.
                 </Paragraph>
