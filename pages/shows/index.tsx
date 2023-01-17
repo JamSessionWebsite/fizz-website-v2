@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Head from "next/head";
 import {useSelector} from "react-redux";
 import {DateTimeUtil} from "@poshprincess/ui-commons";
@@ -7,6 +7,7 @@ import {Show} from "../../interfaces/show";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
 import useBreakpoint from "use-breakpoint";
+import axios from "axios";
 
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
@@ -32,109 +33,85 @@ const onSortShows = (a, b) => {
     return 0;
 }
 
-const shows: Show[] = [
-    {
-        name: 'Sun Queen feat. Diet Fizz at Uncommon Ground',
-        description: 'Diet Fizz, a subset of Fizz, is performing live at Uncommon Ground in Chicago, Illinois!',
-        startDateTimeEpoch: 1671237000000,
-        endDateTimeEpoch: 1671247800000,
-        eventUrl: 'https://www.simpletix.com/e/sun-queen-ft-fizz-with-guy-zensai-susanna-tickets-121166',
-        ticketPrice: 1000,
-        location: {
-            name: 'Uncommon Ground',
-            address: '3800 N CLARK ST',
-            zipCode: 60613,
-            city: 'Chicago',
-            state: 'Illinois',
-            country: 'USA',
-        }
-    },
-    {
-        name: 'Fizz at Bookclub Chicago',
-        description: 'Fizz plays a show alongside Morgan Buckley, Sun Queen, and Susie McCollum',
-        startDateTimeEpoch: 1668819600000,
-        endDateTimeEpoch: 1668835800000,
-        location: {
-            name: 'Bookclub Chicago',
-            address: 'Email tickets@fizz.band for address',
-            zipCode: 60640,
-            city: 'Chicago',
-            state: 'Illinois',
-            country: 'USA',
-        }
-    }
-];
 const bandName = BAND_WEBSITE_CONFIG.bandName;
 const ticketEmailAddress = BAND_WEBSITE_CONFIG.contacts.find(x => x.id === 'tickets');
 const finalTicketEmailAddress = ticketEmailAddress ? ticketEmailAddress.value : BAND_WEBSITE_CONFIG.primaryEmailAddress;
 const showsPage = BAND_WEBSITE_CONFIG.pages.find(x => x.id === 'shows');
 const eventLinkToUrl = showsPage ? `${BAND_WEBSITE_CONFIG.domain}/${showsPage.path}` : BAND_WEBSITE_CONFIG.domain;
 const logoUrl = BAND_WEBSITE_CONFIG.logo.src;
-const richTextEvents = shows
-    .sort(onSortShows)
-    .map(show => {
-        const location = show.location;
-        const ticketSaleStartDate = new Date();
-        ticketSaleStartDate.setTime(ticketSaleStartDate.getTime() - FOURTEEN_DAYS_IN_MILLISECONDS);
-        return {
-            "@context": "https://schema.org",
-            "@type": "Event",
-            "name": show.name,
-            "url": show.eventUrl ? show.eventUrl : eventLinkToUrl,
-            "image": [
-                show.imageUrl ? show.imageUrl : logoUrl
-            ],
-            ...(show.name && show.eventUrl && show.endDateTimeEpoch ? {
-                "offers": {
-                    "name": `Tickets for "${show.name}"`,
-                    "url": show.eventUrl,
-                    "priceCurrency": "USD",
-                    "price": "10.00",
-                    "availability": "https://schema.org/InStock",
-                    "validFrom": ticketSaleStartDate.toISOString(),
-                    "validThrough": new Date(show.endDateTimeEpoch).toISOString(),
-                }
-            } : {}),
-            "location": {
-                "@context": "https://schema.org",
-                "name": location.name,
-                ...(location.address ? {'address': location.address} : {}),
-                "addressCountry": location.country,
-                "addressRegion": location.state,
-                "postalCode": location.zipCode,
-                "streetAddress": location.address,
-                "email": finalTicketEmailAddress,
-            },
-            "eventAttendanceMode": "OfflineEventAttendanceMode",
-            "organizer": {
-                'name': bandName,
-                'url': eventLinkToUrl
-            },
-            "performer": bandName,
-            "description": show.description,
-            "eventStatus": 'EventScheduled',
-            "startDate": new Date(show.startDateTimeEpoch).toISOString(),
-            "endDate": new Date(show.endDateTimeEpoch).toISOString(),
-        };
-    })
-const richTextDataStructuresForGoogleSearch = [
-    {
-        "@context": "https://schema.org",
-        "@type": "MusicGroup",
-        "name": bandName,
-        "url": BAND_WEBSITE_CONFIG.domain,
-        "image": [
-            "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
-        ],
-        "genre": "Funk Pop",
-        "email": "booking@fizz.band",
-        "logo": logoUrl
-    },
-    ...richTextEvents
-];
 
 const UpcomingShowsPage = () => {
     const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
+    const [shows, setShows] = useState([]);
+    useEffect(() => {
+        axios
+            .get(`https://api.fizz.band/website-info/${BAND_WEBSITE_CONFIG.bandId}/${BAND_WEBSITE_CONFIG.websiteId}`)
+            .then(response => {
+                setShows(response.data.body.websiteInfo.shows);
+            })
+    }, []);
+    const richTextEvents = shows
+        .sort(onSortShows)
+        .map(show => {
+            const location = show.location;
+            const ticketSaleStartDate = new Date();
+            ticketSaleStartDate.setTime(ticketSaleStartDate.getTime() - FOURTEEN_DAYS_IN_MILLISECONDS);
+            return {
+                "@context": "https://schema.org",
+                "@type": "Event",
+                "name": show.name,
+                "url": show.eventUrl ? show.eventUrl : eventLinkToUrl,
+                "image": [
+                    show.imageUrl ? show.imageUrl : logoUrl
+                ],
+                ...(show.name && show.eventUrl && show.endDateTimeEpoch ? {
+                    "offers": {
+                        "name": `Tickets for "${show.name}"`,
+                        "url": show.eventUrl,
+                        "priceCurrency": "USD",
+                        "price": show.price > 0 ? (show.price * 100).toFixed(2) : 0,
+                        "availability": "https://schema.org/InStock",
+                        "validFrom": ticketSaleStartDate.toISOString(),
+                        "validThrough": DateTimeUtil.fromEpochToDateTime(show.endDateTimeEpoch),
+                    }
+                } : {}),
+                "location": {
+                    "@context": "https://schema.org",
+                    "name": location.name,
+                    ...(location.address ? {'address': location.address} : {}),
+                    "addressCountry": location.country,
+                    "addressRegion": location.state,
+                    "postalCode": location.zipCode,
+                    "streetAddress": location.address,
+                    "email": finalTicketEmailAddress,
+                },
+                "eventAttendanceMode": "OfflineEventAttendanceMode",
+                "organizer": {
+                    'name': bandName,
+                    'url': eventLinkToUrl
+                },
+                "performer": bandName,
+                "description": show.description,
+                "eventStatus": 'EventScheduled',
+                "startDate":show.startDateTimeEpoch > 0 ? DateTimeUtil.fromEpochToDateTime(Number(show.startDateTimeEpoch)) : new Date().toISOString(),
+                "endDate": show.endDateTimeEpoch > 0 ? DateTimeUtil.fromEpochToDateTime(Number(show.endDateTimeEpoch)) : new Date().toISOString(),
+            };
+        })
+    const richTextDataStructuresForGoogleSearch = [
+        {
+            "@context": "https://schema.org",
+            "@type": "MusicGroup",
+            "name": bandName,
+            "url": BAND_WEBSITE_CONFIG.domain,
+            "image": [
+                "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
+            ],
+            "genre": "Funk Pop",
+            "email": "booking@fizz.band",
+            "logo": logoUrl
+        },
+        ...richTextEvents
+    ];
     return (
         <div style={{padding: minWidth === 0 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
             <Head>
@@ -160,13 +137,13 @@ const UpcomingShowsPage = () => {
                                     {show.name}
                                 </div>
                                 <div className={'flex-column'}>
-                                    {DateTimeUtil.fromEpochToDateTime(show.startDateTimeEpoch)}
+                                    {DateTimeUtil.fromEpochToDateTime(Number(show.startDateTimeEpoch))}
                                     <Tag
                                         color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Already Happened' : 'Upcoming'}</Tag>
                                 </div>
                                 <div className={'flex-column'}>
                                     <div className={'flex-row'}>
-                                        {show.ticketPrice || show.ticketPrice === 0 ?
+                                        {show.ticketPrice && show.ticketPrice > 0 ?
                                             <>
                                                 <div>
                                                     Price:

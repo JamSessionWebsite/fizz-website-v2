@@ -38,6 +38,8 @@ export interface WebsitePage {
 export interface BandWebsiteConfig {
     mainTitle: string;
     bandName: string;
+    bandId: string;
+    websiteId: string;
     domain: string;
     fontFamily?: string;
     primaryEmailAddress: string;
@@ -57,7 +59,9 @@ const IMAGES_PATH = 'https://audio.fizz.band/images/fizz-website/';
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     mainTitle: 'Fizz: A Local Chicago Funk Pop Band',
     bandName: 'Fizz',
-    domain: 'https://fizz.band',
+    bandId: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
+    websiteId: 'c90e9dd2-289f-4497-9307-d3b7ab57cb21',
+    domain: 'fizz.band',
     primaryEmailAddress: 'booking@fizz.band',
     fontFamily: 'Comfortaa',
     backgroundImageSrc: 'https://audio.fizz.band/images/fizz-website/fizz-website-background-b-and-w.jpg',
