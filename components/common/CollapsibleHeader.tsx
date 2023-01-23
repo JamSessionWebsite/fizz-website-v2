@@ -58,9 +58,6 @@ const CollapsibleHeader = () => {
                     <></>
             }
             <div
-                style={{
-                    ...({backgroundImage: `url(${BAND_WEBSITE_CONFIG.backgroundImageSrc})`}),
-                }}
                 className={`collapsible-header ${extraClassesForHeader} ${minWidth > 0 ? 'flex-row' : 'flex-column'}`}>
                 {
                     !isCollapsed && minWidth === 0 ?

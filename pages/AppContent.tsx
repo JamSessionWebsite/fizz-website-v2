@@ -22,7 +22,6 @@ export default function AppContent({Component, pageProps}) {
         <Layout className={`home-page-background`}
                 style={{
                     fontFamily: BAND_WEBSITE_CONFIG.fontFamily,
-                    backgroundImage: `url(${BAND_WEBSITE_CONFIG.backgroundImageSrc})`,
                     minHeight: '100vh'
                 }}>
             <Head>
