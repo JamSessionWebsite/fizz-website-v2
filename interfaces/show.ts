@@ -3,6 +3,7 @@ export interface Show {
     description: string;
     startDateTimeEpoch: number;
     endDateTimeEpoch: number;
+    status?: string;
     eventUrl?: string;
     ticketPrice?: number;
     imageUrl?: string;

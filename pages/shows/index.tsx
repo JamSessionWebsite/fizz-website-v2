@@ -51,6 +51,7 @@ const UpcomingShowsPage = () => {
             })
     }, []);
     const richTextEvents = shows
+        .filter(s => s.status.toLowerCase() !== 'hidden')
         .sort(onSortShows)
         .map(show => {
             const location = show.location;
@@ -128,7 +129,7 @@ const UpcomingShowsPage = () => {
             <Card title={'Shows'}>
                 <List
                     locale={{emptyText: 'There are currently no upcoming shows. Check back soon!'}}
-                    dataSource={shows}
+                    dataSource={shows.filter(s => s.status.toLowerCase() !== 'hidden')}
                     renderItem={(show: Show, index) => {
                         const showHasHappened = show.startDateTimeEpoch < Date.now();
                         return <>
