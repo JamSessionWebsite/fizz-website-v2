@@ -4,8 +4,7 @@ const nextConfig = {
     swcMinify: true,
     images: {
         domains: [
-            'audio.fizz.band',
-            'fizz.band'
+            'media.bandpractice.app'
         ]
     },
     i18n: {

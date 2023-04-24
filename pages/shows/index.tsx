@@ -105,7 +105,7 @@ const UpcomingShowsPage = () => {
             "name": bandName,
             "url": BAND_WEBSITE_CONFIG.domain,
             "image": [
-                "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
+                "https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/horn-section-of-fizz-bookclub-chicago.jpg"
             ],
             "genre": "Funk Pop",
             "email": "booking@fizz.band",

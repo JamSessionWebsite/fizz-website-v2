@@ -54,7 +54,7 @@ export interface BandWebsiteConfig {
     videos: Video[];
 }
 
-const IMAGES_PATH = 'https://audio.fizz.band/images/fizz-website/';
+const IMAGES_PATH = 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/';
 
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     mainTitle: 'Fizz: A Local Chicago Funk Pop Band',
@@ -64,13 +64,13 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     domain: 'fizz.band',
     primaryEmailAddress: 'booking@fizz.band',
     fontFamily: 'Comfortaa',
-    backgroundImageSrc: 'https://audio.fizz.band/images/fizz-website/fizz-website-background-b-and-w.jpg',
+    backgroundImageSrc: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk'],
     logo: {
-        src: 'https://audio.fizz.band/images/fizz-website/fizz-website-logo.png',
+        src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-soda-red-blue-transparent-bg-256-512.png',
         alt: 'Fizz pop can logo',
         wide: {
-            src: 'https://audio.fizz.band/images/fizz-website/fizz-logo-pop-label-transparent-min.png',
+            src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-logo-pop-label-transparent-min.png',
             alt: 'Fizz pop bottle logo'
         }
     },

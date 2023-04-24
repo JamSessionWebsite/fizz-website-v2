@@ -13,7 +13,7 @@ const INTERNAL_LINKS = [
     {name: 'Shows', href: '/shows'},
     {name: 'Contact Us', href: '/contact-us'},
     {name: 'Videos', href: '/videos'},
-    {name: 'Merch', href: '/merch'},
+    // {name: 'Merch', href: '/merch'},
 ];
 export const BREAKPOINTS = {mobile: 0, tablet: 768, desktop: 1280}
 const CollapsibleHeader = () => {

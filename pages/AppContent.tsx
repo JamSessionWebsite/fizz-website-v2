@@ -32,7 +32,7 @@ export default function AppContent({Component, pageProps}) {
                 <link rel="stylesheet"
                       href={`https://fonts.googleapis.com/css2?family=${BAND_WEBSITE_CONFIG.fontFamily}`}></link>
                 <link rel="shortcut icon"
-                      href="https://audio.fizz.band/images/fizz-website/fizz-website-ico.png"/>
+                      href="https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/Fizz ICO-1.png"/>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
@@ -42,7 +42,7 @@ export default function AppContent({Component, pageProps}) {
                             "name": BAND_WEBSITE_CONFIG.bandName,
                             "url": BAND_WEBSITE_CONFIG.domain,
                             "image": [
-                                "https://audio.fizz.band/images/fizz-website/horn-section-of-fizz-bookclub-chicago.jpg"
+                                "https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/horn-section-of-fizz-bookclub-chicago.jpg"
                             ],
                             "genre": BAND_WEBSITE_CONFIG.genres
                                 .map(genre => capitalizeFirstLetter(genre))
