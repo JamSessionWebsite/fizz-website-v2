@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import React, {useEffect} from 'react';
 import Head from "next/head";
 import {BAND_WEBSITE_CONFIG} from "../band-config";
