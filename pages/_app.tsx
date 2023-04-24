@@ -1,5 +1,5 @@
 import '../public/static/scss/App.scss';
-import AppContent from "./AppContent";
+import AppContent from "../components/pages/AppContent";
 import {Provider} from "react-redux";
 import fizzWebsiteStore from "../redux/FizzWebsiteStore";
 

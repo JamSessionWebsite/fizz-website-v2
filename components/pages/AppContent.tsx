@@ -3,11 +3,11 @@ import Head from "next/head";
 import Image from "next/image";
 import Script from "next/script";
 import dynamic from "next/dynamic";
-import {BAND_WEBSITE_CONFIG} from "../band-config";
-import CollapsibleHeader, {BREAKPOINTS} from "../components/common/CollapsibleHeader";
+import {BAND_WEBSITE_CONFIG} from "../../band-config";
+import CollapsibleHeader, {BREAKPOINTS} from "../common/CollapsibleHeader";
 import useBreakpoint from "use-breakpoint";
 import {useRouter} from "next/router";
-import {SocialMediaLinks} from "../components/SocialMediaLinks";
+import {SocialMediaLinks} from "../SocialMediaLinks";
 
 const Layout = dynamic(() => import('antd').then(dep => dep.Layout));
 
