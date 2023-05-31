@@ -94,7 +94,7 @@ const UpcomingShowsPage = () => {
                 "performer": bandName,
                 "description": show.description,
                 "eventStatus": 'EventScheduled',
-                "startDate":show.startDateTimeEpoch > 0 ? DateTimeUtil.fromEpochToDateTime(Number(show.startDateTimeEpoch)) : new Date().toISOString(),
+                "startDate": show.startDateTimeEpoch > 0 ? DateTimeUtil.fromEpochToDateTime(Number(show.startDateTimeEpoch)) : new Date().toISOString(),
                 "endDate": show.endDateTimeEpoch > 0 ? DateTimeUtil.fromEpochToDateTime(Number(show.endDateTimeEpoch)) : new Date().toISOString(),
             };
         })
@@ -129,7 +129,10 @@ const UpcomingShowsPage = () => {
             <Card title={'Shows'}>
                 <List
                     locale={{emptyText: 'There are currently no upcoming shows. Check back soon!'}}
-                    dataSource={shows.filter(s => s.status.toLowerCase() !== 'hidden')}
+                    dataSource={shows
+                        .filter(s => s.status.toLowerCase() !== 'hidden')
+                        .sort(onSortShows)
+                    }
                     renderItem={(show: Show, index) => {
                         const showHasHappened = show.startDateTimeEpoch < Date.now();
                         return <>
