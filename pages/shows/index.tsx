@@ -141,19 +141,26 @@ const UpcomingShowsPage = () => {
                                     {show.name}
                                 </div>
                                 <div className={'flex-column'}>
-                                    {DateTimeUtil.fromEpochToDateTime(Number(show.startDateTimeEpoch))}
+                                    {show && Number(show.doorsTimeEpoch) !== -1 ?
+                                        <div>
+                                            Doors at {DateTimeUtil.fromEpochToDateTime(Number(show.doorsTimeEpoch))}
+                                        </div> :
+                                        <></>
+                                    }
+                                    <div>Music
+                                        at {DateTimeUtil.fromEpochToDateTime(Number(show.startDateTimeEpoch))}</div>
                                     <Tag
                                         color={showHasHappened ? 'red' : 'green'}>{showHasHappened ? 'Already Happened' : 'Upcoming'}</Tag>
                                 </div>
                                 <div className={'flex-column'}>
                                     <div className={'flex-row'}>
-                                        {show.ticketPrice && show.ticketPrice > 0 ?
+                                        {(show.ticketPrice && show.ticketPrice > 0) || show.isPriceNotKnownUntilDoors ?
                                             <>
                                                 <div>
                                                     Price:
                                                 </div>
                                                 <div className={'value'}>
-                                                    ${(show.ticketPrice / 100).toFixed(2)}
+                                                    {show.isPriceNotKnownUntilDoors ? 'AT DOORS' : `$${(show.ticketPrice / 100).toFixed(2)}`}
                                                 </div>
                                             </> :
                                             <></>

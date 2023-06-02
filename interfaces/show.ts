@@ -3,9 +3,11 @@ export interface Show {
     description: string;
     startDateTimeEpoch: number;
     endDateTimeEpoch: number;
+    doorsTimeEpoch: number;
     status?: string;
     eventUrl?: string;
     ticketPrice?: number;
+    isPriceNotKnownUntilDoors?: boolean;
     imageUrl?: string;
     location: {
         name: string;
