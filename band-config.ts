@@ -129,6 +129,12 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     videos: [
         {
             type: 'youtube',
+            videoId: 'ZYYjREBPZsM',
+            name: 'Indigo - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/ZYYjREBPZsM',
+        },
+        {
+            type: 'youtube',
             videoId: '7YcM2wKevT4',
             name: '25 or 6 to 4 - Fizz at Chicago Secret Show',
             url: 'https://www.youtube-nocookie.com/embed/7YcM2wKevT4',
@@ -138,12 +144,6 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             videoId: '0FRwQZkkTpM',
             name: 'Crazy (Cover) - Fizz at Chicago Secret Show',
             url: 'https://www.youtube-nocookie.com/embed/0FRwQZkkTpM',
-        },
-        {
-            type: 'youtube',
-            videoId: 'ZYYjREBPZsM',
-            name: 'Indigo - Fizz at Chicago Secret Show',
-            url: 'https://www.youtube-nocookie.com/embed/ZYYjREBPZsM',
         },
         {
             type: 'youtube',
