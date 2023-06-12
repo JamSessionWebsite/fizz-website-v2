@@ -129,6 +129,42 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     videos: [
         {
             type: 'youtube',
+            videoId: '7YcM2wKevT4',
+            name: '25 or 6 to 4 - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/7YcM2wKevT4',
+        },
+        {
+            type: 'youtube',
+            videoId: '0FRwQZkkTpM',
+            name: 'Crazy (Cover) - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/0FRwQZkkTpM',
+        },
+        {
+            type: 'youtube',
+            videoId: 'ZYYjREBPZsM',
+            name: 'Indigo - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/ZYYjREBPZsM',
+        },
+        {
+            type: 'youtube',
+            videoId: 'APjfwhAHAgI',
+            name: 'Hey Mama - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/APjfwhAHAgI',
+        },
+        {
+            type: 'youtube',
+            videoId: 'He-PtmS-AB0',
+            name: 'Fine By Me - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/He-PtmS-AB0',
+        },
+        {
+            type: 'youtube',
+            videoId: 'Z9MNpza2eGk',
+            name: 'Give Me More - Fizz at Chicago Secret Show',
+            url: 'https://www.youtube-nocookie.com/embed/Z9MNpza2eGk',
+        },
+        {
+            type: 'youtube',
             videoId: 'Po3-1mDTm7I',
             name: 'I Love You - Morgan Buckley (feat. Fizz)',
             url: 'https://www.youtube-nocookie.com/embed/Po3-1mDTm7I',

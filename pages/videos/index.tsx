@@ -2,12 +2,11 @@ import React, {useEffect, useState} from 'react';
 import {Helmet} from 'react-helmet';
 import {ArrowUpOutlined} from "@ant-design/icons";
 import dynamic from "next/dynamic";
-import {useSelector} from "react-redux";
-import {FizzWebsiteReduxStore} from "../../redux/FizzWebsiteStore";
 import Script from "next/script";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import useBreakpoint from "use-breakpoint";
 import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
+
 const Button = dynamic(() => import('antd').then((dep) => dep.Button));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
 const Skeleton = dynamic(() => import('antd').then((dep) => dep.Skeleton));
