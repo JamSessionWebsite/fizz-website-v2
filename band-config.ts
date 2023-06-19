@@ -140,6 +140,11 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
             url: 'https://www.youtube-nocookie.com/embed/7YcM2wKevT4',
         },
         {
+            type: 'tiktok',
+            name: 'Give Me More - A Fizz Original Song',
+            url: 'https://www.tiktok.com/embed/7241960689571564846'
+        },
+        {
             type: 'youtube',
             videoId: '0FRwQZkkTpM',
             name: 'Crazy (Cover) - Fizz at Chicago Secret Show',
