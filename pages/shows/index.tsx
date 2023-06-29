@@ -28,7 +28,7 @@ const onSortShows = (a, b) => {
         if (a.startDateTimeEpoch > b.startDateTimeEpoch) {
             return 1;
         }
-        return 1;
+        return -1;
     }
     return 0;
 }
