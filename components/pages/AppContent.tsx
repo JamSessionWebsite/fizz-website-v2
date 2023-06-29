@@ -8,6 +8,7 @@ import CollapsibleHeader, {BREAKPOINTS} from "../common/CollapsibleHeader";
 import useBreakpoint from "use-breakpoint";
 import {useRouter} from "next/router";
 import {SocialMediaLinks} from "../SocialMediaLinks";
+import { Card } from "antd";
 
 const Layout = dynamic(() => import('antd').then(dep => dep.Layout));
 
@@ -71,15 +72,17 @@ export default function AppContent({Component, pageProps}) {
                         <div className={'title-container'}>
                             {!BAND_WEBSITE_CONFIG.logo.wide ?
                                 <h1 className={'fizz-title'}>{BAND_WEBSITE_CONFIG.bandName}</h1> :
-                                <Image
-                                    alt={BAND_WEBSITE_CONFIG.logo.wide.alt}
-                                    width={100}
-                                    height={54.3}
-                                    onClick={async () => router.push('/')}
-                                    className={'clickable'}
-                                    priority
-                                    src={BAND_WEBSITE_CONFIG.logo.wide.src}
-                                />
+                                <Card>
+                                    <Image
+                                        alt={BAND_WEBSITE_CONFIG.logo.wide.alt}
+                                        width={100}
+                                        height={54.3}
+                                        onClick={async () => router.push('/')}
+                                        className={'clickable'}
+                                        priority
+                                        src={BAND_WEBSITE_CONFIG.logo.wide.src}
+                                    />
+                                </Card>
                             }
                         </div> :
                         <div className={'fizz-logo-container'}>

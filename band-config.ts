@@ -70,7 +70,7 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-soda-red-blue-transparent-bg-256-512.png',
         alt: 'Fizz pop can logo',
         wide: {
-            src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-logo-pop-label-transparent-min.png',
+            src: '/static/fizz-name-logo-no-bg.png',
             alt: 'Fizz pop bottle logo'
         }
     },
