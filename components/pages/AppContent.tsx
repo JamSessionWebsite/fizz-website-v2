@@ -18,7 +18,7 @@ export default function AppContent({Component, pageProps}) {
     }
 
     const router = useRouter();
-    const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
+    const {minWidth} = useBreakpoint(BREAKPOINTS, 'mobile');
     return (
         <Layout className={`home-page-background`}
                 style={{

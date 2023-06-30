@@ -31,15 +31,20 @@ const AboutUsPage = () => {
                     including <a target={'_blank'} className={'inline-link'} href={'https://hippocampus.band/'}>Hippo Campus</a> and <a target={'_blank'} className={'inline-link'} href={'https://www.asapferg.com/'}>A$AP Ferg</a>.
                 </Paragraph>
                 <Paragraph className={'about-us-text'}>
-                    Currently, we have been working on writing new music and are actively looking for gigs in the
+                    Currently, we have recently finished six new songs and are actively looking for gigs in the
                     Chicago area.  Please email us at <a target={'_blank'} className={'inline-link'} href={'mailto:booking@fizz.band?subject=Booking with Fizz'}>booking@fizz.band</a>  if you
-                    want Fizz to play a show at your venue!  Fizz is made up of a vocalist, guitar, bass, drums, trumpet, alto sax, and trombone.  We also sometimes play
-                    in a stripped down configuration with just the rhythm section and vocalists called Diet Fizz.
+                    want Fizz to play a show at your venue!  Fizz is made up of a vocalist, guitar, bass, drums, trumpet, alto sax, and tenor sax.
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width space-between'}>
                     <div>
                         Our lead vocalist also performs solo work under the name <a target={'_blank'} className={'inline-link'} href={'https://open.spotify.com/artist/4BqHNH6QvIEODtdFByLcMy?si=AEiUoZqFSgq6jJzI4dHFUA'}>Morgan Buckley</a>.
                         Be sure to check out all of our links in one place on our LinkTree:
+                    </div>
+                    <div/>
+                </Paragraph>
+                <Paragraph className={'about-us-text full-width space-between'}>
+                    <div>
+                        Also, be sure to check out our rhythm section's other band, <a target={'_blank'} className={'inline-link'} href={'https://sunqueenmusic.com'}>Sun Queen</a>!
                     </div>
                     <div/>
                 </Paragraph>
