@@ -37,14 +37,10 @@ const AboutUsPage = () => {
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width space-between'}>
                     <div>
-                        Our lead vocalist also performs solo work under the name <a target={'_blank'} className={'inline-link'} href={'https://open.spotify.com/artist/4BqHNH6QvIEODtdFByLcMy?si=AEiUoZqFSgq6jJzI4dHFUA'}>Morgan Buckley</a>.
+                        Our lead vocalist, Morgan, also has her own <a target={'_blank'} className={'inline-link'} href={'https://open.spotify.com/artist/4BqHNH6QvIEODtdFByLcMy?si=AEiUoZqFSgq6jJzI4dHFUA'}>solo project</a> performing singer-songwriter music with guitar, ukulele, and more!
+                        Also, be sure to check out our rhythm section's (Spencer, Alec, and Patch) other band, <a target={'_blank'} className={'inline-link'} href={'https://sunqueenmusic.com'}>Sun Queen</a>.  They are an indie rock band
+                        with an ethereal, spacey vibe mixed in!
                         Be sure to check out all of our links in one place on our LinkTree:
-                    </div>
-                    <div/>
-                </Paragraph>
-                <Paragraph className={'about-us-text full-width space-between'}>
-                    <div>
-                        Also, be sure to check out our rhythm section's other band, <a target={'_blank'} className={'inline-link'} href={'https://sunqueenmusic.com'}>Sun Queen</a>!
                     </div>
                     <div/>
                 </Paragraph>
