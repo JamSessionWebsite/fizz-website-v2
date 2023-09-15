@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Head from "next/head";
-import {useSelector} from "react-redux";
-import {DateTimeUtil} from "@poshprincess/ui-commons";
 import dynamic from "next/dynamic";
 import {Show} from "../../interfaces/show";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import {BREAKPOINTS} from "../../components/common/CollapsibleHeader";
 import useBreakpoint from "use-breakpoint";
 import axios from "axios";
+import {DateTimeUtil} from "../../util/date-time-util";
 
 const Card = dynamic(() => import('antd').then((dep) => dep.Card));
 const List = dynamic(() => import('antd').then((dep) => dep.List));
