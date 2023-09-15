@@ -11,7 +11,7 @@ const BubbleBackground = () => {
         <div style={{top: '0', bottom: '100vh', left: '0', right: '100vw', position: 'fixed'}}>
             {Array.from(Array(NUMBER_OF_BUBBLES).keys()).map(x => <div
                 className={`bubble x${getRandomInt(1, 10)}`}
-                style={{translate: `${getRandomInt(-20, 100)}vw 0`, animationDelay: `-${getRandomInt(0, 20)}s`}}
+                style={{translate: `${getRandomInt(-50, 50)}vw 0`, animationDelay: `-${getRandomInt(0, 20)}s`}}
             />)}
         </div>
     )
