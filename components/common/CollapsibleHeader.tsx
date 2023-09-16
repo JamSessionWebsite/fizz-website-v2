@@ -36,6 +36,7 @@ const CollapsibleHeader = () => {
                     setIsCollapsed(true);
                     return router.push('/');
                 }}
+                preview={false}
                 className={'clickable'}
                 height={200}
                 width={100}

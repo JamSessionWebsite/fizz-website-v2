@@ -76,6 +76,7 @@ export default function AppContent({Component, pageProps}) {
                                 <Card>
                                     <AntImage
                                         style={{zIndex: 1000}}
+                                        preview={false}
                                         alt={BAND_WEBSITE_CONFIG.logo.wide.alt}
                                         width={100}
                                         height={54.3}
@@ -95,6 +96,7 @@ export default function AppContent({Component, pageProps}) {
                                 height={200}
                                 width={100}
                                 src={BAND_WEBSITE_CONFIG.logo.src}
+                                preview={false}
                             />
                         </div>
                     }
