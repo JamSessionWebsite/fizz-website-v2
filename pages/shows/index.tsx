@@ -42,12 +42,20 @@ const logoUrl = BAND_WEBSITE_CONFIG.logo.src;
 const UpcomingShowsPage = () => {
     const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     const [shows, setShows] = useState([]);
+    const [isLoadingShows, setIsLoadingShows] = useState(false);
+
     useEffect(() => {
-        axios
-            .get(`https://api.fizz.band/website-info/${BAND_WEBSITE_CONFIG.bandId}/${BAND_WEBSITE_CONFIG.websiteId}`)
-            .then(response => {
-                setShows(response.data.body.websiteInfo.shows);
-            })
+        try {
+            setIsLoadingShows(true);
+            axios
+                .get(`https://api.fizz.band/website-info/${BAND_WEBSITE_CONFIG.bandId}/${BAND_WEBSITE_CONFIG.websiteId}`)
+                .then(response => {
+                    setShows(response.data.body.websiteInfo.shows);
+                    setIsLoadingShows(false);
+                });
+        } catch (e) {
+            setIsLoadingShows(false);
+        }
     }, []);
     const richTextEvents = shows
         .filter(s => s.status.toLowerCase() !== 'hidden')
@@ -127,6 +135,7 @@ const UpcomingShowsPage = () => {
             </Head>
             <Card title={'Shows'}>
                 <List
+                    loading={isLoadingShows}
                     locale={{emptyText: 'There are currently no upcoming shows. Check back soon!'}}
                     dataSource={shows
                         .filter(s => s.status.toLowerCase() !== 'hidden')
