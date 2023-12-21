@@ -57,21 +57,21 @@ export interface BandWebsiteConfig {
 const IMAGES_PATH = 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/';
 
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
-    mainTitle: 'Fizz: A Local Chicago Funk Pop Band',
-    bandName: 'Fizz',
+    mainTitle: 'The Sips: A Local Chicago Funk Pop Band',
+    bandName: 'The Sips',
     bandId: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
     websiteId: 'c90e9dd2-289f-4497-9307-d3b7ab57cb21',
-    domain: 'fizz.band',
-    primaryEmailAddress: 'booking@fizz.band',
+    domain: 'thesips.band',
+    primaryEmailAddress: 'booking@thesips.band',
     fontFamily: 'Comfortaa',
     backgroundImageSrc: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk'],
     logo: {
         src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-soda-red-blue-transparent-bg-256-512.png',
-        alt: 'Fizz pop can logo',
+        alt: 'The Sips pop can logo',
         wide: {
             src: '/static/fizz-name-logo-no-bg.png',
-            alt: 'Fizz pop bottle logo'
+            alt: 'The Sips pop bottle logo'
         }
     },
     primaryColor: '',
@@ -210,12 +210,12 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         }
     ],
     contacts: [
-        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@fizz.band', defaultSubject: 'Booking with Fizz'},
-        {id: 'media', name: 'Media', method: 'email', value: 'media@fizz.band', defaultSubject: 'Media Inquiry for Fizz'},
-        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@fizz.band', defaultSubject: 'Merch Proposal for Fizz'},
-        {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@fizz.band', defaultSubject: 'I am Trying to Buy Tickets'},
-        {id: 'website', name: 'Website', method: 'email', value: 'spencer@fizz.band', defaultSubject: 'I Have an Issue With the Website'},
-        {id: 'other', name: 'Other', method: 'email', value: 'other@fizz.band', defaultSubject: 'Hi!'},
+        {id: 'booking', name: 'Booking', method: 'email', value: 'booking@thesips.band', defaultSubject: 'Booking with The Sips'},
+        {id: 'media', name: 'Media', method: 'email', value: 'media@thesips.band', defaultSubject: 'Media Inquiry for The Sips'},
+        {id: 'merch', name: 'Merch', method: 'email', value: 'merch@thesips.band', defaultSubject: 'Merch Proposal for The Sips'},
+        {id: 'tickets', name: 'Tickets', method: 'email', value: 'tickets@thesips.band', defaultSubject: 'I am Trying to Buy Tickets'},
+        {id: 'website', name: 'Website', method: 'email', value: 'spencer@thesips.band', defaultSubject: 'I Have an Issue With the Website'},
+        {id: 'other', name: 'Other', method: 'email', value: 'other@thesips.band', defaultSubject: 'Hi!'},
     ],
     pages: [
         {id: 'home', name: 'Home', path: '/'},

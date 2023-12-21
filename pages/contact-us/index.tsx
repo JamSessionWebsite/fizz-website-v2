@@ -18,7 +18,7 @@ const ContactUs = () => {
                 <title>Contact Us | Fizz</title>
                 <meta
                     name='description'
-                    content='Contact Fizz for booking, merch, website issues, or just to chat.  For booking, you can reach us at booking@fizz.band.'></meta>
+                    content='Contact The Sips for booking, merch, website issues, or just to chat.  For booking, you can reach us at booking@thesips.band.'></meta>
             </Head>
             <Card title={'Contact Fizz'}>
                 {BAND_WEBSITE_CONFIG.contacts.map((contact, index) => (

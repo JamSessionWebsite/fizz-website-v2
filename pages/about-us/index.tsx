@@ -22,7 +22,8 @@ const AboutUsPage = () => {
             <Card style={{padding: minWidth === 0 ? '16px 0' : '16px 64px'}}
                   className={'about-us-text-container'}>
                 <Paragraph className={'about-us-text'}>
-                    Hi! We're Fizz, a Chicago-based band that plays a large variety of pop and funk music. We play a
+                    Hi! We're The Sips, a Chicago-based band that plays a large variety of pop and funk music. You may also know us
+                    as Fizz which was our name up until January 2024! We play a
                     majority of original music with a few funky covers of some of our favorite songs!
                     We have played at many notable venues in Chicago including <a target={'_blank'} className={'inline-link'} href={'https://www.houseofblues.com/chicago'}>House of Blues</a>, <a target={'_blank'} className={'inline-link'} href={'https://bottomlounge.com/'}>Bottom Lounge</a>, and <a target={'_blank'} className={'inline-link'} href={'https://navypier.org/listings/listing/navy-pier-beer-garden'}>Navy Pier Beer Garden</a>.
                     We got to play the Navy Pier show because we won 3rd place in the <a target={'_blank'} className={'inline-link'} href={'https://www.bitterjesterfoundation.org/bitter-jester-music-festival-info'}>Bitter Jester Music Festival</a>!
@@ -33,7 +34,7 @@ const AboutUsPage = () => {
                 <Paragraph className={'about-us-text'}>
                     Currently, we have recently finished six new songs and are actively looking for gigs in the
                     Chicago area.  Please email us at <a target={'_blank'} className={'inline-link'} href={'mailto:booking@fizz.band?subject=Booking with Fizz'}>booking@fizz.band</a>  if you
-                    want Fizz to play a show at your venue!  Fizz is made up of a vocalist, guitar, bass, drums, trumpet, alto sax, and tenor sax.
+                    want The Sips to play a show at your venue!  The Sips is made up of a vocalist, guitar, bass, drums, trumpet, alto sax, and tenor sax.
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width space-between'}>
                     <div>
@@ -49,7 +50,7 @@ const AboutUsPage = () => {
                     <div/>
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width'}>
-                    If you are interested in contacting Fizz, check out our <Link className={'inline-link'} href={'/contact-us'}>contact info</Link> page to find the correct email.
+                    If you are interested in contacting The Sips, check out our <Link className={'inline-link'} href={'/contact-us'}>contact info</Link> page to find the correct email.
                     To see our upcoming shows, take a look at the <Link className={'inline-link'} href={'/shows'}>shows</Link> page.
                 </Paragraph>
             </Card>
