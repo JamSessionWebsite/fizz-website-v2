@@ -57,7 +57,7 @@ export interface BandWebsiteConfig {
 const IMAGES_PATH = 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/';
 
 export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
-    mainTitle: 'The Sips: A Local Chicago Funk Pop Band',
+    mainTitle: 'The Sips: A Local Chicago Pop Funk Band',
     bandName: 'The Sips',
     bandId: '9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d',
     websiteId: 'c90e9dd2-289f-4497-9307-d3b7ab57cb21',

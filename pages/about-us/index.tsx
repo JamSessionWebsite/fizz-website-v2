@@ -46,7 +46,7 @@ const AboutUsPage = () => {
                     <div/>
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width space-between'}>
-                    <a target={'_blank'} href={'https://linktr.ee/fizz.band'}>https://linktr.ee/fizz.band</a>
+                    <a target={'_blank'} href={'https://linktr.ee/thesips.band'}>https://linktr.ee/thesips.band</a>
                     <div/>
                 </Paragraph>
                 <Paragraph className={'about-us-text full-width'}>
