@@ -94,7 +94,7 @@ export default function AppContent({Component, pageProps}) {
                                 onClick={async () => router.push('/')}
                                 className={'clickable'}
                                 height={200}
-                                width={100}
+                                width={200}
                                 src={BAND_WEBSITE_CONFIG.logo.src}
                                 preview={false}
                             />

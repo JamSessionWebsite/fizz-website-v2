@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react';
 import Link from "next/link";
-import {Button, Image} from "antd";
+import {Button} from "antd";
 import useBreakpoint from "use-breakpoint";
 import {MenuOutlined} from "@ant-design/icons";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import {useRouter} from "next/router";
 import {SocialMediaLinks} from "../SocialMediaLinks";
+import Image from 'next/image';
 
 const INTERNAL_LINKS = [
     {name: 'About Us', href: '/about-us'},
@@ -30,16 +31,15 @@ const CollapsibleHeader = () => {
     const ImageAndBandName = <div className={'logo-and-title-container'}>
         <div className={'fizz-logo-container'}>
             <Image
-                style={{zIndex: 1000}}
+                style={{zIndex: 1000, height: 200, width: 200}}
                 alt={BAND_WEBSITE_CONFIG.logo.alt}
                 onClick={async () => {
                     setIsCollapsed(true);
                     return router.push('/');
                 }}
-                preview={false}
                 className={'clickable'}
                 height={200}
-                width={100}
+                width={200}
                 src={BAND_WEBSITE_CONFIG.logo.src}
             />
         </div>
