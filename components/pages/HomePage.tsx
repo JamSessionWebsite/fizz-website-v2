@@ -1,17 +1,10 @@
 import React, {useEffect} from 'react';
 import Head from "next/head";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
-import {useRouter} from "next/router";
+import Image from "next/image";
 // const ImageGallery = dynamic(() => import('../components/common/ImageGallery'));
 
 const HomePage = () => {
-    const router = useRouter();
-    useEffect(() => {
-            if(router) {
-                router.push('/about-us').then();
-            }
-    }, [router]);
-
     return (
         <div className={'full-width youtube-container'}>
             <Head>
@@ -26,14 +19,18 @@ const HomePage = () => {
                     name='description'
                     content='Welcome to the official website of Fizz, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
             </Head>
-            <div className={'flex-row image-gallery-container'}>
-                {/*<ImageGallery*/}
-                {/*    title={'Welcome to the Official Website of Fizz!'}*/}
-                {/*    images={BAND_WEBSITE_CONFIG.photos}/>*/}
-                {/*<h2>Here is a sneak peak of one song that we have been working on!</h2>*/}
-                {/*<audio controls={true}>*/}
-                {/*    <source src={'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/songs/31982411-271f-487d-8fbe-5faa7100399c/audioRecordings/hey-mama-041123.m4a'}/>*/}
-                {/*</audio>*/}
+            <div className={'flex-row full-width'}>
+                <div className={'flex-column'}>
+                    <Image
+                        style={{zIndex: 1000}}
+                        width={248}
+                        height={248}
+                        src={'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/FIZZ-Raining.jpg'}
+                        alt={'raining album cover'}/>
+                    <a href={'https://distrokid.com/hyperfollow/thesips1/raining'} target={'_blank'} style={{color: 'white', fontSize: '24px'}}>
+                        Click Here to Presave Our Debut Single "Raining"
+                    </a>
+                </div>
             </div>
         </div>
     )
