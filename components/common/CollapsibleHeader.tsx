@@ -39,7 +39,7 @@ const CollapsibleHeader = () => {
                 }}
                 className={'clickable'}
                 height={200}
-                width={115}
+                width={200}
                 src={BAND_WEBSITE_CONFIG.logo.src}
             />
         </div>
