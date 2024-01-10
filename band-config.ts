@@ -67,11 +67,11 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     backgroundImageSrc: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/fizz-website-background-b-and-w.jpg',
     genres: ['pop','funk'],
     logo: {
-        src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/the-sips-logo-no-bg.png',
+        src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/the-sips-can-logo-no-bg.png',
         alt: 'The Sips pop can logo',
         wide: {
-            src: '/static/fizz-name-logo-no-bg.png',
-            alt: 'The Sips pop bottle logo'
+            src: 'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/The Sips 70s style logo black.png',
+            alt: 'The Sips name logo'
         }
     },
     primaryColor: '',

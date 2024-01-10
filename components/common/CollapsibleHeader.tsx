@@ -31,7 +31,7 @@ const CollapsibleHeader = () => {
     const ImageAndBandName = <div className={'logo-and-title-container'}>
         <div className={'fizz-logo-container'}>
             <Image
-                style={{zIndex: 1000, height: 200, width: 200}}
+                style={{zIndex: 1000}}
                 alt={BAND_WEBSITE_CONFIG.logo.alt}
                 onClick={async () => {
                     setIsCollapsed(true);
@@ -39,7 +39,7 @@ const CollapsibleHeader = () => {
                 }}
                 className={'clickable'}
                 height={200}
-                width={200}
+                width={115}
                 src={BAND_WEBSITE_CONFIG.logo.src}
             />
         </div>
