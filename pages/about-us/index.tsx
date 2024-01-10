@@ -17,7 +17,7 @@ const AboutUsPage = () => {
                 <title>About Us | {BAND_WEBSITE_CONFIG.bandName}</title>
                 <meta
                     name='description'
-                    content='Fizz is a pop/funk/indie band performing live in the Chicago area that takes rich vocal harmonies and a funky rhythm section and layers a powerful horn section on top to create pop music with layers of funk scattered throughout.'></meta>
+                    content='The Sips are a pop funk band performing live in the Chicago area that takes rich vocal harmonies and a funky rhythm section and layers a powerful horn section on top to create pop music with layers of funk scattered throughout.'></meta>
             </Head>
             <Card style={{padding: minWidth === 0 ? '16px 0' : '16px 64px'}}
                   className={'about-us-text-container'}>

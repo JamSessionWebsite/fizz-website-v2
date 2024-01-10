@@ -17,7 +17,7 @@ const HomePage = () => {
                       href="https://fonts.googleapis.com/css2?family=Caveat"></link>
                 <meta
                     name='description'
-                    content='Welcome to the official website of Fizz, a pop/funk/indie band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
+                    content='Welcome to the official website of The Sips, a pop funk band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
             </Head>
             <div className={'flex-row full-width'}>
                 <div className={'flex-column'}>

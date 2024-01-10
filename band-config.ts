@@ -79,7 +79,7 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
         {platform: 'youtube', pageSrc: 'https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw'},
         {platform: 'instagram', pageSrc: 'https://www.instagram.com/fizz.band/'},
         {platform: 'tiktok', pageSrc: 'https://www.tiktok.com/@fizz.band'},
-        {platform: 'facebook', pageSrc: 'https://www.facebook.com/Fizzthebandofficial'},
+        {platform: 'facebook', pageSrc: 'https://www.facebook.com/musicbythesips'},
     ],
     photos: [
         {

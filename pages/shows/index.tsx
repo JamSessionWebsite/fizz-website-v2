@@ -123,10 +123,10 @@ const UpcomingShowsPage = () => {
     return (
         <div style={{padding: minWidth === 0 ? '16px' : '16px 128px'}} className={'upcoming-shows-container'}>
             <Head>
-                <title>Shows | Fizz</title>
+                <title>Shows | The Sips</title>
                 <meta
                     name='description'
-                    content='View a list of all of the upcoming shows that Fizz is going to be playing.  Many will be in the Chicago area although we are always open to travel with in reason!'/>
+                    content='View a list of all of the upcoming shows that The Sips is going to be playing.  Many will be in the Chicago area although we are always open to travel with in reason!'/>
                 <script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

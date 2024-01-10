@@ -15,7 +15,7 @@ const ContactUs = () => {
             className={'contact-us-container'}
             style={{padding: minWidth === 0 ? '0 16px' : '0 128px'}}>
             <Head>
-                <title>Contact Us | Fizz</title>
+                <title>Contact Us | The Sips</title>
                 <meta
                     name='description'
                     content='Contact The Sips for booking, merch, website issues, or just to chat.  For booking, you can reach us at booking@thesips.band.'></meta>
