@@ -1,10 +1,13 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import Head from "next/head";
 import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import Image from "next/image";
+import useBreakpoint from "use-breakpoint";
+import {BREAKPOINTS} from "../common/CollapsibleHeader";
 // const ImageGallery = dynamic(() => import('../components/common/ImageGallery'));
 
 const HomePage = () => {
+    const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
         <div className={'full-width youtube-container'}>
             <Head>
@@ -22,7 +25,7 @@ const HomePage = () => {
             <div className={'flex-row full-width'}>
                 <div className={'flex-column'}>
                     <Image
-                        style={{zIndex: 1000}}
+                        style={{zIndex: 200}}
                         width={248}
                         height={248}
                         src={'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/FIZZ-Raining.jpg'}
