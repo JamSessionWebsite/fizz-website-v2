@@ -11,7 +11,7 @@ import TheSipsSpotifyArtist from "../TheSipsSpotifyArtist";
 const HomePage = () => {
     const {minWidth} = useBreakpoint(BREAKPOINTS, 'desktop');
     return (
-        <div className={'full-width youtube-container'}>
+        <div className={''}>
             <Head>
                 <title>{BAND_WEBSITE_CONFIG.mainTitle}</title>
                 <link rel="stylesheet"
