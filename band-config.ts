@@ -77,6 +77,7 @@ export const BAND_WEBSITE_CONFIG: BandWebsiteConfig = {
     primaryColor: '',
     socialMedia: [
         {platform: 'youtube', pageSrc: 'https://www.youtube.com/channel/UCCYlcZuQdCE2gD3k9jsTRJw'},
+        {platform: 'spotify', pageSrc: 'https://open.spotify.com/artist/4QMmBetHc1LFnQGeH7Dzr3'},
         {platform: 'instagram', pageSrc: 'https://www.instagram.com/thesips.band/'},
         {platform: 'tiktok', pageSrc: 'https://www.tiktok.com/@fizz.band'},
         {platform: 'facebook', pageSrc: 'https://www.facebook.com/musicbythesips'},

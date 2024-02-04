@@ -4,6 +4,8 @@ import {BAND_WEBSITE_CONFIG} from "../../band-config";
 import Image from "next/image";
 import useBreakpoint from "use-breakpoint";
 import {BREAKPOINTS} from "../common/CollapsibleHeader";
+import RainingMusicVideoYoutube from "../RainingMusicVideoYoutube";
+import TheSipsSpotifyArtist from "../TheSipsSpotifyArtist";
 // const ImageGallery = dynamic(() => import('../components/common/ImageGallery'));
 
 const HomePage = () => {
@@ -23,17 +25,10 @@ const HomePage = () => {
                     content='Welcome to the official website of The Sips, a pop funk band from Chicago.  Check out videos of our performances, view a list of our upcoming shows, and more!'></meta>
             </Head>
             <div className={'flex-row full-width'}>
-                <div className={'flex-column'}>
-                    <Image
-                        style={{zIndex: 200}}
-                        width={248}
-                        height={248}
-                        src={'https://media.bandpractice.app/bands/9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d/bandFiles/images/FIZZ-Raining.jpg'}
-                        alt={'raining album cover'}/>
-                    <a href={'https://distrokid.com/hyperfollow/thesips1/raining'} target={'_blank'} style={{color: 'white', fontSize: '24px'}}>
-                        Click Here to Presave Our Debut Single "Raining"
-                    </a>
-                </div>
+                <RainingMusicVideoYoutube />
+            </div>
+            <div className={'flex-row full-width'}>
+                <TheSipsSpotifyArtist />
             </div>
         </div>
     )

@@ -8,6 +8,7 @@ const MailOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.M
 const InstagramOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.InstagramOutlined));
 const YoutubeOutlined = dynamic(() => import('@ant-design/icons').then(dep => dep.YoutubeOutlined));
 
+
 const SOCIAL_MEDIA_ICON_MAP = {
     facebook: <FacebookOutlined/>,
     tiktok: <Image
@@ -17,6 +18,11 @@ const SOCIAL_MEDIA_ICON_MAP = {
         src={'/static/tiktok-logo.svg'}/>,
     youtube: <YoutubeOutlined/>,
     instagram: <InstagramOutlined/>,
+    spotify: <Image
+        alt={'Spotify brand logo'}
+        height={24}
+        width={24}
+        src={'/static/spotify-white-icon.webp'}/>
 }
 
 export function SocialMediaLinks() {
